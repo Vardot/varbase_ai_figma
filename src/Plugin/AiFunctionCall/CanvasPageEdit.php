@@ -422,6 +422,35 @@ class CanvasPageEdit extends FunctionCallBase implements ExecutableFunctionCallI
         'webform_id' => trim($m[1]),
       ];
     }
+    // A theme component, either by its full id ("sdc.vartheme_bs5.card-hero")
+    // or by the leaf name the design resolver speaks in ("card-hero"). Kept in
+    // sync with CreateCanvasPage::classify() so add/swap can place exactly
+    // what a full page build can place (see findSdcComponentId()).
+    if (str_starts_with($name, 'sdc.')) {
+      if ($component_storage->load($name)) {
+        return [
+          'type' => 'sdc',
+          'component_id' => $name,
+          'ref' => $name,
+          'label' => $name,
+          'webform_id' => '',
+        ];
+      }
+    }
+    elseif (!str_contains($name, '.') && !$js_storage->load($name)) {
+      // A bare leaf name only becomes a theme component when nothing else
+      // claims it, so an author's own code component always wins.
+      $sdc_id = $this->findSdcComponentId($name, $component_storage);
+      if ($sdc_id !== '') {
+        return [
+          'type' => 'sdc',
+          'component_id' => $sdc_id,
+          'ref' => $sdc_id,
+          'label' => $name,
+          'webform_id' => '',
+        ];
+      }
+    }
     // Explicit block id, or a Views block referenced loosely.
     $block_candidates = [];
     if (str_starts_with($name, 'block.')) {
@@ -461,6 +490,32 @@ class CanvasPageEdit extends FunctionCallBase implements ExecutableFunctionCallI
   }
 
   /**
+   * Finds a theme component by the leaf name a designer or the resolver uses.
+   *
+   * The resolver talks about "card-hero" or "accordion-container"; the stored
+   * id is "sdc.<theme>.<leaf>". Matching on the leaf keeps add/swap working
+   * whatever theme the site runs, without hard-coding a theme name. Kept in
+   * sync with CreateCanvasPage::findSdcComponentId().
+   *
+   * @param string $leaf
+   *   The component's leaf machine name.
+   * @param \Drupal\Core\Entity\EntityStorageInterface $component_storage
+   *   The Component config entity storage.
+   *
+   * @return string
+   *   The full component id, or an empty string when nothing matches.
+   */
+  protected function findSdcComponentId(string $leaf, $component_storage): string {
+    foreach (array_keys($component_storage->loadByProperties(['source' => 'sdc'])) as $id) {
+      $dot = strrpos($id, '.');
+      if ($dot !== FALSE && substr($id, $dot + 1) === $leaf) {
+        return $id;
+      }
+    }
+    return '';
+  }
+
+  /**
    * Builds the instance inputs for a resolved component spec.
    *
    * Code components are seeded from each prop's example value (so they render
@@ -491,6 +546,19 @@ class CanvasPageEdit extends FunctionCallBase implements ExecutableFunctionCallI
           if (isset($definition['examples'][0])) {
             $inputs[$prop_name] = $definition['examples'][0];
           }
+        }
+      }
+      return $inputs;
+    }
+    if ($spec['type'] === 'sdc') {
+      // A theme component stores each prop's default under
+      // prop_field_definitions; a placed instance stores plain prop => value.
+      $inputs = [];
+      $versioned = $component->get('versioned_properties');
+      $definitions = $versioned['active']['settings']['prop_field_definitions'] ?? [];
+      foreach ($definitions as $prop_name => $definition) {
+        if (isset($definition['default_value'][0]['value'])) {
+          $inputs[$prop_name] = $definition['default_value'][0]['value'];
         }
       }
       return $inputs;
@@ -533,6 +601,11 @@ class CanvasPageEdit extends FunctionCallBase implements ExecutableFunctionCallI
         }
       }
       return [];
+    }
+    if ($spec['type'] === 'sdc') {
+      $versioned = $component->get('versioned_properties');
+      $definitions = $versioned['active']['settings']['prop_field_definitions'] ?? [];
+      return array_keys($definitions);
     }
     // Block / Views / Webform: the declared inputs are the block's settings
     // keys. Returning these keeps a swap between two blocks coherent.

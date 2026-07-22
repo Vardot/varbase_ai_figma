@@ -40,32 +40,48 @@ class AiAssistant {
   /**
    * Asks the model and returns its text answer.
    *
+   * Tries every configured default provider in resolveDefault()'s priority
+   * order, not just the first one: a site can have a healthy "chat" provider
+   * while its "chat_with_tools" default is unreachable (an expired key,
+   * a provider outage) - in that case failing outright instead of falling
+   * through to the working provider would break every content tool for a
+   * problem that has nothing to do with this module.
+   *
    * @param string $system
    *   The system instruction (role/voice/constraints).
    * @param string $user
    *   The user prompt.
    *
    * @return string
-   *   The model's text, or '' when no provider / on error.
+   *   The model's text, or '' when no provider is configured or all of them
+   *   failed.
    */
   public function ask(string $system, string $user): string {
-    $default = $this->resolveDefault();
-    if ($default === NULL) {
+    $candidates = $this->resolveCandidates();
+    if (!$candidates) {
       return '';
     }
-    try {
-      $provider = $this->providerManager->createInstance($default['provider_id']);
-      $input = new ChatInput([
-        new ChatMessage('system', $system),
-        new ChatMessage('user', $user),
-      ]);
-      $response = $provider->chat($input, $default['model_id']);
-      return trim((string) $response->getNormalized()->getText());
+    $last_error = '';
+    foreach ($candidates as $default) {
+      try {
+        $provider = $this->providerManager->createInstance($default['provider_id']);
+        $input = new ChatInput([
+          new ChatMessage('system', $system),
+          new ChatMessage('user', $user),
+        ]);
+        $response = $provider->chat($input, $default['model_id']);
+        return trim((string) $response->getNormalized()->getText());
+      }
+      catch (\Throwable $e) {
+        $last_error = $e->getMessage();
+        $this->loggerFactory->get('ai_figma')->warning('AI assistant call to @provider failed, trying the next configured default: @msg', [
+          '@provider' => $default['provider_id'],
+          '@msg' => $e->getMessage(),
+        ]);
+      }
     }
-    catch (\Throwable $e) {
-      $this->loggerFactory->get('ai_figma')->warning('AI assistant call failed: @msg', ['@msg' => $e->getMessage()]);
-      return '';
-    }
+    $this->loggerFactory->get('ai_figma')->warning('AI assistant call failed on every configured default provider: @msg', ['@msg' => $last_error]);
+    return '';
   }
 
   /**
@@ -95,20 +111,37 @@ class AiAssistant {
   }
 
   /**
-   * Resolves the site's default chat provider + model.
+   * Resolves the site's preferred default chat provider + model.
    *
    * @return array{provider_id:string,model_id:string}|null
    *   The provider/model, or NULL when none configured.
    */
   protected function resolveDefault(): ?array {
+    $candidates = $this->resolveCandidates();
+    return $candidates[0] ?? NULL;
+  }
+
+  /**
+   * Resolves every configured default chat provider, in priority order.
+   *
+   * De-duplicated by provider_id + model_id, so the same provider is never
+   * tried twice when two operation types share it.
+   *
+   * @return array<array{provider_id:string,model_id:string}>
+   *   The configured provider/model pairs, in the order ask() should try
+   *   them; empty when none are configured.
+   */
+  protected function resolveCandidates(): array {
     $defaults = (array) $this->configFactory->get('ai.settings')->get('default_providers');
+    $candidates = [];
     foreach (['chat_with_tools', 'chat', 'chat_with_complex_json'] as $type) {
       $cfg = $defaults[$type] ?? NULL;
       if (is_array($cfg) && !empty($cfg['provider_id']) && !empty($cfg['model_id'])) {
-        return ['provider_id' => (string) $cfg['provider_id'], 'model_id' => (string) $cfg['model_id']];
+        $key = $cfg['provider_id'] . '::' . $cfg['model_id'];
+        $candidates[$key] = ['provider_id' => (string) $cfg['provider_id'], 'model_id' => (string) $cfg['model_id']];
       }
     }
-    return NULL;
+    return array_values($candidates);
   }
 
 }
