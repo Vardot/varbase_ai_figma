@@ -1,0 +1,200 @@
+# Everything the design resolver reasons with lives here, not in code.
+#
+# The engine that decides "reuse this, adapt that, create only this" is tuned
+# entirely from this file: what counts as a content role, how much each signal is
+# worth, where the verdict lines fall, and what is never a candidate. A site with
+# a different component library, or a team with a different appetite for creating
+# new components, changes behaviour by editing config - no patch, no fork.
+resolver:
+  # What a piece of a design IS. A role is matched against the REAL prop and slot
+  # names a component ships, so adding a role here immediately teaches the engine
+  # to recognise it everywhere.
+  role_hints:
+    heading: [heading, title, headline, subtitle, suptitle]
+    body: [body, text, description, summary, content, excerpt, intro]
+    image: [image, media, picture, photo, thumbnail, bg_image]
+    video: [video, oembed]
+    button: [button, cta, action]
+    link: [link, url, href, menu, nav, breadcrumb]
+    badge: [badge, tag, taxonomy, category, pill, chip]
+    list: [items, list, bullets, features, points, menu, nav, breadcrumb, tabs]
+    icon: [icon, glyph, symbol]
+    quote: [quote, testimonial, citation, cite]
+    stat: [stat, number, count, metric, figure]
+    form: [form, webform, newsletter, subscribe, search, signup, contact]
+    logo: [logo, brand, client]
+    author: [author, byline, person]
+    date: [date, time, published]
+    price: [price, cost, amount, plan]
+
+  # The equation. These are the weights of each signal, out of 100.
+  #
+  # The name is deliberately the weakest signal. What a thing can genuinely HOLD
+  # is the strongest. Raise name_affinity if your components are named with real
+  # discipline; raise role_coverage if they are not.
+  # A thing can BE a role without naming a prop after it: the Button component is
+  # a button, but its text lives in "label". These roles carry their own short
+  # text, and text_props says where that text goes when no prop is named for it.
+  plain_text_roles:
+    - button
+    - badge
+    - quote
+    - stat
+    - price
+    - link
+  text_props:
+    - label
+    - text
+    - title
+    - value
+    - caption
+
+  weights:
+    role_coverage: 45
+    structural_fit: 20
+    value_fit: 10
+    kind_fit: 15
+    name_affinity: 10
+
+  # What the engine subtracts for.
+  penalties:
+    # The region needs a role this thing simply cannot hold.
+    missing_required: 15
+    # The region shows live site content, but this thing is static markup.
+    dynamic_mismatch: 20
+    # It lists live content ABOUT SOMETHING ELSE. A view of articles is not a
+    # team grid, however similar the two look on roles alone.
+    subject_mismatch: 35
+
+  # Where the verdict lines fall. Lower reuse_at to reuse more aggressively;
+  # raise it to let the agent create new components more readily.
+  thresholds:
+    reuse_at: 85
+    adapt_at: 60
+
+  # Things that are never an answer to a design.
+  exclude:
+    # Parts that only shape the layout. They are not what a saved section
+    # repeats: counting them makes a single call-to-action banner look like a
+    # four-item grid because it happens to contain four spacers.
+    layout_components:
+      - spacer
+      - section
+      - divider
+      - container
+      - column
+      - group
+      - html-code
+      - hero-slider-container
+    # Theme plumbing. These exist to render the page shell, not to be placed in
+    # Drupal Canvas, so they are never an answer to a design.
+    components:
+      - page
+      - page-header
+      - page-footer
+      - page-user-edit
+      - page-user-login
+      - page-user-password
+      - page-user-register
+      - page-user-reset
+      - root
+      - about
+      - colors
+      - images
+      - logos
+      - typography
+      - welcome
+      - spacing-and-grids
+      - interaction-guideline
+    # Views that are administrative or internal: a moderation queue and an
+    # accessibility report both have a title, an image and a date, so on roles
+    # alone they compete with the blog listing for a "latest posts" region.
+    # Matched on whole words, never substrings - "log" must not condemn "blog".
+    view_words:
+      - watchdog
+      - log
+      - logs
+      - results
+      - usage
+      - queue
+      - publishing
+      - moderation
+      - scheduler
+      - a11y
+      - audit
+      - admin
+    # Block plugins that are machinery, not a design decision. The single-field
+    # blocks alone outnumber everything else several times over, and a field
+    # block called "Image" will happily win an "image" region and render nothing.
+    block_prefixes:
+      - 'entity_field:'
+      - 'entity_view:'
+      - system_main_block
+      - system_messages_block
+      - help_block
+      - local_actions_block
+      - local_tasks_block
+      - page_title_block
+    # Block categories that belong to the admin UI. Menus, breadcrumbs and site
+    # branding are kept even when they sit in these categories, because a design
+    # genuinely does place them.
+    block_categories:
+      - administration
+      - system
+    block_category_keep:
+      - menu
+      - breadcrumb
+      - branding
+
+# AI Context items this module teaches the Canvas AI agents.
+#
+# Anything listed here is seeded as an ai_context item, so extending what the
+# agent knows is a config edit, not a code change. Add an entry, apply the
+# recipe (or reinstall), and the agent has learned it.
+ai_context_items:
+  - label: 'Figma Design Resolution Protocol'
+    description: 'How the Canvas AI agent decides what to reuse and what to create when building from a design.'
+    purpose: 'Delivered to the Canvas AI agents so that every build is resolved against what the site already ships, before anything is placed or invented.'
+    content: |
+      ## How to build a design on this site
+
+      You have tools that let you see exactly what this site already ships and
+      decide what to reuse. Use them. Do not guess from names, and do not invent
+      a component before you have checked.
+
+      ### Always resolve before you build
+      1. Call `varbase_figma_scan_inventory` to see the palette: the Canvas
+         components with their REAL props, allowed enum values and slots; the
+         saved Patterns with the shape of their component tree; the Block
+         plugins; and the Views.
+      2. Call `varbase_figma_resolve_design` with one entry per region of the
+         design. For each region say which content roles it needs (heading, body,
+         image, button, badge, list, icon, quote, stat, form, logo, author, date,
+         price), how many identical items it repeats, whether it is a whole
+         section or a single element, whether it shows REAL site content, and the
+         actual content and mapped token values it carries.
+      3. Obey the verdict it gives you for each region:
+         - REUSE  - place exactly that thing, with exactly the props it hands you.
+         - ADAPT  - place the closest thing, set the props it lists, and fill only
+                    the gaps it names.
+         - CREATE - build a new component ONLY for what it lists as missing. It
+                    also tells you the closest existing thing, so scope the new
+                    component to the gap instead of duplicating what exists.
+
+      ### The rules that make a build correct rather than merely close
+      - A whole section belongs to a saved Pattern. If a region repeats three
+        items and a Pattern already repeats three items, that is the answer -
+        match on structure, not on wording.
+      - A region that shows real, changing site content (latest posts, related
+        articles, team members) belongs to an existing View or a Block. Never
+        freeze live content into hand-written cards; it will never update again.
+      - A menu, a breadcrumb, a search form are Blocks. "Live content" does not
+        mean "a View".
+      - Bind the design's content to the component's REAL prop names, which the
+        tools give you. Never assume a prop is called "heading" or "body".
+      - Never write text into a prop that has an enum. An enum is a style switch
+        (bg-dark, pt-5), not a place for prose. A value the enum rejects is what
+        makes a build fail validation.
+      - Reuse an existing Block. Do not author a custom block.
+      - If the resolver reports a gap, say so plainly. Do not silently drop the
+        part of the design you had nowhere to put.

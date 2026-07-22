@@ -1,0 +1,36 @@
+{
+  "css": {
+    "ai figma settings form": "form#ai-figma-settings, form[data-drupal-selector='ai-figma-settings']",
+    "ai figma settings figma token key": "#edit-figma-token-key",
+    "ai figma settings figma token key name": "select[name='figma_token_key']",
+    "ai figma settings default file key": "#edit-default-file-key",
+    "ai figma settings default file key name": "input[name='default_file_key']",
+    "ai figma settings api base": "#edit-figma-api-base",
+    "ai figma settings api base name": "input[name='figma_api_base']",
+    "ai figma settings connection details": "details#edit-connection",
+    "ai figma settings test details": "details#edit-test",
+    "ai figma test connection button": "#edit-test-connection",
+    "ai figma test connection button value": "input[value='Test Figma connection']",
+    "ai figma save configuration button": "#edit-submit, input[value='Save configuration']",
+
+    "ai figma admin services link": ".admin-item__link[href$='/admin/config/ai/figma']",
+    "ai figma admin menu link": "a[href$='/admin/config/ai/figma']",
+
+    "ai figma open ai panel": "button[aria-label='Open AI Panel']",
+    "ai figma close ai panel": "button[aria-label='Close AI Panel']",
+    "ai figma assistant input": "textarea[placeholder='Build me a ...'], [placeholder='Build me a ...']",
+    "ai figma assistant input partial": "[placeholder*='Build me a']",
+
+    "ai figma assistant response": "[role='dialog']:has(textarea[placeholder='Build me a ...']), [role='complementary']:has(textarea[placeholder='Build me a ...']), aside:has(textarea[placeholder='Build me a ...']), .ai-panel:has(textarea[placeholder='Build me a ...'])",
+    "ai figma editor error dialog": "[role='alertdialog'], [data-testid='error-dialog'], .ai-panel .messages--error",
+    "ai figma editor review changes bar": "[data-testid='canvas-controls'], [class*='topbar'], [class*='top-bar'], header[class*='canvas'], [aria-label='Canvas controls']",
+    "ai figma editor empty placeholder": "[data-testid='empty-region'], .canvas-empty-region, [class*='emptyRegion'], [class*='empty-region']",
+
+    "drupal page heading": "h1",
+    "drupal admin error messages": ".messages--error",
+    "drupal admin status messages": ".messages--status",
+
+    "ai figma settings form errors": "form#ai-figma-settings [aria-invalid='true'], form[data-drupal-selector='ai-figma-settings'] [aria-invalid='true']"
+  },
+  "xpath": {}
+}

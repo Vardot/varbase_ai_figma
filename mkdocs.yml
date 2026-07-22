@@ -1,0 +1,36 @@
+site_name: Varbase AI Figma
+site_description: >-
+  Varbase customization of AI Figma - tunes the general Figma-to-Canvas engine
+  for the Bootstrap 5.3 vartheme_bs5 theme and wires Context Control Center.
+site_url: https://project.pages.drupalcode.org/varbase_ai_figma/
+repo_url: https://git.drupalcode.org/project/varbase_ai_figma
+repo_name: project/varbase_ai_figma
+docs_dir: docs
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.top
+    - content.code.copy
+    - content.code.annotate
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Configuration: configuration.md
+  - AI Agent tools: ai-agent-tools.md
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.superfences

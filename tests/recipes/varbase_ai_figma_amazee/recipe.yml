@@ -1,0 +1,25 @@
+name: 'Varbase AI Figma amazee.ai provider (testing)'
+description: >
+  Configures amazee.ai as the default AI provider for the functional tests:
+  `ensureAmazeeAiAccess` provisions a limited free trial (no API key required)
+  and `setupAiProvider` makes amazee.ai the default chat provider. Apply with
+  `drush recipe`.
+type: 'Testing'
+install:
+  - ai
+  - ai_provider_amazeeio
+  - ai_simple_provider_installer
+config:
+  actions:
+    ai_provider_amazeeio.settings:
+      ensureAmazeeAiAccess: ~
+      setupAiProvider:
+        provider: amazeeio
+    # setupAiProvider provisions the key + models but does not select a default
+    # chat provider, so set it explicitly - the agents fall back to this.
+    ai.settings:
+      simpleConfigUpdate:
+        default_providers:
+          chat:
+            provider_id: amazeeio
+            model_id: claude-4-5-haiku

@@ -1,0 +1,9533 @@
+{
+ "component:sdc.vartheme_bs5.page-better-login": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.page-better-login",
+  "label": "Page Better Login",
+  "props": {
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "without_blocks": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.table": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.table",
+  "label": "Table",
+  "props": {
+   "variant": {
+    "type": "string",
+    "enum": [
+     "",
+     "primary",
+     "secondary",
+     "success",
+     "info",
+     "warning",
+     "danger",
+     "light",
+     "dark"
+    ],
+    "required": false
+   },
+   "responsive": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "striped_rows": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "striped_columns": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "hover": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "bordered": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "border_color": {
+    "type": "string",
+    "enum": [
+     "",
+     "primary",
+     "secondary",
+     "success",
+     "info",
+     "warning",
+     "danger",
+     "light",
+     "dark",
+     "black",
+     "white",
+     "primary-subtle",
+     "secondary-subtle",
+     "success-subtle",
+     "info-subtle",
+     "warning-subtle",
+     "danger-subtle",
+     "light-subtle",
+     "dark-subtle"
+    ],
+    "required": false
+   },
+   "borderless": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "size": {
+    "type": "string",
+    "enum": [
+     "",
+     "sm"
+    ],
+    "required": false
+   },
+   "caption": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "colgroups": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "sticky": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "header": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "rows": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "footer": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "empty": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "no_striping": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "thead_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "tbody_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "tfoot_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "thead_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "tbody_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "tfoot_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.local-tasks": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.local-tasks",
+  "label": "Local Tasks",
+  "props": {
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.share": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.share",
+  "label": "Share",
+  "props": {
+   "heading": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "display_title": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "alignment": {
+    "type": "string",
+    "enum": [
+     "start",
+     "end"
+    ],
+    "required": false
+   },
+   "orientation": {
+    "type": "string",
+    "enum": [
+     "horizontal",
+     "vertical"
+    ],
+    "required": false
+   },
+   "mobile_visibility": {
+    "type": "string",
+    "enum": [
+     "all",
+     "hide_mobile",
+     "mobile_only"
+    ],
+    "required": false
+   },
+   "native_share": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "placement": {
+    "type": "string",
+    "enum": [
+     "inline",
+     "rail-end"
+    ],
+    "required": false
+   },
+   "url": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "share_title": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "share_text": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.comment": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.comment",
+  "label": "Comment",
+  "props": {
+   "content": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "content_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "title_prefix": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "title_suffix": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.accordion-container": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.accordion-container",
+  "label": "Accordion container",
+  "props": {
+   "id": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "flush": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "always_open": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "color": {
+    "type": "string",
+    "enum": [
+     "text-bg-primary",
+     "text-bg-secondary",
+     "text-bg-success",
+     "text-bg-danger",
+     "text-bg-warning",
+     "text-bg-info",
+     "text-bg-dark"
+    ],
+    "required": false
+   }
+  },
+  "slots": [
+   "accordion_content"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.list-group": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.list-group",
+  "label": "List Group",
+  "props": {
+   "items": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "flush": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "numbered": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "horizontal": {
+    "type": "string",
+    "enum": [
+     "",
+     "sm",
+     "md",
+     "lg",
+     "xl",
+     "xxl"
+    ],
+    "required": false
+   },
+   "utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.dropdown-menu": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.dropdown-menu",
+  "label": "Dropdown menu",
+  "props": {
+   "content": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.figure": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.figure",
+  "label": "Figure",
+  "props": {
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.hero-slide": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.hero-slide",
+  "label": "Hero Slide",
+  "props": {
+   "enabled": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "active": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "title": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "content": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "media": {
+    "type": "object",
+    "enum": [],
+    "required": false
+   },
+   "media_position": {
+    "type": "string",
+    "enum": [
+     "inherit",
+     "overlay",
+     "start",
+     "end",
+     "none"
+    ],
+    "required": false
+   },
+   "title_tag": {
+    "type": "string",
+    "enum": [
+     "h2",
+     "h3",
+     "h4",
+     "h5",
+     "h6"
+    ],
+    "required": false
+   },
+   "title_size": {
+    "type": "string",
+    "enum": [
+     "display-1",
+     "display-2",
+     "display-3",
+     "display-4",
+     "display-5",
+     "h1",
+     "h2",
+     "h3"
+    ],
+    "required": false
+   },
+   "content_max_width": {
+    "type": "string",
+    "enum": [
+     "narrow",
+     "normal",
+     "wide"
+    ],
+    "required": false
+   },
+   "vertical_alignment": {
+    "type": "string",
+    "enum": [
+     "start",
+     "center",
+     "end"
+    ],
+    "required": false
+   },
+   "text_align": {
+    "type": "string",
+    "enum": [
+     "text-start",
+     "text-center",
+     "text-end"
+    ],
+    "required": false
+   },
+   "text_color": {
+    "type": "string",
+    "enum": [
+     "text-white",
+     "text-dark"
+    ],
+    "required": false
+   },
+   "split_gap": {
+    "type": "string",
+    "enum": [
+     "none",
+     "sm",
+     "md",
+     "lg"
+    ],
+    "required": false
+   },
+   "background_color": {
+    "type": "string",
+    "enum": [
+     "bg-transparent",
+     "bg-white",
+     "bg-light",
+     "bg-dark",
+     "bg-black",
+     "bg-primary",
+     "bg-secondary",
+     "bg-success",
+     "bg-danger",
+     "bg-warning",
+     "bg-info"
+    ],
+    "required": false
+   },
+   "overlay_bg": {
+    "type": "string",
+    "enum": [
+     "none",
+     "bg-dark",
+     "bg-black",
+     "bg-white",
+     "bg-primary",
+     "bg-secondary",
+     "bg-success",
+     "bg-danger",
+     "bg-warning",
+     "bg-info"
+    ],
+    "required": false
+   },
+   "overlay_opacity": {
+    "type": "string",
+    "enum": [
+     "opacity-10",
+     "opacity-25",
+     "opacity-50",
+     "opacity-75",
+     "opacity-100"
+    ],
+    "required": false
+   },
+   "button_text": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "button_url": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "button_variant": {
+    "type": "string",
+    "enum": [
+     "btn-primary",
+     "btn-secondary",
+     "btn-light",
+     "btn-dark"
+    ],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.pagination": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.pagination",
+  "label": "Pagination",
+  "props": {
+   "size": {
+    "type": "string",
+    "enum": [
+     "",
+     "sm",
+     "lg"
+    ],
+    "required": false
+   },
+   "alignment": {
+    "type": "string",
+    "enum": [
+     "",
+     "start",
+     "end",
+     "center",
+     "vertical"
+    ],
+    "required": false
+   },
+   "heading_id": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "items": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "current": {
+    "type": "number",
+    "enum": [],
+    "required": false
+   },
+   "ellipses": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "pagination_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.form-element-radiocheckbox": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.form-element-radiocheckbox",
+  "label": "Form Element Radio Checkbox",
+  "props": {
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.field-tags": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.field-tags",
+  "label": "Field tags",
+  "props": {
+   "label_display": {
+    "type": "string",
+    "enum": [
+     "",
+     "above",
+     "inline",
+     "hidden",
+     "visually_hidden"
+    ],
+    "required": false
+   },
+   "label_hidden": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "label": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "items": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "entity_type": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "field_name": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "field_type": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "field_tags_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "title_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "content_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.dynamic-responsive-image": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.dynamic-responsive-image",
+  "label": "Dynamic Responsive Image",
+  "props": {
+   "url": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "width": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "height": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "alt": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "data": {
+    "type": "object",
+    "enum": [],
+    "required": false
+   },
+   "dynamic_responsive_image_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "item_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "picture_source_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "picture_img_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "url_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "noscript_img_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.tabs": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.tabs",
+  "label": "Tabs",
+  "props": {
+   "shape": {
+    "type": "string",
+    "enum": [
+     "tabs",
+     "pills"
+    ],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.fieldset": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.fieldset",
+  "label": "Fieldset",
+  "props": {
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.form-element": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.form-element",
+  "label": "Form Element",
+  "props": {
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.links-dropbutton": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.links-dropbutton",
+  "label": "Links Drop button",
+  "props": {
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.alert": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.alert",
+  "label": "Alert",
+  "props": {
+   "variant": {
+    "type": "string",
+    "enum": [
+     "",
+     "primary",
+     "secondary",
+     "success",
+     "danger",
+     "warning",
+     "info",
+     "dark",
+     "light"
+    ],
+    "required": false
+   },
+   "dismissible": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [
+   "heading",
+   "content"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.callout": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.callout",
+  "label": "Callout",
+  "props": {
+   "type": {
+    "type": "string",
+    "enum": [
+     "",
+     "bs-callout-info",
+     "bs-callout-warning",
+     "bs-callout-danger"
+    ],
+    "required": false
+   },
+   "callout_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [
+   "content"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.navbar-brand": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.navbar-brand",
+  "label": "Navbar brand",
+  "props": {
+   "navbar_brand_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.details": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.details",
+  "label": "Details",
+  "props": {
+   "title": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "summary_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "content_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.grid": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.grid",
+  "label": "Grid",
+  "props": {
+   "items": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "col_xs": {
+    "type": "string",
+    "enum": [
+     "none",
+     "col",
+     "col-auto",
+     "col-1",
+     "col-2",
+     "col-3",
+     "col-4",
+     "col-5",
+     "col-6",
+     "col-7",
+     "col-8",
+     "col-9",
+     "col-10",
+     "col-11",
+     "col-12"
+    ],
+    "required": false
+   },
+   "col_sm": {
+    "type": "string",
+    "enum": [
+     "none",
+     "col-sm",
+     "col-sm-auto",
+     "col-sm-1",
+     "col-sm-2",
+     "col-sm-3",
+     "col-sm-4",
+     "col-sm-5",
+     "col-sm-6",
+     "col-sm-7",
+     "col-sm-8",
+     "col-sm-9",
+     "col-sm-10",
+     "col-sm-11",
+     "col-sm-12"
+    ],
+    "required": false
+   },
+   "col_md": {
+    "type": "string",
+    "enum": [
+     "none",
+     "col-md",
+     "col-md-auto",
+     "col-md-1",
+     "col-md-2",
+     "col-md-3",
+     "col-md-4",
+     "col-md-5",
+     "col-md-6",
+     "col-md-7",
+     "col-md-8",
+     "col-md-9",
+     "col-md-10",
+     "col-md-11",
+     "col-md-12"
+    ],
+    "required": false
+   },
+   "col_lg": {
+    "type": "string",
+    "enum": [
+     "none",
+     "col-lg",
+     "col-lg-auto",
+     "col-lg-1",
+     "col-lg-2",
+     "col-lg-3",
+     "col-lg-4",
+     "col-lg-5",
+     "col-lg-6",
+     "col-lg-7",
+     "col-lg-8",
+     "col-lg-9",
+     "col-lg-10",
+     "col-lg-11",
+     "col-lg-12"
+    ],
+    "required": false
+   },
+   "col_xl": {
+    "type": "string",
+    "enum": [
+     "none",
+     "col-xl",
+     "col-xl-auto",
+     "col-xl-1",
+     "col-xl-2",
+     "col-xl-3",
+     "col-xl-4",
+     "col-xl-5",
+     "col-xl-6",
+     "col-xl-7",
+     "col-xl-8",
+     "col-xl-9",
+     "col-xl-10",
+     "col-xl-11",
+     "col-xl-12"
+    ],
+    "required": false
+   },
+   "col_xxl": {
+    "type": "string",
+    "enum": [
+     "none",
+     "col-xxl",
+     "col-xxl-auto",
+     "col-xxl-1",
+     "col-xxl-2",
+     "col-xxl-3",
+     "col-xxl-4",
+     "col-xxl-5",
+     "col-xxl-6",
+     "col-xxl-7",
+     "col-xxl-8",
+     "col-xxl-9",
+     "col-xxl-10",
+     "col-xxl-11",
+     "col-xxl-12"
+    ],
+    "required": false
+   },
+   "grid_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "column_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.accordion-block": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.accordion-block",
+  "label": "Accordion",
+  "props": {
+   "title": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "heading_level": {
+    "type": "integer",
+    "enum": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "required": false
+   },
+   "open_by_default": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "parent_id": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "item_id": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "always_open": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "color": {
+    "type": "string",
+    "enum": [
+     "inherit",
+     "text-bg-primary",
+     "text-bg-secondary",
+     "text-bg-success",
+     "text-bg-danger",
+     "text-bg-warning",
+     "text-bg-info",
+     "text-bg-dark"
+    ],
+    "required": false
+   }
+  },
+  "slots": [
+   "accordion_content"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.breadcrumb": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.breadcrumb",
+  "label": "Breadcrumb",
+  "props": {
+   "breadcrumb": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "divider": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "breadcrumb_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "items_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.field-comment": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.field-comment",
+  "label": "Field Comment",
+  "props": {
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "title_prefix": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "title_suffix": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.nav-menu": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.nav-menu",
+  "label": "Nav",
+  "props": {
+   "items": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "alignment": {
+    "type": "string",
+    "enum": [
+     "",
+     "left",
+     "right",
+     "center",
+     "vertical"
+    ],
+    "required": false
+   },
+   "style": {
+    "type": "string",
+    "enum": [
+     "",
+     "tabs",
+     "pills"
+    ],
+    "required": false
+   },
+   "fill": {
+    "type": "string",
+    "enum": [
+     "",
+     "fill",
+     "justify"
+    ],
+    "required": false
+   },
+   "nav_menu_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.card-hero": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.card-hero",
+  "label": "Hero Card",
+  "props": {
+   "title": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "heading_tag": {
+    "type": "string",
+    "enum": [
+     "h2",
+     "h3",
+     "h4",
+     "h5",
+     "h6"
+    ],
+    "required": false
+   },
+   "content_text": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "media": {
+    "type": "object",
+    "enum": [],
+    "required": false
+   },
+   "object_position": {
+    "type": "string",
+    "enum": [
+     "top",
+     "center",
+     "bottom"
+    ],
+    "required": false
+   },
+   "overlay_image_mode": {
+    "type": "string",
+    "enum": [
+     "object-fit-cover",
+     "object-fit-contain"
+    ],
+    "required": false
+   },
+   "overlay_bg": {
+    "type": "string",
+    "enum": [
+     "bg-dark",
+     "bg-black",
+     "bg-white",
+     "bg-primary",
+     "bg-secondary",
+     "bg-success",
+     "bg-danger",
+     "bg-warning",
+     "bg-info"
+    ],
+    "required": false
+   },
+   "overlay_opacity": {
+    "type": "string",
+    "enum": [
+     "opacity-10",
+     "opacity-25",
+     "opacity-50",
+     "opacity-75",
+     "opacity-100"
+    ],
+    "required": false
+   },
+   "container_type": {
+    "type": "string",
+    "enum": [
+     "container",
+     "container-fluid",
+     "none"
+    ],
+    "required": false
+   },
+   "bg_edge2edge": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "media_position": {
+    "type": "string",
+    "enum": [
+     "overlay",
+     "start",
+     "end",
+     "top",
+     "bottom",
+     "content",
+     "none"
+    ],
+    "required": false
+   },
+   "split_gap": {
+    "type": "string",
+    "enum": [
+     "g-0",
+     "g-2",
+     "g-4",
+     "g-5"
+    ],
+    "required": false
+   },
+   "card_border": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "padding": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "horizontal_alignment": {
+    "type": "string",
+    "enum": [
+     "text-start",
+     "text-center",
+     "text-end"
+    ],
+    "required": false
+   },
+   "vertical_alignment": {
+    "type": "string",
+    "enum": [
+     "justify-content-start",
+     "justify-content-center",
+     "justify-content-end"
+    ],
+    "required": false
+   },
+   "background_color": {
+    "type": "string",
+    "enum": [
+     "bg-transparent",
+     "bg-white",
+     "bg-light",
+     "bg-dark",
+     "bg-primary",
+     "bg-secondary",
+     "bg-success",
+     "bg-danger",
+     "bg-warning",
+     "bg-info"
+    ],
+    "required": false
+   },
+   "content_color": {
+    "type": "string",
+    "enum": [
+     "text-dark",
+     "text-white"
+    ],
+    "required": false
+   },
+   "button_1_label": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "button_1_url": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "button_1_style": {
+    "type": "string",
+    "enum": [
+     "btn-primary",
+     "btn-secondary",
+     "btn-success",
+     "btn-danger",
+     "btn-warning",
+     "btn-info",
+     "btn-light",
+     "btn-dark",
+     "btn-outline-primary",
+     "btn-outline-secondary",
+     "btn-outline-success",
+     "btn-outline-danger",
+     "btn-outline-warning",
+     "btn-outline-info",
+     "btn-outline-light",
+     "btn-outline-dark",
+     "btn-link"
+    ],
+    "required": false
+   },
+   "button_1_size": {
+    "type": "string",
+    "enum": [
+     "default",
+     "btn-sm",
+     "btn-lg"
+    ],
+    "required": false
+   },
+   "button_1_target": {
+    "type": "string",
+    "enum": [
+     "default",
+     "_self",
+     "_blank"
+    ],
+    "required": false
+   }
+  },
+  "slots": [
+   "media_slot",
+   "actions"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.user": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.user",
+  "label": "User",
+  "props": {
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "user_label": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [
+   "content"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.hero-side-by-side": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.hero-side-by-side",
+  "label": "Hero side by side",
+  "props": {
+   "bg_edge2edge": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "heading": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "heading_level": {
+    "type": "integer",
+    "enum": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "required": false
+   },
+   "text": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "image": {
+    "type": "object",
+    "enum": [],
+    "required": false
+   },
+   "image_position": {
+    "type": "string",
+    "enum": [
+     "right",
+     "left"
+    ],
+    "required": false
+   },
+   "align": {
+    "type": "string",
+    "enum": [
+     "text-start",
+     "text-center",
+     "text-end"
+    ],
+    "required": false
+   },
+   "background_color": {
+    "type": "string",
+    "enum": [
+     "bg-none",
+     "bg-white",
+     "bg-primary",
+     "bg-secondary",
+     "bg-success",
+     "bg-danger",
+     "bg-warning",
+     "bg-info",
+     "bg-light",
+     "bg-dark"
+    ],
+    "required": false
+   },
+   "content_color": {
+    "type": "string",
+    "enum": [
+     "text-white",
+     "text-dark"
+    ],
+    "required": false
+   },
+   "background_image": {
+    "type": "object",
+    "enum": [],
+    "required": false
+   },
+   "background_overlay_color": {
+    "type": "string",
+    "enum": [
+     "bg-none",
+     "bg-dark",
+     "bg-light",
+     "bg-primary",
+     "bg-secondary"
+    ],
+    "required": false
+   },
+   "background_overlay_opacity": {
+    "type": "integer",
+    "enum": [
+     0,
+     25,
+     50,
+     75,
+     100
+    ],
+    "required": false
+   },
+   "vertical_padding": {
+    "type": "string",
+    "enum": [
+     "py-0",
+     "py-3",
+     "py-4",
+     "py-5"
+    ],
+    "required": false
+   },
+   "button_label": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "button_url": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "button_variant": {
+    "type": "string",
+    "enum": [
+     "btn-primary",
+     "btn-secondary",
+     "btn-success",
+     "btn-danger",
+     "btn-warning",
+     "btn-info",
+     "btn-light",
+     "btn-dark",
+     "btn-link"
+    ],
+    "required": false
+   },
+   "button_outline": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "button_size": {
+    "type": "string",
+    "enum": [
+     "btn-md",
+     "btn-sm",
+     "btn-lg"
+    ],
+    "required": false
+   },
+   "button_target": {
+    "type": "string",
+    "enum": [
+     "self",
+     "blank"
+    ],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.heroslider": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.heroslider",
+  "label": "Heroslider",
+  "props": {
+   "id": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "items": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "controls": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "indicators": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "controls_indicators_position": {
+    "type": "string",
+    "enum": [
+     "overlay",
+     "start",
+     "end",
+     "top",
+     "bottom"
+    ],
+    "required": false
+   },
+   "interval": {
+    "type": "number",
+    "enum": [],
+    "required": false
+   },
+   "keyboard": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "pause": {
+    "type": "string",
+    "enum": [
+     "",
+     "false",
+     "true",
+     "hover"
+    ],
+    "required": false
+   },
+   "ride": {
+    "type": "string",
+    "enum": [
+     "",
+     "false",
+     "true",
+     "carousel"
+    ],
+    "required": false
+   },
+   "touch": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "wrap": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "heroslider_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "heroslider_controls_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "heroslider_indicators_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "controls_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "indicators_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [
+   "empty"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.card-impressed": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.card-impressed",
+  "label": "Impressed Card",
+  "props": {
+   "media_position": {
+    "type": "string",
+    "enum": [
+     "top",
+     "bottom"
+    ],
+    "required": false
+   },
+   "media_image": {
+    "type": "object",
+    "enum": [],
+    "required": false
+   },
+   "ratio": {
+    "type": "string",
+    "enum": [
+     "ratio-auto",
+     "ratio-16x9",
+     "ratio-4x3",
+     "ratio-1x1",
+     "ratio-21x9"
+    ],
+    "required": false
+   },
+   "fit": {
+    "type": "string",
+    "enum": [
+     "object-fit-cover",
+     "object-fit-contain"
+    ],
+    "required": false
+   },
+   "card_border": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "background_color": {
+    "type": "string",
+    "enum": [
+     "bg-transparent",
+     "bg-body",
+     "bg-body-tertiary",
+     "bg-white",
+     "bg-light",
+     "bg-dark",
+     "bg-primary",
+     "bg-secondary",
+     "bg-success",
+     "bg-danger",
+     "bg-warning",
+     "bg-info"
+    ],
+    "required": false
+   },
+   "padded": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "box_shadow": {
+    "type": "string",
+    "enum": [
+     "shadow-none",
+     "shadow-sm",
+     "shadow",
+     "shadow-lg"
+    ],
+    "required": false
+   },
+   "corner_style": {
+    "type": "string",
+    "enum": [
+     "rounded-0",
+     "rounded-1",
+     "rounded-2",
+     "rounded-3",
+     "rounded-4",
+     "rounded-pill"
+    ],
+    "required": false
+   },
+   "equal_height": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "stretched_link": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "link_url": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "link_target": {
+    "type": "string",
+    "enum": [
+     "default",
+     "_self",
+     "_blank"
+    ],
+    "required": false
+   }
+  },
+  "slots": [
+   "overlay",
+   "content"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.carousel": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.carousel",
+  "label": "Carousel",
+  "props": {
+   "id": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "slide_component": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "items": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "controls": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "indicators": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "carousel_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "carousel_indicators_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "indicators_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.block": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.block",
+  "label": "Block",
+  "props": {
+   "label": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "id": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "bundle": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "html_tag": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "title_prefix": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "title_suffix": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [
+   "content"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.hero-slider-container": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.hero-slider-container",
+  "label": "Hero Slider (Container)",
+  "props": {
+   "bg_edge2edge": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "transition": {
+    "type": "string",
+    "enum": [
+     "slide",
+     "fade"
+    ],
+    "required": false
+   },
+   "autoplay": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "interval_ms": {
+    "type": "integer",
+    "enum": [],
+    "required": false
+   },
+   "pause_on_hover": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "show_indicators": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "show_controls": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "slider_height": {
+    "type": [
+     "string",
+     "number"
+    ],
+    "enum": [
+     "500",
+     "700",
+     "900"
+    ],
+    "required": false
+   },
+   "controller_color": {
+    "type": "string",
+    "enum": [
+     "primary",
+     "light",
+     "dark",
+     "white"
+    ],
+    "required": false
+   }
+  },
+  "slots": [
+   "slides"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.navbar": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.navbar",
+  "label": "Navbar",
+  "props": {
+   "container": {
+    "type": [
+     "string",
+     "null"
+    ],
+    "enum": [
+     "no-container",
+     "container-sm",
+     "container",
+     "container-md",
+     "container-lg",
+     "container-xl",
+     "container-xxl",
+     "container-fluid",
+     null
+    ],
+    "required": false
+   },
+   "color_mode": {
+    "type": "string",
+    "enum": [
+     "light",
+     "dark"
+    ],
+    "required": false
+   },
+   "color": {
+    "type": "string",
+    "enum": [
+     "transparent",
+     "light",
+     "dark",
+     "black",
+     "white",
+     "primary",
+     "secondary",
+     "success",
+     "danger",
+     "warning",
+     "info"
+    ],
+    "required": false
+   },
+   "placement": {
+    "type": "string",
+    "enum": [
+     "",
+     "fixed-top",
+     "fixed-bottom",
+     "sticky-top"
+    ],
+    "required": false
+   },
+   "navbar_expand": {
+    "type": "string",
+    "enum": [
+     "sm",
+     "md",
+     "lg",
+     "xl"
+    ],
+    "required": false
+   },
+   "navbar_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [
+   "branding",
+   "navigation"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.social-auth": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.social-auth",
+  "label": "Social Auth",
+  "props": {
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.views-view-heroslider": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.views-view-heroslider",
+  "label": "Views view Heroslider",
+  "props": {
+   "id": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "controls": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "indicators": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "controls_indicators_position": {
+    "type": "string",
+    "enum": [
+     "overlay",
+     "start",
+     "end",
+     "top",
+     "bottom"
+    ],
+    "required": false
+   },
+   "interval": {
+    "type": "number",
+    "enum": [],
+    "required": false
+   },
+   "keyboard": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "pause": {
+    "type": "string",
+    "enum": [
+     "",
+     "false",
+     "true",
+     "hover"
+    ],
+    "required": false
+   },
+   "ride": {
+    "type": "string",
+    "enum": [
+     "",
+     "false",
+     "true",
+     "carousel"
+    ],
+    "required": false
+   },
+   "touch": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "wrap": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "heroslider_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "heroslider_controls_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "heroslider_indicators_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "controls_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "indicators_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [
+   "rows",
+   "empty"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.views-view": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.views-view",
+  "label": "Views view",
+  "props": {
+   "content": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.card-icon": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.card-icon",
+  "label": "Card Icon",
+  "props": {
+   "text": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "description": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "text_align": {
+    "type": "string",
+    "enum": [
+     "text-start",
+     "text-center",
+     "text-end"
+    ],
+    "required": false
+   },
+   "icon": {
+    "type": "string",
+    "enum": [
+     "none",
+     "facebook",
+     "twitter-x",
+     "instagram",
+     "linkedin",
+     "x",
+     "plus",
+     "exclamation",
+     "check",
+     "dash",
+     "question",
+     "info",
+     "search",
+     "person",
+     "people",
+     "person-plus",
+     "person-check",
+     "chevron-up",
+     "chevron-down",
+     "chevron-left",
+     "chevron-right",
+     "chevron-double-up",
+     "chevron-double-down",
+     "chevron-double-left",
+     "chevron-double-right",
+     "arrow-up",
+     "arrow-down",
+     "arrow-left",
+     "arrow-right",
+     "arrow-up-right",
+     "arrow-up-left",
+     "arrow-down-right",
+     "arrow-down-left",
+     "arrow-repeat",
+     "arrows-angle-expand",
+     "arrows-angle-contract",
+     "play",
+     "pause",
+     "skip-backward",
+     "skip-forward",
+     "circle",
+     "circle-fill",
+     "record-circle"
+    ],
+    "required": false
+   },
+   "icon_size": {
+    "type": "string",
+    "enum": [
+     "fs-6",
+     "fs-5",
+     "fs-4",
+     "fs-3",
+     "fs-2",
+     "fs-1"
+    ],
+    "required": false
+   },
+   "background_color": {
+    "type": "string",
+    "enum": [
+     "bg-body",
+     "bg-primary text-white",
+     "bg-secondary text-white",
+     "bg-success text-white",
+     "bg-danger text-white",
+     "bg-warning",
+     "bg-info",
+     "bg-light",
+     "bg-dark text-white"
+    ],
+    "required": false
+   },
+   "shadow": {
+    "type": "string",
+    "enum": [
+     "shadow-none",
+     "shadow-sm",
+     "shadow",
+     "shadow-lg"
+    ],
+    "required": false
+   },
+   "has_padding": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "url": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "button_label": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "button_variant": {
+    "type": "string",
+    "enum": [
+     "btn-primary",
+     "btn-secondary",
+     "btn-success",
+     "btn-danger",
+     "btn-warning",
+     "btn-info",
+     "btn-light",
+     "btn-dark",
+     "btn-link"
+    ],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.card": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.card",
+  "label": "Card",
+  "props": {
+   "orientation": {
+    "type": "string",
+    "enum": [
+     "image-top",
+     "image-left",
+     "image-right",
+     "image-bottom"
+    ],
+    "required": true
+   },
+   "content_vertical": {
+    "type": "string",
+    "enum": [
+     "justify-content-start",
+     "justify-content-center",
+     "justify-content-end"
+    ],
+    "required": false
+   },
+   "heading_text": {
+    "type": "string",
+    "enum": [],
+    "required": true
+   },
+   "text": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "media": {
+    "type": "object",
+    "enum": [],
+    "required": false
+   },
+   "media_ratio": {
+    "type": "string",
+    "enum": [
+     "auto",
+     "ratio-16x9",
+     "ratio-4x3",
+     "ratio-1x1"
+    ],
+    "required": false
+   },
+   "background": {
+    "type": "string",
+    "enum": [
+     "bg-body",
+     "bg-light",
+     "bg-primary text-white",
+     "bg-dark text-white"
+    ],
+    "required": false
+   },
+   "shadow": {
+    "type": "string",
+    "enum": [
+     "shadow-sm",
+     "shadow",
+     "shadow-lg"
+    ],
+    "required": false
+   },
+   "has_padding": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "url": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "button_label": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "button_variant": {
+    "type": "string",
+    "enum": [
+     "btn-primary",
+     "btn-secondary",
+     "btn-success",
+     "btn-danger",
+     "btn-warning",
+     "btn-info",
+     "btn-light",
+     "btn-dark",
+     "btn-link"
+    ],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.card-pricing": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.card-pricing",
+  "label": "Pricing card",
+  "props": {
+   "badge_text": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "heading_text": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "level": {
+    "type": "number",
+    "enum": [
+     2,
+     3,
+     4
+    ],
+    "required": false
+   },
+   "description": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "price": {
+    "type": [
+     "string",
+     "number"
+    ],
+    "enum": [],
+    "required": false
+   },
+   "currency_code": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "currency_symbol": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "symbol_position": {
+    "type": "string",
+    "enum": [
+     "before",
+     "after"
+    ],
+    "required": true
+   },
+   "price_period": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "price_note": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "show_features_divider": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "text": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "shadow": {
+    "type": "string",
+    "enum": [
+     "shadow-none",
+     "shadow-sm",
+     "shadow",
+     "shadow-lg"
+    ],
+    "required": false
+   },
+   "border": {
+    "type": "string",
+    "enum": [
+     "border",
+     "border-0",
+     "border-primary",
+     "border-secondary",
+     "border-success",
+     "border-danger",
+     "border-warning",
+     "border-info",
+     "border-light",
+     "border-dark"
+    ],
+    "required": false
+   },
+   "background_color": {
+    "type": "string",
+    "enum": [
+     "bg-body",
+     "bg-primary text-white",
+     "bg-secondary text-white",
+     "bg-success text-white",
+     "bg-danger text-white",
+     "bg-warning",
+     "bg-info",
+     "bg-light",
+     "bg-dark text-white"
+    ],
+    "required": false
+   },
+   "text_align": {
+    "type": "string",
+    "enum": [
+     "text-start",
+     "text-center",
+     "text-end"
+    ],
+    "required": false
+   },
+   "button_url": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "button_target": {
+    "type": "string",
+    "enum": [
+     "self",
+     "blank"
+    ],
+    "required": false
+   },
+   "button_label": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "button_variant": {
+    "type": "string",
+    "enum": [
+     "btn-primary",
+     "btn-secondary",
+     "btn-success",
+     "btn-danger",
+     "btn-warning",
+     "btn-info",
+     "btn-light",
+     "btn-dark",
+     "btn-link",
+     "btn-outline-primary",
+     "btn-outline-secondary",
+     "btn-outline-success",
+     "btn-outline-danger",
+     "btn-outline-warning",
+     "btn-outline-info",
+     "btn-outline-light",
+     "btn-outline-dark"
+    ],
+    "required": false
+   },
+   "promote": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.media": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.media",
+  "label": "Media",
+  "props": {
+   "view_mode": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "name": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "title_prefix": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "title_suffix": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "media_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "title_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [
+   "content"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.form": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.form",
+  "label": "Form",
+  "props": {
+   "form_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.card-featured": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.card-featured",
+  "label": "Featured Card",
+  "props": {
+   "media_position": {
+    "type": "string",
+    "enum": [
+     "start",
+     "end",
+     "no-media"
+    ],
+    "required": false
+   },
+   "media_image": {
+    "type": "object",
+    "enum": [],
+    "required": false
+   },
+   "ratio": {
+    "type": "string",
+    "enum": [
+     "ratio-auto",
+     "ratio-16x9",
+     "ratio-4x3",
+     "ratio-1x1",
+     "ratio-21x9"
+    ],
+    "required": false
+   },
+   "fit": {
+    "type": "string",
+    "enum": [
+     "object-fit-cover",
+     "object-fit-contain"
+    ],
+    "required": false
+   },
+   "card_border": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "corner_style": {
+    "type": "string",
+    "enum": [
+     "rounded-0",
+     "rounded-1",
+     "rounded-2",
+     "rounded-3",
+     "rounded-4",
+     "rounded-pill"
+    ],
+    "required": false
+   },
+   "padded": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "equal_height": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "stretched_link": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "link_url": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "link_target": {
+    "type": "string",
+    "enum": [
+     "default",
+     "_self",
+     "_blank"
+    ],
+    "required": false
+   },
+   "content_vertical_alignment": {
+    "type": "string",
+    "enum": [
+     "align-items-start",
+     "align-items-center",
+     "align-items-end"
+    ],
+    "required": false
+   },
+   "gutters_between": {
+    "type": "string",
+    "enum": [
+     "g-0",
+     "g-2 g-lg-3",
+     "g-4",
+     "g-4 g-lg-5"
+    ],
+    "required": false
+   },
+   "columns_xs_size": {
+    "type": "string",
+    "enum": [
+     "02_10",
+     "10_02",
+     "03_09",
+     "09_03",
+     "04_08",
+     "08_04",
+     "05_07",
+     "07_05",
+     "06_06",
+     "12_12"
+    ],
+    "required": false
+   },
+   "columns_sm_size": {
+    "type": "string",
+    "enum": [
+     "02_10",
+     "10_02",
+     "03_09",
+     "09_03",
+     "04_08",
+     "08_04",
+     "05_07",
+     "07_05",
+     "06_06",
+     "12_12"
+    ],
+    "required": false
+   },
+   "columns_md_size": {
+    "type": "string",
+    "enum": [
+     "02_10",
+     "10_02",
+     "03_09",
+     "09_03",
+     "04_08",
+     "08_04",
+     "05_07",
+     "07_05",
+     "06_06",
+     "12_12"
+    ],
+    "required": false
+   },
+   "columns_lg_size": {
+    "type": "string",
+    "enum": [
+     "02_10",
+     "10_02",
+     "03_09",
+     "09_03",
+     "04_08",
+     "08_04",
+     "05_07",
+     "07_05",
+     "06_06",
+     "12_12"
+    ],
+    "required": false
+   },
+   "columns_xl_size": {
+    "type": "string",
+    "enum": [
+     "02_10",
+     "10_02",
+     "03_09",
+     "09_03",
+     "04_08",
+     "08_04",
+     "05_07",
+     "07_05",
+     "06_06",
+     "12_12"
+    ],
+    "required": false
+   },
+   "columns_xxl_size": {
+    "type": "string",
+    "enum": [
+     "02_10",
+     "10_02",
+     "03_09",
+     "09_03",
+     "04_08",
+     "08_04",
+     "05_07",
+     "07_05",
+     "06_06",
+     "12_12"
+    ],
+    "required": false
+   }
+  },
+  "slots": [
+   "overlay",
+   "content"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.card-overlay": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.card-overlay",
+  "label": "Overlay Card",
+  "props": {
+   "media_image": {
+    "type": "object",
+    "enum": [],
+    "required": false
+   },
+   "ratio": {
+    "type": "string",
+    "enum": [
+     "ratio-auto",
+     "ratio-16x9",
+     "ratio-4x3",
+     "ratio-1x1",
+     "ratio-21x9"
+    ],
+    "required": false
+   },
+   "fit": {
+    "type": "string",
+    "enum": [
+     "object-fit-cover",
+     "object-fit-contain"
+    ],
+    "required": false
+   },
+   "padded": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "box_shadow": {
+    "type": "string",
+    "enum": [
+     "shadow-none",
+     "shadow-sm",
+     "shadow",
+     "shadow-lg"
+    ],
+    "required": false
+   },
+   "overlay_color": {
+    "type": "string",
+    "enum": [
+     "bg-transparent",
+     "bg-dark",
+     "bg-light",
+     "bg-primary",
+     "bg-secondary",
+     "bg-success",
+     "bg-danger",
+     "bg-warning",
+     "bg-info",
+     "bg-body",
+     "bg-body-tertiary",
+     "bg-white"
+    ],
+    "required": false
+   },
+   "overlay_opacity": {
+    "type": "string",
+    "enum": [
+     "bg-opacity-10",
+     "bg-opacity-25",
+     "bg-opacity-50",
+     "bg-opacity-75",
+     "bg-opacity-100"
+    ],
+    "required": false
+   },
+   "equal_height": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "h_align": {
+    "type": "string",
+    "enum": [
+     "text-start",
+     "text-center",
+     "text-end"
+    ],
+    "required": false
+   },
+   "v_align": {
+    "type": "string",
+    "enum": [
+     "align-items-start",
+     "align-items-center",
+     "align-items-end"
+    ],
+    "required": false
+   },
+   "stretched_link": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "link_url": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "link_target": {
+    "type": "string",
+    "enum": [
+     "default",
+     "_self",
+     "_blank"
+    ],
+    "required": false
+   }
+  },
+  "slots": [
+   "content"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.views-view-summary": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.views-view-summary",
+  "label": "Views view summary",
+  "props": {
+   "type": {
+    "type": "string",
+    "enum": [
+     "ul",
+     "ol"
+    ],
+    "required": false
+   },
+   "summary_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "list_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "list_item_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [
+   "rows"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.media-header": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.media-header",
+  "label": "Media Header",
+  "props": {
+   "media_type": {
+    "type": "string",
+    "enum": [
+     "",
+     "image",
+     "video",
+     "remote_video"
+    ],
+    "required": false
+   },
+   "provider": {
+    "type": "string",
+    "enum": [
+     "",
+     "youtube",
+     "vimeo"
+    ],
+    "required": false
+   },
+   "media_header_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [
+   "page_breadcrumbs",
+   "page_title",
+   "background_media"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.cta": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.cta",
+  "label": "Hero CTA",
+  "props": {
+   "bg_edge2edge": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "heading_text": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "level": {
+    "type": "integer",
+    "enum": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "required": true
+   },
+   "text": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "heading_size": {
+    "type": "string",
+    "enum": [
+     "display-4",
+     "display-5",
+     "display-6",
+     "h1",
+     "h2",
+     "h3"
+    ],
+    "required": false
+   },
+   "background_image": {
+    "type": "object",
+    "enum": [],
+    "required": false
+   },
+   "overlay_opacity": {
+    "type": "string",
+    "enum": [
+     "0%",
+     "20%",
+     "40%",
+     "60%",
+     "75%"
+    ],
+    "required": false
+   },
+   "background_color": {
+    "type": "string",
+    "enum": [
+     "bg-none",
+     "bg-primary text-white",
+     "bg-secondary text-white",
+     "bg-light",
+     "bg-dark text-white",
+     "bg-body-tertiary",
+     "bg-info text-white"
+    ],
+    "required": false
+   },
+   "content_color": {
+    "type": "string",
+    "enum": [
+     "auto",
+     "text-body",
+     "text-white",
+     "text-dark",
+     "text-primary",
+     "text-secondary",
+     "text-success",
+     "text-danger",
+     "text-warning",
+     "text-info",
+     "text-muted"
+    ],
+    "required": false
+   },
+   "text_align": {
+    "type": "string",
+    "enum": [
+     "text-center",
+     "text-start",
+     "text-end"
+    ],
+    "required": true
+   },
+   "button_text": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "button_url": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "button_variant": {
+    "type": "string",
+    "enum": [
+     "btn-primary",
+     "btn-secondary",
+     "btn-success",
+     "btn-danger",
+     "btn-warning",
+     "btn-info",
+     "btn-light",
+     "btn-dark",
+     "btn-outline-primary",
+     "btn-outline-secondary",
+     "btn-outline-success",
+     "btn-outline-danger",
+     "btn-outline-warning",
+     "btn-outline-info",
+     "btn-outline-light",
+     "btn-outline-dark",
+     "btn-link"
+    ],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.card-text": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.card-text",
+  "label": "Text Card",
+  "props": {
+   "card_border": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "background_color": {
+    "type": "string",
+    "enum": [
+     "none",
+     "bg-body-tertiary",
+     "bg-tertiary",
+     "bg-accent",
+     "bg-primary",
+     "bg-primary-subtle",
+     "bg-secondary",
+     "bg-secondary-subtle",
+     "bg-dark"
+    ],
+    "required": false
+   },
+   "padded": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "box_shadow": {
+    "type": "string",
+    "enum": [
+     "shadow-none",
+     "shadow-sm",
+     "shadow",
+     "shadow-lg"
+    ],
+    "required": false
+   },
+   "corner_style": {
+    "type": "string",
+    "enum": [
+     "rounded-0",
+     "rounded-1",
+     "rounded-2",
+     "rounded-3",
+     "rounded-4",
+     "rounded-5",
+     "rounded-pill"
+    ],
+    "required": false
+   },
+   "equal_height": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "stretched_link": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "link_url": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "link_target": {
+    "type": "string",
+    "enum": [
+     "default",
+     "_self",
+     "_blank"
+    ],
+    "required": false
+   },
+   "icon_image": {
+    "type": "object",
+    "enum": [],
+    "required": false
+   },
+   "icon_alignment": {
+    "type": "string",
+    "enum": [
+     "start",
+     "center",
+     "end"
+    ],
+    "required": false
+   }
+  },
+  "slots": [
+   "content"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.card-logo": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.card-logo",
+  "label": "Card Logo",
+  "props": {
+   "media": {
+    "type": "object",
+    "enum": [],
+    "required": false
+   },
+   "url": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "shadow": {
+    "type": "string",
+    "enum": [
+     "shadow-none",
+     "shadow-sm",
+     "shadow",
+     "shadow-lg"
+    ],
+    "required": false
+   },
+   "alignment": {
+    "type": "string",
+    "enum": [
+     "left",
+     "center",
+     "right"
+    ],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.media-hero-slider": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.media-hero-slider",
+  "label": "Media Hero Slider",
+  "props": {
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "css_name": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "css_class": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "rows": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "empty": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "title": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "title_prefix": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "title_suffix": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "dom_id": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.hero-blog": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.hero-blog",
+  "label": "Hero Blog",
+  "props": {
+   "heading_text": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "level": {
+    "type": "integer",
+    "enum": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "required": false
+   },
+   "heading_size": {
+    "type": "string",
+    "enum": [
+     "default",
+     "h2",
+     "h3",
+     "h4",
+     "h5",
+     "h6",
+     "display-1",
+     "display-2",
+     "display-3",
+     "display-4",
+     "display-5",
+     "display-6"
+    ],
+    "required": false
+   },
+   "date": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "author": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "author_url": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [
+   "blog_media"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.views-view-list": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.views-view-list",
+  "label": "Views View List",
+  "props": {
+   "type": {
+    "type": "string",
+    "enum": [
+     "ul",
+     "ol"
+    ],
+    "required": false
+   },
+   "list_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "list_item_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [
+   "rows"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.views-view-table": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.views-view-table",
+  "label": "Views view table",
+  "props": {
+   "variant": {
+    "type": "string",
+    "enum": [
+     "",
+     "primary",
+     "secondary",
+     "success",
+     "info",
+     "warning",
+     "danger",
+     "light",
+     "dark"
+    ],
+    "required": false
+   },
+   "responsive": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "striped_rows": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "striped_columns": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "hover": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "bordered": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "border_color": {
+    "type": "string",
+    "enum": [
+     "",
+     "primary",
+     "secondary",
+     "success",
+     "info",
+     "warning",
+     "danger",
+     "light",
+     "dark",
+     "black",
+     "white",
+     "primary-subtle",
+     "secondary-subtle",
+     "success-subtle",
+     "info-subtle",
+     "warning-subtle",
+     "danger-subtle",
+     "light-subtle",
+     "dark-subtle"
+    ],
+    "required": false
+   },
+   "size": {
+    "type": "string",
+    "enum": [
+     "",
+     "sm"
+    ],
+    "required": false
+   },
+   "caption": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "table_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "thead_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "tbody_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "tfoot_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "thead_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "tbody_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "tfoot_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [
+   "rows"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.card-testimonial": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.card-testimonial",
+  "label": "Testimonial card",
+  "props": {
+   "style": {
+    "type": "string",
+    "enum": [
+     "bg-body",
+     "bg-dark text-white"
+    ],
+    "required": true
+   },
+   "text": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "cite_name": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "cite_text": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "media": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "shadow": {
+    "type": "string",
+    "enum": [
+     "shadow-none",
+     "shadow-sm",
+     "shadow",
+     "shadow-lg"
+    ],
+    "required": false
+   },
+   "align": {
+    "type": "string",
+    "enum": [
+     "text-start",
+     "text-center",
+     "text-end"
+    ],
+    "required": true
+   },
+   "show_quote_icon": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.node": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.node",
+  "label": "Node",
+  "props": {
+   "title_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "content_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "title_prefix": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "title_suffix": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [
+   "content"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.media-hero-slide": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.media-hero-slide",
+  "label": "Media Hero Slide",
+  "props": {
+   "node": {
+    "type": "object",
+    "enum": [],
+    "required": false
+   },
+   "label": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "content": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "author_picture": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "metadata": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "date": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "author_name": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "url": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "display_submitted": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "title_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "content_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "author_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "title_prefix": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "title_suffix": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "view_mode": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "teaser": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "page": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "readmore": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "logged_in": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "is_admin": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.media-banner": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.media-banner",
+  "label": "Media banner",
+  "props": {
+   "container_type": {
+    "type": "string",
+    "enum": [
+     "container",
+     "container-fluid",
+     "container-sm",
+     "container-md",
+     "container-lg",
+     "container-xl",
+     "container-xxl",
+     "none"
+    ],
+    "required": false
+   },
+   "bg_edge2edge": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "height": {
+    "type": "string",
+    "enum": [
+     "ribbon",
+     "large"
+    ],
+    "required": false
+   },
+   "flex_position": {
+    "type": "string",
+    "enum": [
+     "top-left",
+     "center-left",
+     "bottom-left",
+     "hero-center"
+    ],
+    "required": false
+   },
+   "overlay_bg": {
+    "type": "string",
+    "enum": [
+     "bg-transparent",
+     "bg-dark",
+     "bg-black",
+     "bg-primary",
+     "bg-secondary",
+     "bg-success",
+     "bg-danger",
+     "bg-warning",
+     "bg-info",
+     "bg-white"
+    ],
+    "required": false
+   },
+   "overlay_opacity": {
+    "type": "string",
+    "enum": [
+     "opacity-0",
+     "opacity-25",
+     "opacity-50",
+     "opacity-75",
+     "opacity-100"
+    ],
+    "required": false
+   },
+   "content_width": {
+    "type": "string",
+    "enum": [
+     "w-100",
+     "w-75",
+     "w-50",
+     "w-25"
+    ],
+    "required": false
+   },
+   "object_position": {
+    "type": "string",
+    "enum": [
+     "top",
+     "center",
+     "bottom"
+    ],
+    "required": false
+   },
+   "padding_inline_start": {
+    "type": "string",
+    "enum": [
+     "none",
+     "ps-0",
+     "ps-1",
+     "ps-2",
+     "ps-3",
+     "ps-4",
+     "ps-5"
+    ],
+    "required": false
+   },
+   "padding_inline_end": {
+    "type": "string",
+    "enum": [
+     "none",
+     "pe-0",
+     "pe-1",
+     "pe-2",
+     "pe-3",
+     "pe-4",
+     "pe-5"
+    ],
+    "required": false
+   },
+   "radius": {
+    "type": "string",
+    "enum": [
+     "none",
+     "rounded",
+     "rounded-0",
+     "rounded-1",
+     "rounded-2",
+     "rounded-3",
+     "rounded-4",
+     "rounded-pill"
+    ],
+    "required": false
+   },
+   "media": {
+    "type": "object",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [
+   "media_banner_slot"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.nav": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.nav",
+  "label": "Nav",
+  "props": {
+   "alignment": {
+    "type": "string",
+    "enum": [
+     "",
+     "left",
+     "right",
+     "center",
+     "vertical"
+    ],
+    "required": false
+   },
+   "style": {
+    "type": "string",
+    "enum": [
+     "",
+     "tabs",
+     "pills"
+    ],
+    "required": false
+   },
+   "fill": {
+    "type": "string",
+    "enum": [
+     "",
+     "fill",
+     "justify"
+    ],
+    "required": false
+   },
+   "nav_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [
+   "items"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.views-view-unformatted": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.views-view-unformatted",
+  "label": "Views view unformatted",
+  "props": {
+   "title": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "default_row_class": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [
+   "rows"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.views-view-grid": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.views-view-grid",
+  "label": "Views view grid",
+  "props": {
+   "grid_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "column_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "col_xs": {
+    "type": "string",
+    "enum": [
+     "none",
+     "col",
+     "col-auto",
+     "col-1",
+     "col-2",
+     "col-3",
+     "col-4",
+     "col-6",
+     "col-12"
+    ],
+    "required": false
+   },
+   "col_sm": {
+    "type": "string",
+    "enum": [
+     "none",
+     "col-sm",
+     "col-sm-auto",
+     "col-sm-1",
+     "col-sm-2",
+     "col-sm-3",
+     "col-sm-4",
+     "col-sm-6",
+     "col-sm-12"
+    ],
+    "required": false
+   },
+   "col_md": {
+    "type": "string",
+    "enum": [
+     "none",
+     "col-md",
+     "col-md-auto",
+     "col-md-1",
+     "col-md-2",
+     "col-md-3",
+     "col-md-4",
+     "col-md-6",
+     "col-md-12"
+    ],
+    "required": false
+   },
+   "col_lg": {
+    "type": "string",
+    "enum": [
+     "none",
+     "col-lg",
+     "col-lg-auto",
+     "col-lg-1",
+     "col-lg-2",
+     "col-lg-3",
+     "col-lg-4",
+     "col-lg-6",
+     "col-lg-12"
+    ],
+    "required": false
+   },
+   "col_xl": {
+    "type": "string",
+    "enum": [
+     "none",
+     "col-xl",
+     "col-xl-auto",
+     "col-xl-1",
+     "col-xl-2",
+     "col-xl-3",
+     "col-xl-4",
+     "col-xl-6",
+     "col-xl-12"
+    ],
+    "required": false
+   },
+   "col_xxl": {
+    "type": "string",
+    "enum": [
+     "none",
+     "col-xxl",
+     "col-xxl-auto",
+     "col-xxl-1",
+     "col-xxl-2",
+     "col-xxl-3",
+     "col-xxl-4",
+     "col-xxl-6",
+     "col-xxl-12"
+    ],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [
+   "rows"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.region": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.region",
+  "label": "Region",
+  "props": {
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "content": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.heading": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.heading",
+  "label": "Heading",
+  "props": {
+   "heading_text": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "level": {
+    "type": "integer",
+    "enum": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "required": false
+   },
+   "text_size": {
+    "type": "string",
+    "enum": [
+     "h1",
+     "h2",
+     "h3",
+     "h4",
+     "h5",
+     "h6",
+     "display-1",
+     "display-2",
+     "display-3",
+     "display-4",
+     "display-5",
+     "display-6"
+    ],
+    "required": false
+   },
+   "text_color": {
+    "type": "string",
+    "enum": [
+     "text-primary",
+     "text-secondary",
+     "text-success",
+     "text-danger",
+     "text-warning",
+     "text-info",
+     "text-muted",
+     "text-white",
+     "text-dark"
+    ],
+    "required": false
+   },
+   "align": {
+    "type": "string",
+    "enum": [
+     "text-start",
+     "text-center",
+     "text-end"
+    ],
+    "required": false
+   },
+   "font_weight": {
+    "type": "string",
+    "enum": [
+     "fw-light",
+     "fw-normal",
+     "fw-medium",
+     "fw-semibold",
+     "fw-bold"
+    ],
+    "required": false
+   },
+   "font_style": {
+    "type": "string",
+    "enum": [
+     "fst-italic"
+    ],
+    "required": false
+   },
+   "url": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "target": {
+    "type": "string",
+    "enum": [
+     "_self",
+     "_blank"
+    ],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.input-email": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.input-email",
+  "label": "Input Email",
+  "props": {
+   "input_email_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "size": {
+    "type": "string",
+    "enum": [
+     "",
+     "form-control-sm",
+     "form-control-lg"
+    ],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.spinner": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.spinner",
+  "label": "Spinner",
+  "props": {
+   "html_tag": {
+    "type": "string",
+    "enum": [
+     "div",
+     "span"
+    ],
+    "required": false
+   },
+   "type": {
+    "type": "string",
+    "enum": [
+     "",
+     "border",
+     "grow"
+    ],
+    "required": false
+   },
+   "color": {
+    "type": "string",
+    "enum": [
+     "",
+     "primary",
+     "secondary",
+     "success",
+     "danger",
+     "warning",
+     "info",
+     "dark",
+     "light"
+    ],
+    "required": false
+   },
+   "size": {
+    "type": "string",
+    "enum": [
+     "",
+     "sm"
+    ],
+    "required": false
+   },
+   "hidden_status": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "spinner_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "spinner_status_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [
+   "content"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.close-button": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.close-button",
+  "label": "Close button",
+  "props": {
+   "size": {
+    "type": "string",
+    "enum": [
+     "",
+     "btn-sm",
+     "btn-lg"
+    ],
+    "required": false
+   },
+   "disabled": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "close_button_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.input-password": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.input-password",
+  "label": "Input password",
+  "props": {
+   "input_password_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "size": {
+    "type": "string",
+    "enum": [
+     "",
+     "form-control-sm",
+     "form-control-lg"
+    ],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.input-color": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.input-color",
+  "label": "Input Color",
+  "props": {
+   "input_color_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "size": {
+    "type": "string",
+    "enum": [
+     "",
+     "form-control-sm",
+     "form-control-lg"
+    ],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.html-code": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.html-code",
+  "label": "HTML Code",
+  "props": {
+   "code": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.rich-text": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.rich-text",
+  "label": "Rich Text",
+  "props": {
+   "text": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "trim": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "trim_length": {
+    "type": "integer",
+    "enum": [],
+    "required": false
+   },
+   "trim_units": {
+    "type": "string",
+    "enum": [
+     "characters",
+     "words"
+    ],
+    "required": false
+   },
+   "suffix": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "strip_html": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.spacer": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.spacer",
+  "label": "Spacer",
+  "props": {
+   "size": {
+    "type": "string",
+    "enum": [
+     "py-0",
+     "py-1",
+     "py-2",
+     "py-3",
+     "py-4",
+     "py-5"
+    ],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.column": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.column",
+  "label": "Column",
+  "props": {},
+  "slots": [
+   "content"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.anchor": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.anchor",
+  "label": "Anchor",
+  "props": {
+   "id": {
+    "type": "string",
+    "enum": [],
+    "required": true
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.progress-bar": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.progress-bar",
+  "label": "Progress bar",
+  "props": {
+   "color": {
+    "type": "string",
+    "enum": [
+     "",
+     "bg-primary",
+     "bg-secondary",
+     "bg-success",
+     "bg-info",
+     "bg-warning",
+     "bg-danger",
+     "bg-light",
+     "bg-dark"
+    ],
+    "required": false
+   },
+   "striped": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "animated": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "label": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "percent": {
+    "type": "number",
+    "enum": [],
+    "required": false
+   },
+   "message": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "progress_bar_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "wrapper_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "indicator_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "label_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "message_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.select": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.select",
+  "label": "Select",
+  "props": {
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.link": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.link",
+  "label": "Link",
+  "props": {
+   "url": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "color": {
+    "type": "string",
+    "enum": [
+     "",
+     "primary",
+     "secondary",
+     "success",
+     "danger",
+     "warning",
+     "info",
+     "light",
+     "dark",
+     "body-emphasis"
+    ],
+    "required": false
+   },
+   "opacity": {
+    "type": "string",
+    "enum": [
+     "",
+     "10",
+     "25",
+     "50",
+     "75",
+     "100"
+    ],
+    "required": false
+   },
+   "underline_color": {
+    "type": "string",
+    "enum": [
+     "",
+     "primary",
+     "secondary",
+     "success",
+     "danger",
+     "warning",
+     "info",
+     "light",
+     "dark"
+    ],
+    "required": false
+   },
+   "underline_offset": {
+    "type": [
+     "string",
+     "number"
+    ],
+    "enum": [
+     "",
+     "1",
+     "2",
+     "3"
+    ],
+    "required": false
+   },
+   "underline_opacity": {
+    "type": [
+     "string",
+     "number"
+    ],
+    "enum": [
+     "",
+     "0",
+     "10",
+     "25",
+     "50",
+     "75",
+     "100"
+    ],
+    "required": false
+   },
+   "link_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [
+   "content"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.text": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.text",
+  "label": "Text",
+  "props": {
+   "text": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "text_size": {
+    "type": "string",
+    "enum": [
+     "none",
+     "fs-6",
+     "fs-5",
+     "fs-4",
+     "fs-3"
+    ],
+    "required": false
+   },
+   "text_color": {
+    "type": "string",
+    "enum": [
+     "text-body",
+     "text-primary",
+     "text-secondary",
+     "text-success",
+     "text-danger",
+     "text-warning",
+     "text-info",
+     "text-muted",
+     "text-dark",
+     "text-white",
+     "text-subtle-text"
+    ],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.divider": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.divider",
+  "label": "Divider",
+  "props": {
+   "border_width": {
+    "type": "string",
+    "enum": [
+     "border-1",
+     "border-2",
+     "border-3",
+     "border-4",
+     "border-5"
+    ],
+    "required": false
+   },
+   "border_color": {
+    "type": "string",
+    "enum": [
+     "border-secondary",
+     "border-light",
+     "border-dark",
+     "border-primary",
+     "border-success",
+     "border-danger",
+     "border-warning",
+     "border-info",
+     "border-white",
+     "border-black"
+    ],
+    "required": false
+   },
+   "opacity": {
+    "type": "string",
+    "enum": [
+     "opacity-25",
+     "opacity-50",
+     "opacity-75",
+     "opacity-100"
+    ],
+    "required": false
+   },
+   "margin_top": {
+    "type": "string",
+    "enum": [
+     "mt-0",
+     "mt-1",
+     "mt-2",
+     "mt-3",
+     "mt-4",
+     "mt-5"
+    ],
+    "required": false
+   },
+   "margin_bottom": {
+    "type": "string",
+    "enum": [
+     "mb-0",
+     "mb-1",
+     "mb-2",
+     "mb-3",
+     "mb-4",
+     "mb-5"
+    ],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.icon": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.icon",
+  "label": "Icon",
+  "props": {
+   "icon": {
+    "type": "string",
+    "enum": [
+     "facebook",
+     "twitter-x",
+     "instagram",
+     "linkedin",
+     "x",
+     "plus",
+     "exclamation",
+     "check",
+     "dash",
+     "question",
+     "info",
+     "search",
+     "person",
+     "people",
+     "person-plus",
+     "person-check",
+     "chevron-up",
+     "chevron-down",
+     "chevron-left",
+     "chevron-right",
+     "chevron-double-up",
+     "chevron-double-down",
+     "chevron-double-left",
+     "chevron-double-right",
+     "arrow-up",
+     "arrow-down",
+     "arrow-left",
+     "arrow-right",
+     "arrow-up-right",
+     "arrow-up-left",
+     "arrow-down-right",
+     "arrow-down-left",
+     "arrow-repeat",
+     "arrows-angle-expand",
+     "arrows-angle-contract",
+     "play",
+     "pause",
+     "skip-backward",
+     "skip-forward",
+     "circle",
+     "circle-fill",
+     "record-circle",
+     "house-door-fill",
+     "house-door",
+     "box-arrow-in-right",
+     "person-fill",
+     "person-circle",
+     "shield-check",
+     "chat-dots",
+     "laptop",
+     "gear"
+    ],
+    "required": false
+   },
+   "icon_size": {
+    "type": "string",
+    "enum": [
+     "fs-1",
+     "fs-2",
+     "fs-3",
+     "fs-4",
+     "fs-5",
+     "fs-6"
+    ],
+    "required": false
+   },
+   "color": {
+    "type": "string",
+    "enum": [
+     "text-body",
+     "text-primary",
+     "text-secondary",
+     "text-success",
+     "text-danger",
+     "text-warning",
+     "text-info",
+     "text-light",
+     "text-dark",
+     "text-white",
+     "text-muted",
+     "text-body-secondary",
+     "text-body-tertiary",
+     "text-primary-emphasis",
+     "text-secondary-emphasis",
+     "text-success-emphasis",
+     "text-danger-emphasis",
+     "text-warning-emphasis",
+     "text-info-emphasis"
+    ],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.nav-item": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.nav-item",
+  "label": "Nav item",
+  "props": {
+   "container": {
+    "type": "string",
+    "enum": [
+     "fixed",
+     "fluid"
+    ],
+    "required": false
+   },
+   "color": {
+    "type": "string",
+    "enum": [
+     "light",
+     "dark"
+    ],
+    "required": false
+   },
+   "placement": {
+    "type": "string",
+    "enum": [
+     "",
+     "fixed-top",
+     "fixed-bottom",
+     "sticky-top"
+    ],
+    "required": false
+   },
+   "navbar_expand": {
+    "type": "string",
+    "enum": [
+     "sm",
+     "md",
+     "lg",
+     "xl"
+    ],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.plain-text": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.plain-text",
+  "label": "Plain Text",
+  "props": {
+   "text": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "trim": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "trim_length": {
+    "type": "integer",
+    "enum": [],
+    "required": false
+   },
+   "trim_units": {
+    "type": "string",
+    "enum": [
+     "characters",
+     "words"
+    ],
+    "required": false
+   },
+   "suffix": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "strip_html": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.blockquote": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.blockquote",
+  "label": "Blockquote",
+  "props": {
+   "type": {
+    "type": "string",
+    "enum": [
+     "dark",
+     "light"
+    ],
+    "required": false
+   },
+   "text": {
+    "type": "string",
+    "enum": [],
+    "required": true
+   },
+   "cite_text": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.input-checkbox": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.input-checkbox",
+  "label": "Checkbox",
+  "props": {
+   "input_checkbox_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "children": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.input-date": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.input-date",
+  "label": "Input Date",
+  "props": {
+   "input_date_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "size": {
+    "type": "string",
+    "enum": [
+     "",
+     "form-control-sm",
+     "form-control-lg"
+    ],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.bootstrap-icon": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.bootstrap-icon",
+  "label": "Bootstrap Icon",
+  "props": {
+   "icon": {
+    "type": "string",
+    "enum": [
+     "0-circle",
+     "0-circle-fill",
+     "0-square",
+     "0-square-fill",
+     "1-circle",
+     "1-circle-fill",
+     "1-square",
+     "1-square-fill",
+     123,
+     "2-circle",
+     "2-circle-fill",
+     "2-square",
+     "2-square-fill",
+     "3-circle",
+     "3-circle-fill",
+     "3-square",
+     "3-square-fill",
+     "4-circle",
+     "4-circle-fill",
+     "4-square",
+     "4-square-fill",
+     "5-circle",
+     "5-circle-fill",
+     "5-square",
+     "5-square-fill",
+     "6-circle",
+     "6-circle-fill",
+     "6-square",
+     "6-square-fill",
+     "7-circle",
+     "7-circle-fill",
+     "7-square",
+     "7-square-fill",
+     "8-circle",
+     "8-circle-fill",
+     "8-square",
+     "8-square-fill",
+     "9-circle",
+     "9-circle-fill",
+     "9-square",
+     "9-square-fill",
+     "activity",
+     "airplane",
+     "airplane-engines",
+     "airplane-engines-fill",
+     "airplane-fill",
+     "alarm",
+     "alarm-fill",
+     "alexa",
+     "align-bottom",
+     "align-center",
+     "align-end",
+     "align-middle",
+     "align-start",
+     "align-top",
+     "alipay",
+     "alphabet",
+     "alphabet-uppercase",
+     "alt",
+     "amazon",
+     "amd",
+     "android",
+     "android2",
+     "anthropic",
+     "app",
+     "app-indicator",
+     "apple",
+     "apple-music",
+     "archive",
+     "archive-fill",
+     "arrow-90deg-down",
+     "arrow-90deg-left",
+     "arrow-90deg-right",
+     "arrow-90deg-up",
+     "arrow-bar-down",
+     "arrow-bar-left",
+     "arrow-bar-right",
+     "arrow-bar-up",
+     "arrow-clockwise",
+     "arrow-counterclockwise",
+     "arrow-down",
+     "arrow-down-circle",
+     "arrow-down-circle-fill",
+     "arrow-down-left",
+     "arrow-down-left-circle",
+     "arrow-down-left-circle-fill",
+     "arrow-down-left-square",
+     "arrow-down-left-square-fill",
+     "arrow-down-right",
+     "arrow-down-right-circle",
+     "arrow-down-right-circle-fill",
+     "arrow-down-right-square",
+     "arrow-down-right-square-fill",
+     "arrow-down-short",
+     "arrow-down-square",
+     "arrow-down-square-fill",
+     "arrow-down-up",
+     "arrow-left",
+     "arrow-left-circle",
+     "arrow-left-circle-fill",
+     "arrow-left-right",
+     "arrow-left-short",
+     "arrow-left-square",
+     "arrow-left-square-fill",
+     "arrow-repeat",
+     "arrow-return-left",
+     "arrow-return-right",
+     "arrow-right",
+     "arrow-right-circle",
+     "arrow-right-circle-fill",
+     "arrow-right-short",
+     "arrow-right-square",
+     "arrow-right-square-fill",
+     "arrow-through-heart",
+     "arrow-through-heart-fill",
+     "arrow-up",
+     "arrow-up-circle",
+     "arrow-up-circle-fill",
+     "arrow-up-left",
+     "arrow-up-left-circle",
+     "arrow-up-left-circle-fill",
+     "arrow-up-left-square",
+     "arrow-up-left-square-fill",
+     "arrow-up-right",
+     "arrow-up-right-circle",
+     "arrow-up-right-circle-fill",
+     "arrow-up-right-square",
+     "arrow-up-right-square-fill",
+     "arrow-up-short",
+     "arrow-up-square",
+     "arrow-up-square-fill",
+     "arrows",
+     "arrows-angle-contract",
+     "arrows-angle-expand",
+     "arrows-collapse",
+     "arrows-collapse-vertical",
+     "arrows-expand",
+     "arrows-expand-vertical",
+     "arrows-fullscreen",
+     "arrows-move",
+     "arrows-vertical",
+     "aspect-ratio",
+     "aspect-ratio-fill",
+     "asterisk",
+     "at",
+     "award",
+     "award-fill",
+     "back",
+     "backpack",
+     "backpack-fill",
+     "backpack2",
+     "backpack2-fill",
+     "backpack3",
+     "backpack3-fill",
+     "backpack4",
+     "backpack4-fill",
+     "backspace",
+     "backspace-fill",
+     "backspace-reverse",
+     "backspace-reverse-fill",
+     "badge-3d",
+     "badge-3d-fill",
+     "badge-4k",
+     "badge-4k-fill",
+     "badge-8k",
+     "badge-8k-fill",
+     "badge-ad",
+     "badge-ad-fill",
+     "badge-ar",
+     "badge-ar-fill",
+     "badge-cc",
+     "badge-cc-fill",
+     "badge-hd",
+     "badge-hd-fill",
+     "badge-sd",
+     "badge-sd-fill",
+     "badge-tm",
+     "badge-tm-fill",
+     "badge-vo",
+     "badge-vo-fill",
+     "badge-vr",
+     "badge-vr-fill",
+     "badge-wc",
+     "badge-wc-fill",
+     "bag",
+     "bag-check",
+     "bag-check-fill",
+     "bag-dash",
+     "bag-dash-fill",
+     "bag-fill",
+     "bag-heart",
+     "bag-heart-fill",
+     "bag-plus",
+     "bag-plus-fill",
+     "bag-x",
+     "bag-x-fill",
+     "balloon",
+     "balloon-fill",
+     "balloon-heart",
+     "balloon-heart-fill",
+     "ban",
+     "ban-fill",
+     "bandaid",
+     "bandaid-fill",
+     "bank",
+     "bank2",
+     "bar-chart",
+     "bar-chart-fill",
+     "bar-chart-line",
+     "bar-chart-line-fill",
+     "bar-chart-steps",
+     "basket",
+     "basket-fill",
+     "basket2",
+     "basket2-fill",
+     "basket3",
+     "basket3-fill",
+     "battery",
+     "battery-charging",
+     "battery-full",
+     "battery-half",
+     "battery-low",
+     "beaker",
+     "beaker-fill",
+     "behance",
+     "bell",
+     "bell-fill",
+     "bell-slash",
+     "bell-slash-fill",
+     "bezier",
+     "bezier2",
+     "bicycle",
+     "bing",
+     "binoculars",
+     "binoculars-fill",
+     "blockquote-left",
+     "blockquote-right",
+     "bluesky",
+     "bluetooth",
+     "body-text",
+     "book",
+     "book-fill",
+     "book-half",
+     "bookmark",
+     "bookmark-check",
+     "bookmark-check-fill",
+     "bookmark-dash",
+     "bookmark-dash-fill",
+     "bookmark-fill",
+     "bookmark-heart",
+     "bookmark-heart-fill",
+     "bookmark-plus",
+     "bookmark-plus-fill",
+     "bookmark-star",
+     "bookmark-star-fill",
+     "bookmark-x",
+     "bookmark-x-fill",
+     "bookmarks",
+     "bookmarks-fill",
+     "bookshelf",
+     "boombox",
+     "boombox-fill",
+     "bootstrap",
+     "bootstrap-fill",
+     "bootstrap-reboot",
+     "border",
+     "border-all",
+     "border-bottom",
+     "border-center",
+     "border-inner",
+     "border-left",
+     "border-middle",
+     "border-outer",
+     "border-right",
+     "border-style",
+     "border-top",
+     "border-width",
+     "bounding-box",
+     "bounding-box-circles",
+     "box",
+     "box-arrow-down",
+     "box-arrow-down-left",
+     "box-arrow-down-right",
+     "box-arrow-in-down",
+     "box-arrow-in-down-left",
+     "box-arrow-in-down-right",
+     "box-arrow-in-left",
+     "box-arrow-in-right",
+     "box-arrow-in-up",
+     "box-arrow-in-up-left",
+     "box-arrow-in-up-right",
+     "box-arrow-left",
+     "box-arrow-right",
+     "box-arrow-up",
+     "box-arrow-up-left",
+     "box-arrow-up-right",
+     "box-fill",
+     "box-seam",
+     "box-seam-fill",
+     "box2",
+     "box2-fill",
+     "box2-heart",
+     "box2-heart-fill",
+     "boxes",
+     "braces",
+     "braces-asterisk",
+     "bricks",
+     "briefcase",
+     "briefcase-fill",
+     "brightness-alt-high",
+     "brightness-alt-high-fill",
+     "brightness-alt-low",
+     "brightness-alt-low-fill",
+     "brightness-high",
+     "brightness-high-fill",
+     "brightness-low",
+     "brightness-low-fill",
+     "brilliance",
+     "broadcast",
+     "broadcast-pin",
+     "browser-chrome",
+     "browser-edge",
+     "browser-firefox",
+     "browser-safari",
+     "brush",
+     "brush-fill",
+     "bucket",
+     "bucket-fill",
+     "bug",
+     "bug-fill",
+     "building",
+     "building-add",
+     "building-check",
+     "building-dash",
+     "building-down",
+     "building-exclamation",
+     "building-fill",
+     "building-fill-add",
+     "building-fill-check",
+     "building-fill-dash",
+     "building-fill-down",
+     "building-fill-exclamation",
+     "building-fill-gear",
+     "building-fill-lock",
+     "building-fill-slash",
+     "building-fill-up",
+     "building-fill-x",
+     "building-gear",
+     "building-lock",
+     "building-slash",
+     "building-up",
+     "building-x",
+     "buildings",
+     "buildings-fill",
+     "bullseye",
+     "bus-front",
+     "bus-front-fill",
+     "c-circle",
+     "c-circle-fill",
+     "c-square",
+     "c-square-fill",
+     "cake",
+     "cake-fill",
+     "cake2",
+     "cake2-fill",
+     "calculator",
+     "calculator-fill",
+     "calendar",
+     "calendar-check",
+     "calendar-check-fill",
+     "calendar-date",
+     "calendar-date-fill",
+     "calendar-day",
+     "calendar-day-fill",
+     "calendar-event",
+     "calendar-event-fill",
+     "calendar-fill",
+     "calendar-heart",
+     "calendar-heart-fill",
+     "calendar-minus",
+     "calendar-minus-fill",
+     "calendar-month",
+     "calendar-month-fill",
+     "calendar-plus",
+     "calendar-plus-fill",
+     "calendar-range",
+     "calendar-range-fill",
+     "calendar-week",
+     "calendar-week-fill",
+     "calendar-x",
+     "calendar-x-fill",
+     "calendar2",
+     "calendar2-check",
+     "calendar2-check-fill",
+     "calendar2-date",
+     "calendar2-date-fill",
+     "calendar2-day",
+     "calendar2-day-fill",
+     "calendar2-event",
+     "calendar2-event-fill",
+     "calendar2-fill",
+     "calendar2-heart",
+     "calendar2-heart-fill",
+     "calendar2-minus",
+     "calendar2-minus-fill",
+     "calendar2-month",
+     "calendar2-month-fill",
+     "calendar2-plus",
+     "calendar2-plus-fill",
+     "calendar2-range",
+     "calendar2-range-fill",
+     "calendar2-week",
+     "calendar2-week-fill",
+     "calendar2-x",
+     "calendar2-x-fill",
+     "calendar3",
+     "calendar3-event",
+     "calendar3-event-fill",
+     "calendar3-fill",
+     "calendar3-range",
+     "calendar3-range-fill",
+     "calendar3-week",
+     "calendar3-week-fill",
+     "calendar4",
+     "calendar4-event",
+     "calendar4-range",
+     "calendar4-week",
+     "camera",
+     "camera-fill",
+     "camera-reels",
+     "camera-reels-fill",
+     "camera-video",
+     "camera-video-fill",
+     "camera-video-off",
+     "camera-video-off-fill",
+     "camera2",
+     "capslock",
+     "capslock-fill",
+     "capsule",
+     "capsule-pill",
+     "car-front",
+     "car-front-fill",
+     "card-checklist",
+     "card-heading",
+     "card-image",
+     "card-list",
+     "card-text",
+     "caret-down",
+     "caret-down-fill",
+     "caret-down-square",
+     "caret-down-square-fill",
+     "caret-left",
+     "caret-left-fill",
+     "caret-left-square",
+     "caret-left-square-fill",
+     "caret-right",
+     "caret-right-fill",
+     "caret-right-square",
+     "caret-right-square-fill",
+     "caret-up",
+     "caret-up-fill",
+     "caret-up-square",
+     "caret-up-square-fill",
+     "cart",
+     "cart-check",
+     "cart-check-fill",
+     "cart-dash",
+     "cart-dash-fill",
+     "cart-fill",
+     "cart-plus",
+     "cart-plus-fill",
+     "cart-x",
+     "cart-x-fill",
+     "cart2",
+     "cart3",
+     "cart4",
+     "cash",
+     "cash-coin",
+     "cash-stack",
+     "cassette",
+     "cassette-fill",
+     "cast",
+     "cc-circle",
+     "cc-circle-fill",
+     "cc-square",
+     "cc-square-fill",
+     "chat",
+     "chat-dots",
+     "chat-dots-fill",
+     "chat-fill",
+     "chat-heart",
+     "chat-heart-fill",
+     "chat-left",
+     "chat-left-dots",
+     "chat-left-dots-fill",
+     "chat-left-fill",
+     "chat-left-heart",
+     "chat-left-heart-fill",
+     "chat-left-quote",
+     "chat-left-quote-fill",
+     "chat-left-text",
+     "chat-left-text-fill",
+     "chat-quote",
+     "chat-quote-fill",
+     "chat-right",
+     "chat-right-dots",
+     "chat-right-dots-fill",
+     "chat-right-fill",
+     "chat-right-heart",
+     "chat-right-heart-fill",
+     "chat-right-quote",
+     "chat-right-quote-fill",
+     "chat-right-text",
+     "chat-right-text-fill",
+     "chat-square",
+     "chat-square-dots",
+     "chat-square-dots-fill",
+     "chat-square-fill",
+     "chat-square-heart",
+     "chat-square-heart-fill",
+     "chat-square-quote",
+     "chat-square-quote-fill",
+     "chat-square-text",
+     "chat-square-text-fill",
+     "chat-text",
+     "chat-text-fill",
+     "check",
+     "check-all",
+     "check-circle",
+     "check-circle-fill",
+     "check-lg",
+     "check-square",
+     "check-square-fill",
+     "check2",
+     "check2-all",
+     "check2-circle",
+     "check2-square",
+     "chevron-bar-contract",
+     "chevron-bar-down",
+     "chevron-bar-expand",
+     "chevron-bar-left",
+     "chevron-bar-right",
+     "chevron-bar-up",
+     "chevron-compact-down",
+     "chevron-compact-left",
+     "chevron-compact-right",
+     "chevron-compact-up",
+     "chevron-contract",
+     "chevron-double-down",
+     "chevron-double-left",
+     "chevron-double-right",
+     "chevron-double-up",
+     "chevron-down",
+     "chevron-expand",
+     "chevron-left",
+     "chevron-right",
+     "chevron-up",
+     "circle",
+     "circle-fill",
+     "circle-half",
+     "circle-square",
+     "claude",
+     "clipboard",
+     "clipboard-check",
+     "clipboard-check-fill",
+     "clipboard-data",
+     "clipboard-data-fill",
+     "clipboard-fill",
+     "clipboard-heart",
+     "clipboard-heart-fill",
+     "clipboard-minus",
+     "clipboard-minus-fill",
+     "clipboard-plus",
+     "clipboard-plus-fill",
+     "clipboard-pulse",
+     "clipboard-x",
+     "clipboard-x-fill",
+     "clipboard2",
+     "clipboard2-check",
+     "clipboard2-check-fill",
+     "clipboard2-data",
+     "clipboard2-data-fill",
+     "clipboard2-fill",
+     "clipboard2-heart",
+     "clipboard2-heart-fill",
+     "clipboard2-minus",
+     "clipboard2-minus-fill",
+     "clipboard2-plus",
+     "clipboard2-plus-fill",
+     "clipboard2-pulse",
+     "clipboard2-pulse-fill",
+     "clipboard2-x",
+     "clipboard2-x-fill",
+     "clock",
+     "clock-fill",
+     "clock-history",
+     "cloud",
+     "cloud-arrow-down",
+     "cloud-arrow-down-fill",
+     "cloud-arrow-up",
+     "cloud-arrow-up-fill",
+     "cloud-check",
+     "cloud-check-fill",
+     "cloud-download",
+     "cloud-download-fill",
+     "cloud-drizzle",
+     "cloud-drizzle-fill",
+     "cloud-fill",
+     "cloud-fog",
+     "cloud-fog-fill",
+     "cloud-fog2",
+     "cloud-fog2-fill",
+     "cloud-hail",
+     "cloud-hail-fill",
+     "cloud-haze",
+     "cloud-haze-fill",
+     "cloud-haze2",
+     "cloud-haze2-fill",
+     "cloud-lightning",
+     "cloud-lightning-fill",
+     "cloud-lightning-rain",
+     "cloud-lightning-rain-fill",
+     "cloud-minus",
+     "cloud-minus-fill",
+     "cloud-moon",
+     "cloud-moon-fill",
+     "cloud-plus",
+     "cloud-plus-fill",
+     "cloud-rain",
+     "cloud-rain-fill",
+     "cloud-rain-heavy",
+     "cloud-rain-heavy-fill",
+     "cloud-slash",
+     "cloud-slash-fill",
+     "cloud-sleet",
+     "cloud-sleet-fill",
+     "cloud-snow",
+     "cloud-snow-fill",
+     "cloud-sun",
+     "cloud-sun-fill",
+     "cloud-upload",
+     "cloud-upload-fill",
+     "clouds",
+     "clouds-fill",
+     "cloudy",
+     "cloudy-fill",
+     "code",
+     "code-slash",
+     "code-square",
+     "coin",
+     "collection",
+     "collection-fill",
+     "collection-play",
+     "collection-play-fill",
+     "columns",
+     "columns-gap",
+     "command",
+     "compass",
+     "compass-fill",
+     "cone",
+     "cone-striped",
+     "controller",
+     "cookie",
+     "copy",
+     "cpu",
+     "cpu-fill",
+     "credit-card",
+     "credit-card-2-back",
+     "credit-card-2-back-fill",
+     "credit-card-2-front",
+     "credit-card-2-front-fill",
+     "credit-card-fill",
+     "crop",
+     "crosshair",
+     "crosshair2",
+     "css",
+     "cup",
+     "cup-fill",
+     "cup-hot",
+     "cup-hot-fill",
+     "cup-straw",
+     "currency-bitcoin",
+     "currency-dollar",
+     "currency-euro",
+     "currency-exchange",
+     "currency-pound",
+     "currency-rupee",
+     "currency-yen",
+     "cursor",
+     "cursor-fill",
+     "cursor-text",
+     "dash",
+     "dash-circle",
+     "dash-circle-dotted",
+     "dash-circle-fill",
+     "dash-lg",
+     "dash-square",
+     "dash-square-dotted",
+     "dash-square-fill",
+     "database",
+     "database-add",
+     "database-check",
+     "database-dash",
+     "database-down",
+     "database-exclamation",
+     "database-fill",
+     "database-fill-add",
+     "database-fill-check",
+     "database-fill-dash",
+     "database-fill-down",
+     "database-fill-exclamation",
+     "database-fill-gear",
+     "database-fill-lock",
+     "database-fill-slash",
+     "database-fill-up",
+     "database-fill-x",
+     "database-gear",
+     "database-lock",
+     "database-slash",
+     "database-up",
+     "database-x",
+     "device-hdd",
+     "device-hdd-fill",
+     "device-ssd",
+     "device-ssd-fill",
+     "diagram-2",
+     "diagram-2-fill",
+     "diagram-3",
+     "diagram-3-fill",
+     "diamond",
+     "diamond-fill",
+     "diamond-half",
+     "dice-1",
+     "dice-1-fill",
+     "dice-2",
+     "dice-2-fill",
+     "dice-3",
+     "dice-3-fill",
+     "dice-4",
+     "dice-4-fill",
+     "dice-5",
+     "dice-5-fill",
+     "dice-6",
+     "dice-6-fill",
+     "disc",
+     "disc-fill",
+     "discord",
+     "display",
+     "display-fill",
+     "displayport",
+     "displayport-fill",
+     "distribute-horizontal",
+     "distribute-vertical",
+     "door-closed",
+     "door-closed-fill",
+     "door-open",
+     "door-open-fill",
+     "dot",
+     "download",
+     "dpad",
+     "dpad-fill",
+     "dribbble",
+     "dropbox",
+     "droplet",
+     "droplet-fill",
+     "droplet-half",
+     "duffle",
+     "duffle-fill",
+     "ear",
+     "ear-fill",
+     "earbuds",
+     "easel",
+     "easel-fill",
+     "easel2",
+     "easel2-fill",
+     "easel3",
+     "easel3-fill",
+     "egg",
+     "egg-fill",
+     "egg-fried",
+     "eject",
+     "eject-fill",
+     "emoji-angry",
+     "emoji-angry-fill",
+     "emoji-astonished",
+     "emoji-astonished-fill",
+     "emoji-dizzy",
+     "emoji-dizzy-fill",
+     "emoji-expressionless",
+     "emoji-expressionless-fill",
+     "emoji-frown",
+     "emoji-frown-fill",
+     "emoji-grimace",
+     "emoji-grimace-fill",
+     "emoji-grin",
+     "emoji-grin-fill",
+     "emoji-heart-eyes",
+     "emoji-heart-eyes-fill",
+     "emoji-kiss",
+     "emoji-kiss-fill",
+     "emoji-laughing",
+     "emoji-laughing-fill",
+     "emoji-neutral",
+     "emoji-neutral-fill",
+     "emoji-smile",
+     "emoji-smile-fill",
+     "emoji-smile-upside-down",
+     "emoji-smile-upside-down-fill",
+     "emoji-sunglasses",
+     "emoji-sunglasses-fill",
+     "emoji-surprise",
+     "emoji-surprise-fill",
+     "emoji-tear",
+     "emoji-tear-fill",
+     "emoji-wink",
+     "emoji-wink-fill",
+     "envelope",
+     "envelope-arrow-down",
+     "envelope-arrow-down-fill",
+     "envelope-arrow-up",
+     "envelope-arrow-up-fill",
+     "envelope-at",
+     "envelope-at-fill",
+     "envelope-check",
+     "envelope-check-fill",
+     "envelope-dash",
+     "envelope-dash-fill",
+     "envelope-exclamation",
+     "envelope-exclamation-fill",
+     "envelope-fill",
+     "envelope-heart",
+     "envelope-heart-fill",
+     "envelope-open",
+     "envelope-open-fill",
+     "envelope-open-heart",
+     "envelope-open-heart-fill",
+     "envelope-paper",
+     "envelope-paper-fill",
+     "envelope-paper-heart",
+     "envelope-paper-heart-fill",
+     "envelope-plus",
+     "envelope-plus-fill",
+     "envelope-slash",
+     "envelope-slash-fill",
+     "envelope-x",
+     "envelope-x-fill",
+     "eraser",
+     "eraser-fill",
+     "escape",
+     "ethernet",
+     "ev-front",
+     "ev-front-fill",
+     "ev-station",
+     "ev-station-fill",
+     "exclamation",
+     "exclamation-circle",
+     "exclamation-circle-fill",
+     "exclamation-diamond",
+     "exclamation-diamond-fill",
+     "exclamation-lg",
+     "exclamation-octagon",
+     "exclamation-octagon-fill",
+     "exclamation-square",
+     "exclamation-square-fill",
+     "exclamation-triangle",
+     "exclamation-triangle-fill",
+     "exclude",
+     "explicit",
+     "explicit-fill",
+     "exposure",
+     "eye",
+     "eye-fill",
+     "eye-slash",
+     "eye-slash-fill",
+     "eyedropper",
+     "eyeglasses",
+     "facebook",
+     "fan",
+     "fast-forward",
+     "fast-forward-btn",
+     "fast-forward-btn-fill",
+     "fast-forward-circle",
+     "fast-forward-circle-fill",
+     "fast-forward-fill",
+     "feather",
+     "feather2",
+     "file",
+     "file-arrow-down",
+     "file-arrow-down-fill",
+     "file-arrow-up",
+     "file-arrow-up-fill",
+     "file-bar-graph",
+     "file-bar-graph-fill",
+     "file-binary",
+     "file-binary-fill",
+     "file-break",
+     "file-break-fill",
+     "file-check",
+     "file-check-fill",
+     "file-code",
+     "file-code-fill",
+     "file-diff",
+     "file-diff-fill",
+     "file-earmark",
+     "file-earmark-arrow-down",
+     "file-earmark-arrow-down-fill",
+     "file-earmark-arrow-up",
+     "file-earmark-arrow-up-fill",
+     "file-earmark-bar-graph",
+     "file-earmark-bar-graph-fill",
+     "file-earmark-binary",
+     "file-earmark-binary-fill",
+     "file-earmark-break",
+     "file-earmark-break-fill",
+     "file-earmark-check",
+     "file-earmark-check-fill",
+     "file-earmark-code",
+     "file-earmark-code-fill",
+     "file-earmark-diff",
+     "file-earmark-diff-fill",
+     "file-earmark-easel",
+     "file-earmark-easel-fill",
+     "file-earmark-excel",
+     "file-earmark-excel-fill",
+     "file-earmark-fill",
+     "file-earmark-font",
+     "file-earmark-font-fill",
+     "file-earmark-image",
+     "file-earmark-image-fill",
+     "file-earmark-lock",
+     "file-earmark-lock-fill",
+     "file-earmark-lock2",
+     "file-earmark-lock2-fill",
+     "file-earmark-medical",
+     "file-earmark-medical-fill",
+     "file-earmark-minus",
+     "file-earmark-minus-fill",
+     "file-earmark-music",
+     "file-earmark-music-fill",
+     "file-earmark-pdf",
+     "file-earmark-pdf-fill",
+     "file-earmark-person",
+     "file-earmark-person-fill",
+     "file-earmark-play",
+     "file-earmark-play-fill",
+     "file-earmark-plus",
+     "file-earmark-plus-fill",
+     "file-earmark-post",
+     "file-earmark-post-fill",
+     "file-earmark-ppt",
+     "file-earmark-ppt-fill",
+     "file-earmark-richtext",
+     "file-earmark-richtext-fill",
+     "file-earmark-ruled",
+     "file-earmark-ruled-fill",
+     "file-earmark-slides",
+     "file-earmark-slides-fill",
+     "file-earmark-spreadsheet",
+     "file-earmark-spreadsheet-fill",
+     "file-earmark-text",
+     "file-earmark-text-fill",
+     "file-earmark-word",
+     "file-earmark-word-fill",
+     "file-earmark-x",
+     "file-earmark-x-fill",
+     "file-earmark-zip",
+     "file-earmark-zip-fill",
+     "file-easel",
+     "file-easel-fill",
+     "file-excel",
+     "file-excel-fill",
+     "file-fill",
+     "file-font",
+     "file-font-fill",
+     "file-image",
+     "file-image-fill",
+     "file-lock",
+     "file-lock-fill",
+     "file-lock2",
+     "file-lock2-fill",
+     "file-medical",
+     "file-medical-fill",
+     "file-minus",
+     "file-minus-fill",
+     "file-music",
+     "file-music-fill",
+     "file-pdf",
+     "file-pdf-fill",
+     "file-person",
+     "file-person-fill",
+     "file-play",
+     "file-play-fill",
+     "file-plus",
+     "file-plus-fill",
+     "file-post",
+     "file-post-fill",
+     "file-ppt",
+     "file-ppt-fill",
+     "file-richtext",
+     "file-richtext-fill",
+     "file-ruled",
+     "file-ruled-fill",
+     "file-slides",
+     "file-slides-fill",
+     "file-spreadsheet",
+     "file-spreadsheet-fill",
+     "file-text",
+     "file-text-fill",
+     "file-word",
+     "file-word-fill",
+     "file-x",
+     "file-x-fill",
+     "file-zip",
+     "file-zip-fill",
+     "files",
+     "files-alt",
+     "filetype-aac",
+     "filetype-ai",
+     "filetype-bmp",
+     "filetype-cs",
+     "filetype-css",
+     "filetype-csv",
+     "filetype-doc",
+     "filetype-docx",
+     "filetype-exe",
+     "filetype-gif",
+     "filetype-heic",
+     "filetype-html",
+     "filetype-java",
+     "filetype-jpg",
+     "filetype-js",
+     "filetype-json",
+     "filetype-jsx",
+     "filetype-key",
+     "filetype-m4p",
+     "filetype-md",
+     "filetype-mdx",
+     "filetype-mov",
+     "filetype-mp3",
+     "filetype-mp4",
+     "filetype-otf",
+     "filetype-pdf",
+     "filetype-php",
+     "filetype-png",
+     "filetype-ppt",
+     "filetype-pptx",
+     "filetype-psd",
+     "filetype-py",
+     "filetype-raw",
+     "filetype-rb",
+     "filetype-sass",
+     "filetype-scss",
+     "filetype-sh",
+     "filetype-sql",
+     "filetype-svg",
+     "filetype-tiff",
+     "filetype-tsx",
+     "filetype-ttf",
+     "filetype-txt",
+     "filetype-wav",
+     "filetype-woff",
+     "filetype-xls",
+     "filetype-xlsx",
+     "filetype-xml",
+     "filetype-yml",
+     "film",
+     "filter",
+     "filter-circle",
+     "filter-circle-fill",
+     "filter-left",
+     "filter-right",
+     "filter-square",
+     "filter-square-fill",
+     "fingerprint",
+     "fire",
+     "flag",
+     "flag-fill",
+     "flask",
+     "flask-fill",
+     "flask-florence",
+     "flask-florence-fill",
+     "floppy",
+     "floppy-fill",
+     "floppy2",
+     "floppy2-fill",
+     "flower1",
+     "flower2",
+     "flower3",
+     "folder",
+     "folder-check",
+     "folder-fill",
+     "folder-minus",
+     "folder-plus",
+     "folder-symlink",
+     "folder-symlink-fill",
+     "folder-x",
+     "folder2",
+     "folder2-open",
+     "fonts",
+     "fork-knife",
+     "forward",
+     "forward-fill",
+     "front",
+     "fuel-pump",
+     "fuel-pump-diesel",
+     "fuel-pump-diesel-fill",
+     "fuel-pump-fill",
+     "fullscreen",
+     "fullscreen-exit",
+     "funnel",
+     "funnel-fill",
+     "gear",
+     "gear-fill",
+     "gear-wide",
+     "gear-wide-connected",
+     "gem",
+     "gender-ambiguous",
+     "gender-female",
+     "gender-male",
+     "gender-neuter",
+     "gender-trans",
+     "geo",
+     "geo-alt",
+     "geo-alt-fill",
+     "geo-fill",
+     "gift",
+     "gift-fill",
+     "git",
+     "github",
+     "gitlab",
+     "globe",
+     "globe-americas",
+     "globe-americas-fill",
+     "globe-asia-australia",
+     "globe-asia-australia-fill",
+     "globe-central-south-asia",
+     "globe-central-south-asia-fill",
+     "globe-europe-africa",
+     "globe-europe-africa-fill",
+     "globe2",
+     "google",
+     "google-play",
+     "gpu-card",
+     "graph-down",
+     "graph-down-arrow",
+     "graph-up",
+     "graph-up-arrow",
+     "grid",
+     "grid-1x2",
+     "grid-1x2-fill",
+     "grid-3x2",
+     "grid-3x2-gap",
+     "grid-3x2-gap-fill",
+     "grid-3x3",
+     "grid-3x3-gap",
+     "grid-3x3-gap-fill",
+     "grid-fill",
+     "grip-horizontal",
+     "grip-vertical",
+     "h-circle",
+     "h-circle-fill",
+     "h-square",
+     "h-square-fill",
+     "hammer",
+     "hand-index",
+     "hand-index-fill",
+     "hand-index-thumb",
+     "hand-index-thumb-fill",
+     "hand-thumbs-down",
+     "hand-thumbs-down-fill",
+     "hand-thumbs-up",
+     "hand-thumbs-up-fill",
+     "handbag",
+     "handbag-fill",
+     "hash",
+     "hdd",
+     "hdd-fill",
+     "hdd-network",
+     "hdd-network-fill",
+     "hdd-rack",
+     "hdd-rack-fill",
+     "hdd-stack",
+     "hdd-stack-fill",
+     "hdmi",
+     "hdmi-fill",
+     "headphones",
+     "headset",
+     "headset-vr",
+     "heart",
+     "heart-arrow",
+     "heart-fill",
+     "heart-half",
+     "heart-pulse",
+     "heart-pulse-fill",
+     "heartbreak",
+     "heartbreak-fill",
+     "hearts",
+     "heptagon",
+     "heptagon-fill",
+     "heptagon-half",
+     "hexagon",
+     "hexagon-fill",
+     "hexagon-half",
+     "highlighter",
+     "highlights",
+     "hospital",
+     "hospital-fill",
+     "hourglass",
+     "hourglass-bottom",
+     "hourglass-split",
+     "hourglass-top",
+     "house",
+     "house-add",
+     "house-add-fill",
+     "house-check",
+     "house-check-fill",
+     "house-dash",
+     "house-dash-fill",
+     "house-door",
+     "house-door-fill",
+     "house-down",
+     "house-down-fill",
+     "house-exclamation",
+     "house-exclamation-fill",
+     "house-fill",
+     "house-gear",
+     "house-gear-fill",
+     "house-heart",
+     "house-heart-fill",
+     "house-lock",
+     "house-lock-fill",
+     "house-slash",
+     "house-slash-fill",
+     "house-up",
+     "house-up-fill",
+     "house-x",
+     "house-x-fill",
+     "houses",
+     "houses-fill",
+     "hr",
+     "hurricane",
+     "hypnotize",
+     "image",
+     "image-alt",
+     "image-fill",
+     "images",
+     "inbox",
+     "inbox-fill",
+     "inboxes",
+     "inboxes-fill",
+     "incognito",
+     "indent",
+     "infinity",
+     "info",
+     "info-circle",
+     "info-circle-fill",
+     "info-lg",
+     "info-square",
+     "info-square-fill",
+     "input-cursor",
+     "input-cursor-text",
+     "instagram",
+     "intersect",
+     "javascript",
+     "journal",
+     "journal-album",
+     "journal-arrow-down",
+     "journal-arrow-up",
+     "journal-bookmark",
+     "journal-bookmark-fill",
+     "journal-check",
+     "journal-code",
+     "journal-medical",
+     "journal-minus",
+     "journal-plus",
+     "journal-richtext",
+     "journal-text",
+     "journal-x",
+     "journals",
+     "joystick",
+     "justify",
+     "justify-left",
+     "justify-right",
+     "kanban",
+     "kanban-fill",
+     "key",
+     "key-fill",
+     "keyboard",
+     "keyboard-fill",
+     "ladder",
+     "lamp",
+     "lamp-fill",
+     "laptop",
+     "laptop-fill",
+     "layer-backward",
+     "layer-forward",
+     "layers",
+     "layers-fill",
+     "layers-half",
+     "layout-sidebar",
+     "layout-sidebar-inset",
+     "layout-sidebar-inset-reverse",
+     "layout-sidebar-reverse",
+     "layout-split",
+     "layout-text-sidebar",
+     "layout-text-sidebar-reverse",
+     "layout-text-window",
+     "layout-text-window-reverse",
+     "layout-three-columns",
+     "layout-wtf",
+     "leaf",
+     "leaf-fill",
+     "life-preserver",
+     "lightbulb",
+     "lightbulb-fill",
+     "lightbulb-off",
+     "lightbulb-off-fill",
+     "lightning",
+     "lightning-charge",
+     "lightning-charge-fill",
+     "lightning-fill",
+     "line",
+     "link",
+     "link-45deg",
+     "linkedin",
+     "list",
+     "list-check",
+     "list-columns",
+     "list-columns-reverse",
+     "list-nested",
+     "list-ol",
+     "list-stars",
+     "list-task",
+     "list-ul",
+     "lock",
+     "lock-fill",
+     "luggage",
+     "luggage-fill",
+     "lungs",
+     "lungs-fill",
+     "magic",
+     "magnet",
+     "magnet-fill",
+     "mailbox",
+     "mailbox-flag",
+     "mailbox2",
+     "mailbox2-flag",
+     "map",
+     "map-fill",
+     "markdown",
+     "markdown-fill",
+     "marker-tip",
+     "mask",
+     "mastodon",
+     "measuring-cup",
+     "measuring-cup-fill",
+     "medium",
+     "megaphone",
+     "megaphone-fill",
+     "memory",
+     "menu-app",
+     "menu-app-fill",
+     "menu-button",
+     "menu-button-fill",
+     "menu-button-wide",
+     "menu-button-wide-fill",
+     "menu-down",
+     "menu-up",
+     "messenger",
+     "meta",
+     "mic",
+     "mic-fill",
+     "mic-mute",
+     "mic-mute-fill",
+     "microsoft",
+     "microsoft-teams",
+     "minecart",
+     "minecart-loaded",
+     "modem",
+     "modem-fill",
+     "moisture",
+     "moon",
+     "moon-fill",
+     "moon-stars",
+     "moon-stars-fill",
+     "mortarboard",
+     "mortarboard-fill",
+     "motherboard",
+     "motherboard-fill",
+     "mouse",
+     "mouse-fill",
+     "mouse2",
+     "mouse2-fill",
+     "mouse3",
+     "mouse3-fill",
+     "music-note",
+     "music-note-beamed",
+     "music-note-list",
+     "music-player",
+     "music-player-fill",
+     "newspaper",
+     "nintendo-switch",
+     "node-minus",
+     "node-minus-fill",
+     "node-plus",
+     "node-plus-fill",
+     "noise-reduction",
+     "nut",
+     "nut-fill",
+     "nvidia",
+     "nvme",
+     "nvme-fill",
+     "octagon",
+     "octagon-fill",
+     "octagon-half",
+     "openai",
+     "opencollective",
+     "optical-audio",
+     "optical-audio-fill",
+     "option",
+     "outlet",
+     "p-circle",
+     "p-circle-fill",
+     "p-square",
+     "p-square-fill",
+     "paint-bucket",
+     "palette",
+     "palette-fill",
+     "palette2",
+     "paperclip",
+     "paragraph",
+     "pass",
+     "pass-fill",
+     "passport",
+     "passport-fill",
+     "patch-check",
+     "patch-check-fill",
+     "patch-exclamation",
+     "patch-exclamation-fill",
+     "patch-minus",
+     "patch-minus-fill",
+     "patch-plus",
+     "patch-plus-fill",
+     "patch-question",
+     "patch-question-fill",
+     "pause",
+     "pause-btn",
+     "pause-btn-fill",
+     "pause-circle",
+     "pause-circle-fill",
+     "pause-fill",
+     "paypal",
+     "pc",
+     "pc-display",
+     "pc-display-horizontal",
+     "pc-horizontal",
+     "pci-card",
+     "pci-card-network",
+     "pci-card-sound",
+     "peace",
+     "peace-fill",
+     "pen",
+     "pen-fill",
+     "pencil",
+     "pencil-fill",
+     "pencil-square",
+     "pentagon",
+     "pentagon-fill",
+     "pentagon-half",
+     "people",
+     "people-fill",
+     "percent",
+     "perplexity",
+     "person",
+     "person-add",
+     "person-arms-up",
+     "person-badge",
+     "person-badge-fill",
+     "person-bounding-box",
+     "person-check",
+     "person-check-fill",
+     "person-circle",
+     "person-dash",
+     "person-dash-fill",
+     "person-down",
+     "person-exclamation",
+     "person-fill",
+     "person-fill-add",
+     "person-fill-check",
+     "person-fill-dash",
+     "person-fill-down",
+     "person-fill-exclamation",
+     "person-fill-gear",
+     "person-fill-lock",
+     "person-fill-slash",
+     "person-fill-up",
+     "person-fill-x",
+     "person-gear",
+     "person-heart",
+     "person-hearts",
+     "person-lines-fill",
+     "person-lock",
+     "person-plus",
+     "person-plus-fill",
+     "person-raised-hand",
+     "person-rolodex",
+     "person-slash",
+     "person-square",
+     "person-standing",
+     "person-standing-dress",
+     "person-up",
+     "person-vcard",
+     "person-vcard-fill",
+     "person-video",
+     "person-video2",
+     "person-video3",
+     "person-walking",
+     "person-wheelchair",
+     "person-workspace",
+     "person-x",
+     "person-x-fill",
+     "phone",
+     "phone-fill",
+     "phone-flip",
+     "phone-landscape",
+     "phone-landscape-fill",
+     "phone-vibrate",
+     "phone-vibrate-fill",
+     "pie-chart",
+     "pie-chart-fill",
+     "piggy-bank",
+     "piggy-bank-fill",
+     "pin",
+     "pin-angle",
+     "pin-angle-fill",
+     "pin-fill",
+     "pin-map",
+     "pin-map-fill",
+     "pinterest",
+     "pip",
+     "pip-fill",
+     "play",
+     "play-btn",
+     "play-btn-fill",
+     "play-circle",
+     "play-circle-fill",
+     "play-fill",
+     "playstation",
+     "plug",
+     "plug-fill",
+     "plugin",
+     "plus",
+     "plus-circle",
+     "plus-circle-dotted",
+     "plus-circle-fill",
+     "plus-lg",
+     "plus-slash-minus",
+     "plus-square",
+     "plus-square-dotted",
+     "plus-square-fill",
+     "postage",
+     "postage-fill",
+     "postage-heart",
+     "postage-heart-fill",
+     "postcard",
+     "postcard-fill",
+     "postcard-heart",
+     "postcard-heart-fill",
+     "power",
+     "prescription",
+     "prescription2",
+     "printer",
+     "printer-fill",
+     "projector",
+     "projector-fill",
+     "puzzle",
+     "puzzle-fill",
+     "qr-code",
+     "qr-code-scan",
+     "question",
+     "question-circle",
+     "question-circle-fill",
+     "question-diamond",
+     "question-diamond-fill",
+     "question-lg",
+     "question-octagon",
+     "question-octagon-fill",
+     "question-square",
+     "question-square-fill",
+     "quora",
+     "quote",
+     "r-circle",
+     "r-circle-fill",
+     "r-square",
+     "r-square-fill",
+     "radar",
+     "radioactive",
+     "rainbow",
+     "receipt",
+     "receipt-cutoff",
+     "reception-0",
+     "reception-1",
+     "reception-2",
+     "reception-3",
+     "reception-4",
+     "record",
+     "record-btn",
+     "record-btn-fill",
+     "record-circle",
+     "record-circle-fill",
+     "record-fill",
+     "record2",
+     "record2-fill",
+     "recycle",
+     "reddit",
+     "regex",
+     "repeat",
+     "repeat-1",
+     "reply",
+     "reply-all",
+     "reply-all-fill",
+     "reply-fill",
+     "rewind",
+     "rewind-btn",
+     "rewind-btn-fill",
+     "rewind-circle",
+     "rewind-circle-fill",
+     "rewind-fill",
+     "robot",
+     "rocket",
+     "rocket-fill",
+     "rocket-takeoff",
+     "rocket-takeoff-fill",
+     "router",
+     "router-fill",
+     "rss",
+     "rss-fill",
+     "rulers",
+     "safe",
+     "safe-fill",
+     "safe2",
+     "safe2-fill",
+     "save",
+     "save-fill",
+     "save2",
+     "save2-fill",
+     "scissors",
+     "scooter",
+     "screwdriver",
+     "sd-card",
+     "sd-card-fill",
+     "search",
+     "search-heart",
+     "search-heart-fill",
+     "segmented-nav",
+     "send",
+     "send-arrow-down",
+     "send-arrow-down-fill",
+     "send-arrow-up",
+     "send-arrow-up-fill",
+     "send-check",
+     "send-check-fill",
+     "send-dash",
+     "send-dash-fill",
+     "send-exclamation",
+     "send-exclamation-fill",
+     "send-fill",
+     "send-plus",
+     "send-plus-fill",
+     "send-slash",
+     "send-slash-fill",
+     "send-x",
+     "send-x-fill",
+     "server",
+     "shadows",
+     "share",
+     "share-fill",
+     "shield",
+     "shield-check",
+     "shield-exclamation",
+     "shield-fill",
+     "shield-fill-check",
+     "shield-fill-exclamation",
+     "shield-fill-minus",
+     "shield-fill-plus",
+     "shield-fill-x",
+     "shield-lock",
+     "shield-lock-fill",
+     "shield-minus",
+     "shield-plus",
+     "shield-shaded",
+     "shield-slash",
+     "shield-slash-fill",
+     "shield-x",
+     "shift",
+     "shift-fill",
+     "shop",
+     "shop-window",
+     "shuffle",
+     "sign-dead-end",
+     "sign-dead-end-fill",
+     "sign-do-not-enter",
+     "sign-do-not-enter-fill",
+     "sign-intersection",
+     "sign-intersection-fill",
+     "sign-intersection-side",
+     "sign-intersection-side-fill",
+     "sign-intersection-t",
+     "sign-intersection-t-fill",
+     "sign-intersection-y",
+     "sign-intersection-y-fill",
+     "sign-merge-left",
+     "sign-merge-left-fill",
+     "sign-merge-right",
+     "sign-merge-right-fill",
+     "sign-no-left-turn",
+     "sign-no-left-turn-fill",
+     "sign-no-parking",
+     "sign-no-parking-fill",
+     "sign-no-right-turn",
+     "sign-no-right-turn-fill",
+     "sign-railroad",
+     "sign-railroad-fill",
+     "sign-stop",
+     "sign-stop-fill",
+     "sign-stop-lights",
+     "sign-stop-lights-fill",
+     "sign-turn-left",
+     "sign-turn-left-fill",
+     "sign-turn-right",
+     "sign-turn-right-fill",
+     "sign-turn-slight-left",
+     "sign-turn-slight-left-fill",
+     "sign-turn-slight-right",
+     "sign-turn-slight-right-fill",
+     "sign-yield",
+     "sign-yield-fill",
+     "signal",
+     "signpost",
+     "signpost-2",
+     "signpost-2-fill",
+     "signpost-fill",
+     "signpost-split",
+     "signpost-split-fill",
+     "sim",
+     "sim-fill",
+     "sim-slash",
+     "sim-slash-fill",
+     "sina-weibo",
+     "skip-backward",
+     "skip-backward-btn",
+     "skip-backward-btn-fill",
+     "skip-backward-circle",
+     "skip-backward-circle-fill",
+     "skip-backward-fill",
+     "skip-end",
+     "skip-end-btn",
+     "skip-end-btn-fill",
+     "skip-end-circle",
+     "skip-end-circle-fill",
+     "skip-end-fill",
+     "skip-forward",
+     "skip-forward-btn",
+     "skip-forward-btn-fill",
+     "skip-forward-circle",
+     "skip-forward-circle-fill",
+     "skip-forward-fill",
+     "skip-start",
+     "skip-start-btn",
+     "skip-start-btn-fill",
+     "skip-start-circle",
+     "skip-start-circle-fill",
+     "skip-start-fill",
+     "skype",
+     "slack",
+     "slash",
+     "slash-circle",
+     "slash-circle-fill",
+     "slash-lg",
+     "slash-square",
+     "slash-square-fill",
+     "sliders",
+     "sliders2",
+     "sliders2-vertical",
+     "smartwatch",
+     "snapchat",
+     "snow",
+     "snow2",
+     "snow3",
+     "sort-alpha-down",
+     "sort-alpha-down-alt",
+     "sort-alpha-up",
+     "sort-alpha-up-alt",
+     "sort-down",
+     "sort-down-alt",
+     "sort-numeric-down",
+     "sort-numeric-down-alt",
+     "sort-numeric-up",
+     "sort-numeric-up-alt",
+     "sort-up",
+     "sort-up-alt",
+     "soundwave",
+     "sourceforge",
+     "speaker",
+     "speaker-fill",
+     "speedometer",
+     "speedometer2",
+     "spellcheck",
+     "spotify",
+     "square",
+     "square-fill",
+     "square-half",
+     "stack",
+     "stack-overflow",
+     "star",
+     "star-fill",
+     "star-half",
+     "stars",
+     "steam",
+     "stickies",
+     "stickies-fill",
+     "sticky",
+     "sticky-fill",
+     "stop",
+     "stop-btn",
+     "stop-btn-fill",
+     "stop-circle",
+     "stop-circle-fill",
+     "stop-fill",
+     "stoplights",
+     "stoplights-fill",
+     "stopwatch",
+     "stopwatch-fill",
+     "strava",
+     "stripe",
+     "subscript",
+     "substack",
+     "subtract",
+     "suit-club",
+     "suit-club-fill",
+     "suit-diamond",
+     "suit-diamond-fill",
+     "suit-heart",
+     "suit-heart-fill",
+     "suit-spade",
+     "suit-spade-fill",
+     "suitcase",
+     "suitcase-fill",
+     "suitcase-lg",
+     "suitcase-lg-fill",
+     "suitcase2",
+     "suitcase2-fill",
+     "sun",
+     "sun-fill",
+     "sunglasses",
+     "sunrise",
+     "sunrise-fill",
+     "sunset",
+     "sunset-fill",
+     "superscript",
+     "symmetry-horizontal",
+     "symmetry-vertical",
+     "table",
+     "tablet",
+     "tablet-fill",
+     "tablet-landscape",
+     "tablet-landscape-fill",
+     "tag",
+     "tag-fill",
+     "tags",
+     "tags-fill",
+     "taxi-front",
+     "taxi-front-fill",
+     "telegram",
+     "telephone",
+     "telephone-fill",
+     "telephone-forward",
+     "telephone-forward-fill",
+     "telephone-inbound",
+     "telephone-inbound-fill",
+     "telephone-minus",
+     "telephone-minus-fill",
+     "telephone-outbound",
+     "telephone-outbound-fill",
+     "telephone-plus",
+     "telephone-plus-fill",
+     "telephone-x",
+     "telephone-x-fill",
+     "tencent-qq",
+     "terminal",
+     "terminal-dash",
+     "terminal-fill",
+     "terminal-plus",
+     "terminal-split",
+     "terminal-x",
+     "text-center",
+     "text-indent-left",
+     "text-indent-right",
+     "text-left",
+     "text-paragraph",
+     "text-right",
+     "text-wrap",
+     "textarea",
+     "textarea-resize",
+     "textarea-t",
+     "thermometer",
+     "thermometer-half",
+     "thermometer-high",
+     "thermometer-low",
+     "thermometer-snow",
+     "thermometer-sun",
+     "threads",
+     "threads-fill",
+     "three-dots",
+     "three-dots-vertical",
+     "thunderbolt",
+     "thunderbolt-fill",
+     "ticket",
+     "ticket-detailed",
+     "ticket-detailed-fill",
+     "ticket-fill",
+     "ticket-perforated",
+     "ticket-perforated-fill",
+     "tiktok",
+     "toggle-off",
+     "toggle-on",
+     "toggle2-off",
+     "toggle2-on",
+     "toggles",
+     "toggles2",
+     "tools",
+     "tornado",
+     "train-freight-front",
+     "train-freight-front-fill",
+     "train-front",
+     "train-front-fill",
+     "train-lightrail-front",
+     "train-lightrail-front-fill",
+     "translate",
+     "transparency",
+     "trash",
+     "trash-fill",
+     "trash2",
+     "trash2-fill",
+     "trash3",
+     "trash3-fill",
+     "tree",
+     "tree-fill",
+     "trello",
+     "triangle",
+     "triangle-fill",
+     "triangle-half",
+     "trophy",
+     "trophy-fill",
+     "tropical-storm",
+     "truck",
+     "truck-flatbed",
+     "truck-front",
+     "truck-front-fill",
+     "tsunami",
+     "tux",
+     "tv",
+     "tv-fill",
+     "twitch",
+     "twitter",
+     "twitter-x",
+     "type",
+     "type-bold",
+     "type-h1",
+     "type-h2",
+     "type-h3",
+     "type-h4",
+     "type-h5",
+     "type-h6",
+     "type-italic",
+     "type-strikethrough",
+     "type-underline",
+     "typescript",
+     "ubuntu",
+     "ui-checks",
+     "ui-checks-grid",
+     "ui-radios",
+     "ui-radios-grid",
+     "umbrella",
+     "umbrella-fill",
+     "unindent",
+     "union",
+     "unity",
+     "universal-access",
+     "universal-access-circle",
+     "unlock",
+     "unlock-fill",
+     "unlock2",
+     "unlock2-fill",
+     "upc",
+     "upc-scan",
+     "upload",
+     "usb",
+     "usb-c",
+     "usb-c-fill",
+     "usb-drive",
+     "usb-drive-fill",
+     "usb-fill",
+     "usb-micro",
+     "usb-micro-fill",
+     "usb-mini",
+     "usb-mini-fill",
+     "usb-plug",
+     "usb-plug-fill",
+     "usb-symbol",
+     "valentine",
+     "valentine2",
+     "vector-pen",
+     "view-list",
+     "view-stacked",
+     "vignette",
+     "vimeo",
+     "vinyl",
+     "vinyl-fill",
+     "virus",
+     "virus2",
+     "voicemail",
+     "volume-down",
+     "volume-down-fill",
+     "volume-mute",
+     "volume-mute-fill",
+     "volume-off",
+     "volume-off-fill",
+     "volume-up",
+     "volume-up-fill",
+     "vr",
+     "wallet",
+     "wallet-fill",
+     "wallet2",
+     "watch",
+     "water",
+     "webcam",
+     "webcam-fill",
+     "wechat",
+     "whatsapp",
+     "wifi",
+     "wifi-1",
+     "wifi-2",
+     "wifi-off",
+     "wikipedia",
+     "wind",
+     "window",
+     "window-dash",
+     "window-desktop",
+     "window-dock",
+     "window-fullscreen",
+     "window-plus",
+     "window-sidebar",
+     "window-split",
+     "window-stack",
+     "window-x",
+     "windows",
+     "wordpress",
+     "wrench",
+     "wrench-adjustable",
+     "wrench-adjustable-circle",
+     "wrench-adjustable-circle-fill",
+     "x",
+     "x-circle",
+     "x-circle-fill",
+     "x-diamond",
+     "x-diamond-fill",
+     "x-lg",
+     "x-octagon",
+     "x-octagon-fill",
+     "x-square",
+     "x-square-fill",
+     "xbox",
+     "yelp",
+     "yin-yang",
+     "youtube",
+     "zoom-in",
+     "zoom-out"
+    ],
+    "required": false
+   },
+   "icon_size": {
+    "type": [
+     "string",
+     "number"
+    ],
+    "enum": [
+     "fs-6",
+     "fs-5",
+     "fs-4",
+     "fs-3",
+     "fs-2",
+     "fs-1"
+    ],
+    "required": false
+   },
+   "color": {
+    "type": "string",
+    "enum": [
+     "text-body",
+     "text-primary",
+     "text-secondary",
+     "text-success",
+     "text-danger",
+     "text-warning",
+     "text-info",
+     "text-light",
+     "text-dark",
+     "text-muted",
+     "text-white"
+    ],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.row": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.row",
+  "label": "Row",
+  "props": {
+   "background_color": {
+    "type": "string",
+    "enum": [
+     "none",
+     "bg-light",
+     "bg-body",
+     "bg-body-secondary",
+     "bg-body-tertiary",
+     "bg-primary",
+     "bg-secondary",
+     "bg-success",
+     "bg-danger",
+     "bg-warning",
+     "bg-info",
+     "bg-dark"
+    ],
+    "required": false
+   },
+   "bg_edge2edge": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "background_image": {
+    "type": "object",
+    "enum": [],
+    "required": false
+   },
+   "overlay_color": {
+    "type": "string",
+    "enum": [
+     "none",
+     "dark",
+     "light"
+    ],
+    "required": false
+   },
+   "overlay_opacity": {
+    "type": "integer",
+    "enum": [
+     0,
+     25,
+     50,
+     75,
+     100
+    ],
+    "required": false
+   },
+   "container_type": {
+    "type": "string",
+    "enum": [
+     "none",
+     "container",
+     "container-fluid"
+    ],
+    "required": false
+   },
+   "gutter": {
+    "type": "string",
+    "enum": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "required": false
+   },
+   "columns_mobile": {
+    "type": "string",
+    "enum": [
+     "none",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6"
+    ],
+    "required": false
+   },
+   "columns_desktop": {
+    "type": "string",
+    "enum": [
+     "none",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6"
+    ],
+    "required": false
+   },
+   "align_items": {
+    "type": "string",
+    "enum": [
+     "none",
+     "align-items-start",
+     "align-items-center",
+     "align-items-end",
+     "align-items-stretch"
+    ],
+    "required": false
+   },
+   "justify_content": {
+    "type": "string",
+    "enum": [
+     "none",
+     "justify-content-start",
+     "justify-content-center",
+     "justify-content-end",
+     "justify-content-between",
+     "justify-content-around",
+     "justify-content-evenly"
+    ],
+    "required": false
+   },
+   "padding_block_start": {
+    "type": "string",
+    "enum": [
+     "pt-0",
+     "pt-1",
+     "pt-2",
+     "pt-3",
+     "pt-4",
+     "pt-5"
+    ],
+    "required": false
+   },
+   "padding_block_end": {
+    "type": "string",
+    "enum": [
+     "pb-0",
+     "pb-1",
+     "pb-2",
+     "pb-3",
+     "pb-4",
+     "pb-5"
+    ],
+    "required": false
+   },
+   "margin_block_start": {
+    "type": "string",
+    "enum": [
+     "mt-0",
+     "mt-1",
+     "mt-2",
+     "mt-3",
+     "mt-4",
+     "mt-5"
+    ],
+    "required": false
+   },
+   "margin_block_end": {
+    "type": "string",
+    "enum": [
+     "mb-0",
+     "mb-1",
+     "mb-2",
+     "mb-3",
+     "mb-4",
+     "mb-5"
+    ],
+    "required": false
+   }
+  },
+  "slots": [
+   "content"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.input": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.input",
+  "label": "Input",
+  "props": {
+   "type": {
+    "type": "string",
+    "enum": [
+     "button",
+     "checkbox",
+     "color",
+     "date",
+     "datetime-local",
+     "email",
+     "file",
+     "hidden",
+     "image",
+     "month",
+     "number",
+     "password",
+     "radio",
+     "range",
+     "reset",
+     "search",
+     "submit",
+     "tel",
+     "text",
+     "time",
+     "url",
+     "week"
+    ],
+    "required": false
+   },
+   "value": {
+    "type": [
+     "string",
+     "null"
+    ],
+    "enum": [],
+    "required": false
+   },
+   "bs_form_control": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "bs_size": {
+    "type": "string",
+    "enum": [
+     "",
+     "form-control-sm",
+     "form-control-lg"
+    ],
+    "required": false
+   },
+   "placeholder": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "input_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "children": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.radios": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.radios",
+  "label": "Radios",
+  "props": {
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.group": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.group",
+  "label": "Group",
+  "props": {
+   "background_color": {
+    "type": "string",
+    "enum": [
+     "none",
+     "bg-primary",
+     "bg-primary-subtle",
+     "bg-secondary",
+     "bg-secondary-subtle",
+     "bg-success",
+     "bg-success-subtle",
+     "bg-danger",
+     "bg-danger-subtle",
+     "bg-warning",
+     "bg-warning-subtle",
+     "bg-info",
+     "bg-info-subtle",
+     "bg-light",
+     "bg-light-subtle",
+     "bg-dark",
+     "bg-dark-subtle",
+     "bg-body",
+     "bg-body-secondary",
+     "bg-body-tertiary",
+     "bg-black",
+     "bg-white",
+     "bg-transparent",
+     "bg-tertiary",
+     "bg-accent"
+    ],
+    "required": false
+   },
+   "direction": {
+    "type": "string",
+    "enum": [
+     "vertical",
+     "horizontal"
+    ],
+    "required": false
+   },
+   "gap": {
+    "type": "string",
+    "enum": [
+     "gap-0",
+     "gap-1",
+     "gap-2",
+     "gap-3",
+     "gap-4",
+     "gap-5"
+    ],
+    "required": false
+   },
+   "wrap": {
+    "type": "string",
+    "enum": [
+     "wrap",
+     "nowrap",
+     "wrap-reverse"
+    ],
+    "required": false
+   },
+   "align_items": {
+    "type": "string",
+    "enum": [
+     "align-items-start",
+     "align-items-center",
+     "align-items-end",
+     "align-items-stretch",
+     "align-items-baseline"
+    ],
+    "required": false
+   },
+   "justify_content": {
+    "type": "string",
+    "enum": [
+     "justify-content-start",
+     "justify-content-center",
+     "justify-content-end",
+     "justify-content-between",
+     "justify-content-around",
+     "justify-content-evenly"
+    ],
+    "required": false
+   },
+   "padding_block_start": {
+    "type": "string",
+    "enum": [
+     "pt-0",
+     "pt-1",
+     "pt-2",
+     "pt-3",
+     "pt-4",
+     "pt-5"
+    ],
+    "required": false
+   },
+   "padding_block_end": {
+    "type": "string",
+    "enum": [
+     "pb-0",
+     "pb-1",
+     "pb-2",
+     "pb-3",
+     "pb-4",
+     "pb-5"
+    ],
+    "required": false
+   },
+   "padding_inline_start": {
+    "type": "string",
+    "enum": [
+     "ps-0",
+     "ps-1",
+     "ps-2",
+     "ps-3",
+     "ps-4",
+     "ps-5"
+    ],
+    "required": false
+   },
+   "padding_inline_end": {
+    "type": "string",
+    "enum": [
+     "pe-0",
+     "pe-1",
+     "pe-2",
+     "pe-3",
+     "pe-4",
+     "pe-5"
+    ],
+    "required": false
+   },
+   "margin_block_start": {
+    "type": "string",
+    "enum": [
+     "mt-0",
+     "mt-1",
+     "mt-2",
+     "mt-3",
+     "mt-4",
+     "mt-5"
+    ],
+    "required": false
+   },
+   "margin_block_end": {
+    "type": "string",
+    "enum": [
+     "mb-0",
+     "mb-1",
+     "mb-2",
+     "mb-3",
+     "mb-4",
+     "mb-5"
+    ],
+    "required": false
+   },
+   "margin_inline_start": {
+    "type": "string",
+    "enum": [
+     "ms-0",
+     "ms-1",
+     "ms-2",
+     "ms-3",
+     "ms-4",
+     "ms-5"
+    ],
+    "required": false
+   },
+   "margin_inline_end": {
+    "type": "string",
+    "enum": [
+     "me-0",
+     "me-1",
+     "me-2",
+     "me-3",
+     "me-4",
+     "me-5"
+    ],
+    "required": false
+   },
+   "radius": {
+    "type": "string",
+    "enum": [
+     "none",
+     "rounded",
+     "rounded-0",
+     "rounded-1",
+     "rounded-2",
+     "rounded-3",
+     "rounded-4",
+     "rounded-pill"
+    ],
+    "required": false
+   },
+   "border": {
+    "type": "string",
+    "enum": [
+     "none",
+     "border",
+     "border-top",
+     "border-bottom",
+     "border-start",
+     "border-end"
+    ],
+    "required": false
+   },
+   "border_color": {
+    "type": "string",
+    "enum": [
+     "none",
+     "border-primary",
+     "border-primary-subtle",
+     "border-secondary",
+     "border-secondary-subtle",
+     "border-success",
+     "border-success-subtle",
+     "border-danger",
+     "border-danger-subtle",
+     "border-warning",
+     "border-warning-subtle",
+     "border-info",
+     "border-info-subtle",
+     "border-light",
+     "border-dark",
+     "border-dark-subtle",
+     "border-black",
+     "border-white"
+    ],
+    "required": false
+   },
+   "border_width": {
+    "type": "string",
+    "enum": [
+     "none",
+     "border-1",
+     "border-2",
+     "border-3",
+     "border-4",
+     "border-5"
+    ],
+    "required": false
+   },
+   "aos_animation": {
+    "type": "string",
+    "enum": [
+     "none",
+     "fade",
+     "fade-up",
+     "fade-down",
+     "fade-left",
+     "fade-right",
+     "fade-up-right",
+     "fade-up-left",
+     "fade-down-right",
+     "fade-down-left",
+     "flip-up",
+     "flip-down",
+     "flip-left",
+     "flip-right",
+     "slide-up",
+     "slide-down",
+     "slide-left",
+     "slide-right",
+     "zoom-in",
+     "zoom-in-up",
+     "zoom-in-down",
+     "zoom-in-left",
+     "zoom-in-right",
+     "zoom-out",
+     "zoom-out-up",
+     "zoom-out-down",
+     "zoom-out-left",
+     "zoom-out-right"
+    ],
+    "required": false
+   },
+   "aos_duration": {
+    "type": "string",
+    "enum": [
+     "default",
+     "400",
+     "600",
+     "800",
+     "1000",
+     "1200",
+     "1500",
+     "2000"
+    ],
+    "required": false
+   },
+   "aos_delay": {
+    "type": "string",
+    "enum": [
+     "0",
+     "100",
+     "200",
+     "300",
+     "400",
+     "500",
+     "600"
+    ],
+    "required": false
+   },
+   "aos_once": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [
+   "content"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.input-submit": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.input-submit",
+  "label": "Input Submit",
+  "props": {
+   "input_submit_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "children": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.badge": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.badge",
+  "label": "Badge",
+  "props": {
+   "label": {
+    "type": "string",
+    "enum": [],
+    "required": true
+   },
+   "url": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "variant": {
+    "type": "string",
+    "enum": [
+     "text-bg-primary",
+     "text-bg-secondary",
+     "text-bg-success",
+     "text-bg-danger",
+     "text-bg-warning",
+     "text-bg-info",
+     "text-bg-light",
+     "text-bg-dark"
+    ],
+    "required": true
+   },
+   "size": {
+    "type": "string",
+    "enum": [
+     "fs-6 px-2 py-1",
+     "fs-6 px-3 py-2",
+     "fs-5 px-3 py-2"
+    ],
+    "required": false
+   },
+   "icon": {
+    "type": "string",
+    "enum": [
+     "none",
+     "facebook",
+     "twitter-x",
+     "instagram",
+     "linkedin",
+     "x",
+     "plus",
+     "exclamation",
+     "check",
+     "dash",
+     "question",
+     "info",
+     "search",
+     "person",
+     "people",
+     "person-plus",
+     "person-check",
+     "chevron-up",
+     "chevron-down",
+     "chevron-left",
+     "chevron-right",
+     "chevron-double-up",
+     "chevron-double-down",
+     "chevron-double-left",
+     "chevron-double-right",
+     "arrow-up",
+     "arrow-down",
+     "arrow-left",
+     "arrow-right",
+     "arrow-up-right",
+     "arrow-up-left",
+     "arrow-down-right",
+     "arrow-down-left",
+     "arrow-repeat",
+     "arrows-angle-expand",
+     "arrows-angle-contract",
+     "play",
+     "pause",
+     "skip-backward",
+     "skip-forward",
+     "circle",
+     "circle-fill",
+     "record-circle"
+    ],
+    "required": false
+   },
+   "icon_first": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "radius": {
+    "type": "string",
+    "enum": [
+     "rounded-1",
+     "rounded-pill"
+    ],
+    "required": false
+   },
+   "indicator": {
+    "type": "string",
+    "enum": [
+     "none",
+     "dot",
+     "count"
+    ],
+    "required": false
+   },
+   "indicator_text": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.container": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.container",
+  "label": "Container",
+  "props": {
+   "container_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "children": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.input-radio": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.input-radio",
+  "label": "Input radio",
+  "props": {
+   "input_radio_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "size": {
+    "type": "string",
+    "enum": [
+     "",
+     "form-control-sm",
+     "form-control-lg"
+    ],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.list": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.list",
+  "label": "List",
+  "props": {
+   "items": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "type": {
+    "type": "string",
+    "enum": [
+     "ul",
+     "ol"
+    ],
+    "required": false
+   },
+   "list_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "list_item_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.taxonomy": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.taxonomy",
+  "label": "Taxonomy",
+  "props": {
+   "label": {
+    "type": "string",
+    "enum": [],
+    "required": true
+   },
+   "url": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "target": {
+    "type": "string",
+    "enum": [
+     "_self",
+     "_blank"
+    ],
+    "required": false
+   },
+   "size": {
+    "type": "string",
+    "enum": [
+     "taxonomy-lg",
+     "taxonomy-sm"
+    ],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.section": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.section",
+  "label": "Section",
+  "props": {
+   "bg_edge2edge": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "container_type": {
+    "type": "string",
+    "enum": [
+     "container",
+     "container-fluid",
+     "none"
+    ],
+    "required": false
+   },
+   "background_color": {
+    "type": "string",
+    "enum": [
+     "none",
+     "bg-body",
+     "bg-body-secondary",
+     "bg-body-tertiary",
+     "bg-tertiary",
+     "bg-accent",
+     "bg-primary",
+     "bg-primary-subtle",
+     "bg-secondary",
+     "bg-secondary-subtle",
+     "bg-success",
+     "bg-success-subtle",
+     "bg-danger",
+     "bg-danger-subtle",
+     "bg-warning",
+     "bg-warning-subtle",
+     "bg-info",
+     "bg-info-subtle",
+     "bg-light",
+     "bg-light-subtle",
+     "bg-dark",
+     "bg-dark-subtle",
+     "bg-black",
+     "bg-white",
+     "bg-transparent"
+    ],
+    "required": false
+   },
+   "text_color": {
+    "type": "string",
+    "enum": [
+     "auto",
+     "text-body",
+     "text-dark",
+     "text-white",
+     "text-muted"
+    ],
+    "required": false
+   },
+   "background_media": {
+    "type": "object",
+    "enum": [],
+    "required": false
+   },
+   "background_overlay": {
+    "type": "string",
+    "enum": [
+     "none",
+     "overlay-10",
+     "overlay-25",
+     "overlay-50",
+     "overlay-75"
+    ],
+    "required": false
+   },
+   "columns": {
+    "type": [
+     "string",
+     "number"
+    ],
+    "enum": [
+     "100",
+     "50-50",
+     "33-33-33",
+     "75-25",
+     "25-75",
+     "67-33",
+     "33-67",
+     "50-25-25",
+     "25-25-50",
+     "25-25-25-25",
+     "20-20-20-20-20",
+     "16-16-16-16-16-16"
+    ],
+    "required": false
+   },
+   "gutter": {
+    "type": "string",
+    "enum": [
+     "gx-0 gy-0",
+     "gx-1 gy-1",
+     "gx-2 gy-2",
+     "gx-3 gy-3",
+     "gx-4 gy-4",
+     "gx-5 gy-5"
+    ],
+    "required": false
+   },
+   "padding_block_start": {
+    "type": "string",
+    "enum": [
+     "pt-0",
+     "pt-1",
+     "pt-2",
+     "pt-3",
+     "pt-4",
+     "pt-5"
+    ],
+    "required": false
+   },
+   "padding_block_end": {
+    "type": "string",
+    "enum": [
+     "pb-0",
+     "pb-1",
+     "pb-2",
+     "pb-3",
+     "pb-4",
+     "pb-5"
+    ],
+    "required": false
+   },
+   "padding_inline_start": {
+    "type": "string",
+    "enum": [
+     "ps-0",
+     "ps-1",
+     "ps-2",
+     "ps-3",
+     "ps-4",
+     "ps-5"
+    ],
+    "required": false
+   },
+   "padding_inline_end": {
+    "type": "string",
+    "enum": [
+     "pe-0",
+     "pe-1",
+     "pe-2",
+     "pe-3",
+     "pe-4",
+     "pe-5"
+    ],
+    "required": false
+   },
+   "margin_block_start": {
+    "type": "string",
+    "enum": [
+     "mt-0",
+     "mt-1",
+     "mt-2",
+     "mt-3",
+     "mt-4",
+     "mt-5"
+    ],
+    "required": false
+   },
+   "margin_block_end": {
+    "type": "string",
+    "enum": [
+     "mb-0",
+     "mb-1",
+     "mb-2",
+     "mb-3",
+     "mb-4",
+     "mb-5"
+    ],
+    "required": false
+   },
+   "margin_inline_start": {
+    "type": "string",
+    "enum": [
+     "ms-0",
+     "ms-1",
+     "ms-2",
+     "ms-3",
+     "ms-4",
+     "ms-5"
+    ],
+    "required": false
+   },
+   "margin_inline_end": {
+    "type": "string",
+    "enum": [
+     "me-0",
+     "me-1",
+     "me-2",
+     "me-3",
+     "me-4",
+     "me-5"
+    ],
+    "required": false
+   },
+   "shadow": {
+    "type": "string",
+    "enum": [
+     "none",
+     "shadow-sm",
+     "shadow",
+     "shadow-lg"
+    ],
+    "required": false
+   },
+   "radius": {
+    "type": "string",
+    "enum": [
+     "none",
+     "rounded",
+     "rounded-0",
+     "rounded-1",
+     "rounded-2",
+     "rounded-3",
+     "rounded-4",
+     "rounded-pill"
+    ],
+    "required": false
+   },
+   "border": {
+    "type": "string",
+    "enum": [
+     "none",
+     "border",
+     "border-top",
+     "border-bottom",
+     "border-start",
+     "border-end"
+    ],
+    "required": false
+   },
+   "border_color": {
+    "type": "string",
+    "enum": [
+     "none",
+     "border-primary",
+     "border-primary-subtle",
+     "border-secondary",
+     "border-secondary-subtle",
+     "border-success",
+     "border-success-subtle",
+     "border-danger",
+     "border-danger-subtle",
+     "border-warning",
+     "border-warning-subtle",
+     "border-info",
+     "border-info-subtle",
+     "border-light",
+     "border-dark",
+     "border-dark-subtle",
+     "border-black",
+     "border-white"
+    ],
+    "required": false
+   },
+   "border_width": {
+    "type": "string",
+    "enum": [
+     "none",
+     "border-1",
+     "border-2",
+     "border-3",
+     "border-4",
+     "border-5"
+    ],
+    "required": false
+   },
+   "vertical_alignment": {
+    "type": "string",
+    "enum": [
+     "align-items-start",
+     "align-items-center",
+     "align-items-end",
+     "align-items-stretch"
+    ],
+    "required": false
+   },
+   "horizontal_alignment": {
+    "type": "string",
+    "enum": [
+     "text-start",
+     "text-center",
+     "text-end"
+    ],
+    "required": false
+   },
+   "section_header": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "section_footer": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "aos_animation": {
+    "type": "string",
+    "enum": [
+     "none",
+     "fade",
+     "fade-up",
+     "fade-down",
+     "fade-left",
+     "fade-right",
+     "fade-up-right",
+     "fade-up-left",
+     "fade-down-right",
+     "fade-down-left",
+     "flip-up",
+     "flip-down",
+     "flip-left",
+     "flip-right",
+     "slide-up",
+     "slide-down",
+     "slide-left",
+     "slide-right",
+     "zoom-in",
+     "zoom-in-up",
+     "zoom-in-down",
+     "zoom-in-left",
+     "zoom-in-right",
+     "zoom-out",
+     "zoom-out-up",
+     "zoom-out-down",
+     "zoom-out-left",
+     "zoom-out-right"
+    ],
+    "required": false
+   },
+   "aos_duration": {
+    "type": "string",
+    "enum": [
+     "default",
+     "400",
+     "600",
+     "800",
+     "1000",
+     "1200",
+     "1500",
+     "2000"
+    ],
+    "required": false
+   },
+   "aos_delay": {
+    "type": "string",
+    "enum": [
+     "0",
+     "100",
+     "200",
+     "300",
+     "400",
+     "500",
+     "600"
+    ],
+    "required": false
+   },
+   "aos_once": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [
+   "header_slot",
+   "col_1",
+   "col_2",
+   "col_3",
+   "col_4",
+   "col_5",
+   "col_6",
+   "footer_slot"
+  ],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.page-title": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.page-title",
+  "label": "Page title",
+  "props": {
+   "title": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "display": {
+    "type": "string",
+    "enum": [
+     "",
+     "display-1",
+     "display-2",
+     "display-3",
+     "display-4",
+     "display-5",
+     "display-6"
+    ],
+    "required": false
+   },
+   "page_title_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "title_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "title_prefix": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "title_suffix": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.date": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.date",
+  "label": "Date",
+  "props": {
+   "date": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "text_color": {
+    "type": "string",
+    "enum": [
+     "text-primary",
+     "text-secondary",
+     "text-success",
+     "text-danger",
+     "text-warning",
+     "text-info",
+     "text-muted",
+     "text-white",
+     "text-dark",
+     "text-body"
+    ],
+    "required": false
+   },
+   "size": {
+    "type": "string",
+    "enum": [
+     "fs-6",
+     "fs-5",
+     "fs-4",
+     "fs-3",
+     "fs-2",
+     "fs-1"
+    ],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.video": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.video",
+  "label": "Video",
+  "props": {
+   "video_file": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "ratio": {
+    "type": "string",
+    "enum": [
+     "16x9",
+     "4x3",
+     "1x1",
+     "21x9"
+    ],
+    "required": false
+   },
+   "loading": {
+    "type": "string",
+    "enum": [
+     "lazy",
+     "eager"
+    ],
+    "required": false
+   },
+   "extra_classes": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.field": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.field",
+  "label": "Filed",
+  "props": {
+   "label_display": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "title_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.textarea": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.textarea",
+  "label": "Textarea",
+  "props": {
+   "resizable": {
+    "type": "string",
+    "enum": [
+     "",
+     "none",
+     "vertical",
+     "horizontal",
+     "both"
+    ],
+    "required": false
+   },
+   "required": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "value": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "rows": {
+    "type": "number",
+    "enum": [],
+    "required": false
+   },
+   "cols": {
+    "type": "number",
+    "enum": [],
+    "required": false
+   },
+   "maxlength": {
+    "type": "number",
+    "enum": [],
+    "required": false
+   },
+   "placeholder": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "readonly": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "disabled": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "wrapper_html_tag": {
+    "type": "string",
+    "enum": [
+     "",
+     "div",
+     "span"
+    ],
+    "required": false
+   },
+   "wrapper_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "textarea_utility_classes": {
+    "type": "array",
+    "enum": [],
+    "required": false
+   },
+   "wrapper_attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   },
+   "attributes": {
+    "type": "Drupal\\Core\\Template\\Attribute",
+    "enum": [],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.image": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.image",
+  "label": "Image",
+  "props": {
+   "media": {
+    "type": "object",
+    "enum": [],
+    "required": false
+   },
+   "link_url": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "target": {
+    "type": "string",
+    "enum": [
+     "self",
+     "blank"
+    ],
+    "required": false
+   },
+   "ratio": {
+    "type": "string",
+    "enum": [
+     "ratio-auto",
+     "ratio-16x9",
+     "ratio-4x3",
+     "ratio-1x1",
+     "ratio-21x9"
+    ],
+    "required": false
+   },
+   "fit": {
+    "type": "string",
+    "enum": [
+     "object-fit-cover",
+     "object-fit-contain"
+    ],
+    "required": false
+   },
+   "align": {
+    "type": "string",
+    "enum": [
+     "me-auto",
+     "mx-auto",
+     "ms-auto"
+    ],
+    "required": false
+   },
+   "width": {
+    "type": "string",
+    "enum": [
+     "w-auto",
+     "w-25",
+     "w-50",
+     "w-75",
+     "w-100"
+    ],
+    "required": false
+   },
+   "rounded": {
+    "type": "string",
+    "enum": [
+     "none",
+     "rounded",
+     "rounded-0",
+     "rounded-1",
+     "rounded-2",
+     "rounded-3",
+     "rounded-4",
+     "rounded-pill"
+    ],
+    "required": false
+   },
+   "loading": {
+    "type": "string",
+    "enum": [
+     "lazy",
+     "eager"
+    ],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.button": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.button",
+  "label": "Button",
+  "props": {
+   "variant": {
+    "type": "string",
+    "enum": [
+     "btn-primary",
+     "btn-secondary",
+     "btn-success",
+     "btn-danger",
+     "btn-warning",
+     "btn-info",
+     "btn-light",
+     "btn-dark",
+     "btn-link"
+    ],
+    "required": true
+   },
+   "outline": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "size": {
+    "type": "string",
+    "enum": [
+     "btn-md",
+     "btn-sm",
+     "btn-lg"
+    ],
+    "required": true
+   },
+   "label": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "href": {
+    "type": "string",
+    "enum": [],
+    "required": false
+   },
+   "target": {
+    "type": "string",
+    "enum": [
+     "self",
+     "blank"
+    ],
+    "required": false
+   },
+   "disabled": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "icon": {
+    "type": "string",
+    "enum": [
+     "none",
+     "facebook",
+     "twitter-x",
+     "instagram",
+     "linkedin",
+     "x",
+     "plus",
+     "exclamation",
+     "check",
+     "dash",
+     "question",
+     "info",
+     "search",
+     "person",
+     "people",
+     "person-plus",
+     "person-check",
+     "chevron-up",
+     "chevron-down",
+     "chevron-left",
+     "chevron-right",
+     "chevron-double-up",
+     "chevron-double-down",
+     "chevron-double-left",
+     "chevron-double-right",
+     "arrow-up",
+     "arrow-down",
+     "arrow-left",
+     "arrow-right",
+     "arrow-up-right",
+     "arrow-up-left",
+     "arrow-down-right",
+     "arrow-down-left",
+     "arrow-repeat",
+     "arrows-angle-expand",
+     "arrows-angle-contract",
+     "play",
+     "pause",
+     "skip-backward",
+     "skip-forward",
+     "circle",
+     "circle-fill",
+     "record-circle",
+     "arrow-right-circle-fill",
+     "arrow-left-circle-fill",
+     "arrow-up-circle-fill",
+     "arrow-down-circle-fill",
+     "caret-right-fill",
+     "caret-left-fill",
+     "caret-up-fill",
+     "caret-down-fill"
+    ],
+    "required": false
+   },
+   "icon_first": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "alignment": {
+    "type": "string",
+    "enum": [
+     "inline",
+     "left",
+     "center",
+     "right"
+    ],
+    "required": false
+   },
+   "full_width": {
+    "type": "boolean",
+    "enum": [],
+    "required": false
+   },
+   "radius": {
+    "type": "string",
+    "enum": [
+     "rounded",
+     "rounded-0",
+     "rounded-1",
+     "rounded-2",
+     "rounded-3",
+     "rounded-4",
+     "rounded-pill"
+    ],
+    "required": false
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "component:sdc.vartheme_bs5.icons": {
+  "kind": "component",
+  "id": "sdc.vartheme_bs5.icons",
+  "label": "Icons",
+  "props": {
+   "icon": {
+    "type": "string",
+    "enum": [],
+    "required": true
+   },
+   "icon_size": {
+    "type": "string",
+    "enum": [
+     "extra-small",
+     "small",
+     "medium",
+     "large",
+     "extra-large"
+    ],
+    "required": true
+   }
+  },
+  "slots": [],
+  "dynamic": false,
+  "structure": {}
+ },
+ "pattern:contact_split": {
+  "kind": "pattern",
+  "id": "contact_split",
+  "label": "Contact Form with Info",
+  "props": {},
+  "slots": [],
+  "dynamic": true,
+  "structure": {
+   "total": 8,
+   "depth": 3,
+   "repeat": 2,
+   "components": {
+    "sdc.vartheme_bs5.section": 1,
+    "sdc.vartheme_bs5.heading": 2,
+    "block.webform_block": 1,
+    "sdc.vartheme_bs5.group": 1,
+    "sdc.vartheme_bs5.text": 1,
+    "sdc.vartheme_bs5.spacer": 1,
+    "sdc.vartheme_bs5.button": 1
+   }
+  }
+ },
+ "pattern:counters": {
+  "kind": "pattern",
+  "id": "counters",
+  "label": "Counters",
+  "props": {},
+  "slots": [],
+  "dynamic": false,
+  "structure": {
+   "total": 10,
+   "depth": 3,
+   "repeat": 3,
+   "components": {
+    "sdc.vartheme_bs5.section": 1,
+    "sdc.vartheme_bs5.group": 3,
+    "sdc.vartheme_bs5.heading": 3,
+    "sdc.vartheme_bs5.text": 3
+   }
+  }
+ },
+ "pattern:cta_banner": {
+  "kind": "pattern",
+  "id": "cta_banner",
+  "label": "Call to Action Banner",
+  "props": {},
+  "slots": [],
+  "dynamic": false,
+  "structure": {
+   "total": 9,
+   "depth": 3,
+   "repeat": 1,
+   "components": {
+    "sdc.vartheme_bs5.section": 1,
+    "sdc.vartheme_bs5.card-text": 1,
+    "sdc.vartheme_bs5.spacer": 4,
+    "sdc.vartheme_bs5.heading": 1,
+    "sdc.vartheme_bs5.text": 1,
+    "sdc.vartheme_bs5.button": 1
+   }
+  }
+ },
+ "pattern:cta_cards": {
+  "kind": "pattern",
+  "id": "cta_cards",
+  "label": "Call to Action Cards",
+  "props": {},
+  "slots": [],
+  "dynamic": false,
+  "structure": {
+   "total": 12,
+   "depth": 3,
+   "repeat": 3,
+   "components": {
+    "sdc.vartheme_bs5.section": 1,
+    "sdc.vartheme_bs5.heading": 3,
+    "sdc.vartheme_bs5.card-text": 2,
+    "sdc.vartheme_bs5.text": 2,
+    "sdc.vartheme_bs5.spacer": 2,
+    "sdc.vartheme_bs5.button": 2
+   }
+  }
+ },
+ "pattern:faq_accordion": {
+  "kind": "pattern",
+  "id": "faq_accordion",
+  "label": "FAQ Accordion",
+  "props": {},
+  "slots": [],
+  "dynamic": false,
+  "structure": {
+   "total": 9,
+   "depth": 3,
+   "repeat": 3,
+   "components": {
+    "sdc.vartheme_bs5.section": 1,
+    "sdc.vartheme_bs5.heading": 1,
+    "sdc.vartheme_bs5.accordion-container": 1,
+    "sdc.vartheme_bs5.accordion-block": 3,
+    "sdc.vartheme_bs5.text": 3
+   }
+  }
+ },
+ "pattern:feature_cards": {
+  "kind": "pattern",
+  "id": "feature_cards",
+  "label": "Feature Cards",
+  "props": {},
+  "slots": [],
+  "dynamic": false,
+  "structure": {
+   "total": 17,
+   "depth": 3,
+   "repeat": 4,
+   "components": {
+    "sdc.vartheme_bs5.section": 1,
+    "sdc.vartheme_bs5.heading": 4,
+    "sdc.vartheme_bs5.card-text": 3,
+    "sdc.vartheme_bs5.spacer": 6,
+    "sdc.vartheme_bs5.text": 3
+   }
+  }
+ },
+ "pattern:feature_highlight": {
+  "kind": "pattern",
+  "id": "feature_highlight",
+  "label": "Feature Highlight",
+  "props": {},
+  "slots": [],
+  "dynamic": false,
+  "structure": {
+   "total": 5,
+   "depth": 3,
+   "repeat": 1,
+   "components": {
+    "sdc.vartheme_bs5.section": 1,
+    "sdc.vartheme_bs5.card-featured": 1,
+    "sdc.vartheme_bs5.heading": 1,
+    "sdc.vartheme_bs5.spacer": 1,
+    "sdc.vartheme_bs5.text": 1
+   }
+  }
+ },
+ "pattern:footer_global": {
+  "kind": "pattern",
+  "id": "footer_global",
+  "label": "Site Footer",
+  "props": {},
+  "slots": [],
+  "dynamic": true,
+  "structure": {
+   "total": 8,
+   "depth": 3,
+   "repeat": 1,
+   "components": {
+    "sdc.vartheme_bs5.section": 2,
+    "block.system_menu_block.secondary": 1,
+    "sdc.vartheme_bs5.html-code": 2,
+    "block.system_menu_block.social-media-menu": 1,
+    "sdc.vartheme_bs5.divider": 1,
+    "block.system_menu_block.footer": 1
+   }
+  }
+ },
+ "pattern:header_global": {
+  "kind": "pattern",
+  "id": "header_global",
+  "label": "Site Header",
+  "props": {},
+  "slots": [],
+  "dynamic": true,
+  "structure": {
+   "total": 4,
+   "depth": 3,
+   "repeat": 1,
+   "components": {
+    "sdc.vartheme_bs5.section": 1,
+    "block.system_branding_block": 1,
+    "sdc.vartheme_bs5.group": 1,
+    "block.system_menu_block.main": 1
+   }
+  }
+ },
+ "pattern:hero_slider": {
+  "kind": "pattern",
+  "id": "hero_slider",
+  "label": "Hero Slider",
+  "props": {},
+  "slots": [],
+  "dynamic": false,
+  "structure": {
+   "total": 6,
+   "depth": 3,
+   "repeat": 4,
+   "components": {
+    "sdc.vartheme_bs5.section": 1,
+    "sdc.vartheme_bs5.hero-slider-container": 1,
+    "sdc.vartheme_bs5.hero-slide": 4
+   }
+  }
+ },
+ "pattern:image_cards": {
+  "kind": "pattern",
+  "id": "image_cards",
+  "label": "Image Cards",
+  "props": {},
+  "slots": [],
+  "dynamic": false,
+  "structure": {
+   "total": 22,
+   "depth": 3,
+   "repeat": 4,
+   "components": {
+    "sdc.vartheme_bs5.section": 1,
+    "sdc.vartheme_bs5.spacer": 7,
+    "sdc.vartheme_bs5.heading": 1,
+    "sdc.vartheme_bs5.card-text": 4,
+    "sdc.vartheme_bs5.image": 4,
+    "sdc.vartheme_bs5.text": 4,
+    "sdc.vartheme_bs5.button": 1
+   }
+  }
+ },
+ "pattern:latest_blog_posts": {
+  "kind": "pattern",
+  "id": "latest_blog_posts",
+  "label": "Latest Blog Posts",
+  "props": {},
+  "slots": [],
+  "dynamic": true,
+  "structure": {
+   "total": 6,
+   "depth": 3,
+   "repeat": 1,
+   "components": {
+    "sdc.vartheme_bs5.section": 1,
+    "sdc.vartheme_bs5.heading": 1,
+    "sdc.vartheme_bs5.spacer": 2,
+    "block.views_block.blog-latest": 1,
+    "sdc.vartheme_bs5.button": 1
+   }
+  }
+ },
+ "pattern:media_banner_intro": {
+  "kind": "pattern",
+  "id": "media_banner_intro",
+  "label": "Page Intro Banner",
+  "props": {},
+  "slots": [],
+  "dynamic": true,
+  "structure": {
+   "total": 6,
+   "depth": 3,
+   "repeat": 1,
+   "components": {
+    "sdc.vartheme_bs5.media-banner": 1,
+    "block.system_breadcrumb_block": 1,
+    "sdc.vartheme_bs5.spacer": 2,
+    "sdc.vartheme_bs5.heading": 1,
+    "sdc.vartheme_bs5.text": 1
+   }
+  }
+ },
+ "pattern:text_with_cards": {
+  "kind": "pattern",
+  "id": "text_with_cards",
+  "label": "Text with Cards",
+  "props": {},
+  "slots": [],
+  "dynamic": false,
+  "structure": {
+   "total": 16,
+   "depth": 3,
+   "repeat": 4,
+   "components": {
+    "sdc.vartheme_bs5.section": 1,
+    "sdc.vartheme_bs5.heading": 4,
+    "sdc.vartheme_bs5.spacer": 5,
+    "sdc.vartheme_bs5.text": 3,
+    "sdc.vartheme_bs5.button": 1,
+    "sdc.vartheme_bs5.card-text": 2
+   }
+  }
+ }
+}

@@ -1,0 +1,130 @@
+varbase_ai_figma.settings:
+  type: config_object
+  label: 'Varbase AI Figma settings'
+  mapping:
+    resolver:
+      type: mapping
+      label: 'Design resolver'
+      mapping:
+        role_hints:
+          type: sequence
+          label: 'Content roles and the real prop-name fragments that signal them'
+          sequence:
+            type: sequence
+            label: 'Name fragments'
+            sequence:
+              type: string
+              label: 'Fragment'
+        plain_text_roles:
+          type: sequence
+          label: 'Roles whose content is a short piece of text the thing itself carries'
+          sequence:
+            type: string
+            label: 'Role'
+        text_props:
+          type: sequence
+          label: 'Prop names a thing keeps its own text in, most specific first'
+          sequence:
+            type: string
+            label: 'Prop name'
+        weights:
+          type: mapping
+          label: 'How much each signal is worth, out of 100'
+          mapping:
+            role_coverage:
+              type: integer
+              label: 'Can it actually hold every role the region needs'
+            structural_fit:
+              type: integer
+              label: 'Is it the right shape: repeats, children, nesting'
+            value_fit:
+              type: integer
+              label: 'Can its props take the design values (enums, types)'
+            kind_fit:
+              type: integer
+              label: 'Section wants a pattern, listing wants a view, atom a component'
+            name_affinity:
+              type: integer
+              label: 'Does the name look like the region (weakest signal)'
+        penalties:
+          type: mapping
+          label: 'What the engine subtracts for'
+          mapping:
+            missing_required:
+              type: integer
+              label: 'It cannot hold a role the region requires'
+            dynamic_mismatch:
+              type: integer
+              label: 'Static markup offered for a live-content region'
+            subject_mismatch:
+              type: integer
+              label: 'It lists live content about something else'
+        thresholds:
+          type: mapping
+          label: 'Where the verdict lines fall'
+          mapping:
+            reuse_at:
+              type: integer
+              label: 'At or above this score, reuse it as is'
+            adapt_at:
+              type: integer
+              label: 'At or above this score, adapt it; below it, create'
+        exclude:
+          type: mapping
+          label: 'Things that are never an answer to a design'
+          mapping:
+            layout_components:
+              type: sequence
+              label: 'Components that only shape the layout'
+              sequence:
+                type: string
+                label: 'Component name'
+            components:
+              type: sequence
+              label: 'Components that are never an answer to a design (theme plumbing)'
+              sequence:
+                type: string
+                label: 'Component name'
+            view_words:
+              type: sequence
+              label: 'Whole words that mark a view as administrative or internal'
+              sequence:
+                type: string
+                label: 'Word'
+            block_prefixes:
+              type: sequence
+              label: 'Block plugin ids or prefixes that are machinery, not design'
+              sequence:
+                type: string
+                label: 'Prefix'
+            block_categories:
+              type: sequence
+              label: 'Block categories that belong to the admin UI'
+              sequence:
+                type: string
+                label: 'Category'
+            block_category_keep:
+              type: sequence
+              label: 'Kept even inside an admin category (menus, breadcrumbs, branding)'
+              sequence:
+                type: string
+                label: 'Fragment'
+    ai_context_items:
+      type: sequence
+      label: 'AI Context items this module teaches the Canvas AI agents'
+      sequence:
+        type: mapping
+        label: 'AI Context item'
+        mapping:
+          label:
+            type: label
+            label: 'Label'
+          description:
+            type: text
+            label: 'Description'
+          purpose:
+            type: text
+            label: 'Purpose'
+          content:
+            type: text
+            label: 'Content delivered to the agent'

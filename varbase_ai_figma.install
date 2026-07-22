@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Install hooks for Varbase AI Figma.
+ *
+ * Varbase AI Figma owns no engine of its own: the general ai_figma module
+ * provides the Figma client, the Canvas builder, the AI Agent tools, the admin
+ * forms and the routes. This module only *customizes* that engine for the
+ * Bootstrap 5.3 vartheme_bs5 theme. The wiring logic lives in the
+ * Drupal\varbase_ai_figma\VarbaseAiFigmaInstaller service; these hooks call it.
+ */
+
+declare(strict_types=1);
+
+/**
+ * Implements hook_install().
+ */
+function varbase_ai_figma_install(): void {
+  $installer = \Drupal::service('varbase_ai_figma.installer');
+  $installer->applyProfile();
+  $installer->bakeDemoToken();
+  $installer->seedContext();
+  $installer->setOrchestratorTools(TRUE);
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function varbase_ai_figma_uninstall(): void {
+  \Drupal::service('varbase_ai_figma.installer')->setOrchestratorTools(FALSE);
+}

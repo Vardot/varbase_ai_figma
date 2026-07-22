@@ -1,0 +1,1289 @@
+[
+ {
+  "pattern_id": "hero_slider",
+  "label": "Hero Slider",
+  "nodes": [
+   {
+    "key": "sec",
+    "component": "section",
+    "parent": null,
+    "slot": null,
+    "inputs": {
+     "bg_edge2edge": true,
+     "container_type": "none",
+     "columns": "100",
+     "section_header": false,
+     "section_footer": false,
+     "aos_once": true
+    }
+   },
+   {
+    "key": "slider",
+    "component": "hero-slider-container",
+    "parent": "sec",
+    "slot": "col_1",
+    "inputs": {
+     "bg_edge2edge": false,
+     "transition": "slide",
+     "autoplay": true,
+     "interval_ms": 5000,
+     "pause_on_hover": true,
+     "show_indicators": true,
+     "show_controls": true,
+     "slider_height": "700",
+     "controller_color": "white"
+    }
+   },
+   {
+    "key": "slide1",
+    "component": "hero-slide",
+    "parent": "slider",
+    "slot": "slides",
+    "inputs": {
+     "enabled": true,
+     "active": true,
+     "title": "Varbase, better than ever",
+     "content": "<p>Elevate your digital experience with Varbase's dynamic design system, seamlessly blending aesthetic appeal with unparalleled functionality.</p>",
+     "media_position": "inherit",
+     "title_tag": "h2",
+     "title_size": "h1",
+     "content_max_width": "normal",
+     "vertical_alignment": "center",
+     "text_align": "text-start",
+     "text_color": "text-white",
+     "overlay_bg": "bg-dark",
+     "overlay_opacity": "opacity-50",
+     "button_text": "Try Varbase for Free",
+     "button_url": "/about-varbase",
+     "button_variant": "btn-primary"
+    }
+   },
+   {
+    "key": "slide2",
+    "component": "hero-slide",
+    "parent": "slider",
+    "slot": "slides",
+    "inputs": {
+     "enabled": true,
+     "active": false,
+     "title": "Compose your site from recipes",
+     "content": "<p>Assemble your site from composable Drupal recipes, applied on their own or grouped together. Start from an enterprise-ready baseline.</p>",
+     "media_position": "inherit",
+     "title_tag": "h2",
+     "title_size": "h1",
+     "content_max_width": "normal",
+     "vertical_alignment": "center",
+     "text_align": "text-start",
+     "text_color": "text-white",
+     "overlay_bg": "bg-dark",
+     "overlay_opacity": "opacity-50",
+     "button_text": "Explore recipes",
+     "button_url": "/features",
+     "button_variant": "btn-primary"
+    }
+   },
+   {
+    "key": "slide3",
+    "component": "hero-slide",
+    "parent": "slider",
+    "slot": "slides",
+    "inputs": {
+     "enabled": true,
+     "active": false,
+     "title": "Design pages without code",
+     "content": "<p>Build and arrange pages visually with Drupal Canvas, no code required. The Bootstrap 5 based Vartheme keeps every layout responsive and on brand.</p>",
+     "media_position": "inherit",
+     "title_tag": "h2",
+     "title_size": "h1",
+     "content_max_width": "normal",
+     "vertical_alignment": "center",
+     "text_align": "text-start",
+     "text_color": "text-white",
+     "overlay_bg": "bg-dark",
+     "overlay_opacity": "opacity-50",
+     "button_text": "Contact us",
+     "button_url": "/contact-us",
+     "button_variant": "btn-primary"
+    }
+   }
+  ],
+  "notes": "Root section uses columns='100' (single full-width column) per target shape, bg_edge2edge=true for full-bleed hero, container_type='none' so the carousel spans the viewport (matches the demo 01-home.yml pattern). hero-slider-container placed in col_1 with all real props from its manifest (transition/autoplay/interval_ms/pause_on_hover/show_indicators/show_controls/slider_height enum '700'/controller_color 'white'). Three hero-slide children live in the container's 'slides' slot. hero-slide is fully prop-driven (its only slot-like content is the 'content' rich-text prop and 'media' image prop), so all copy is in inputs, not child nodes. First slide has active=true so the carousel opens on it (manifest notes container auto-activates first if none active; set explicitly for clarity). content is passed as an HTML string per the contentMediaType:text/html prop; at build time this may be wrapped as {value, format} like the demo. media image prop omitted (no media entity available at design time; slides fall back to the manifest example placeholder / overlay bg). All button_url values are real paths, never '#'. All enum values (title_size h1, overlay_opacity opacity-50, button_variant btn-primary, text_color text-white, media_position inherit) verified against hero-slide.component.yml."
+ },
+ {
+  "pattern_id": "hero_split",
+  "label": "Hero Split",
+  "notes": "hero-side-by-side is fully prop-driven (no slots per its .component.yml), so all content lives in its inputs and there are no child leaf nodes. Root section uses columns='100' (single column) with the hero placed in col_1. Section kept visually neutral (container-fluid, no bg) so the hero's own bg_edge2edge full-bleed background is used. Props/enums taken verbatim from the two manifests: section.columns enum '100'; hero image uses the shipped example asset path; image_position=left (image start) for a split hero; button_url uses a real path '/get-started' (not '#'). All enum values (background_color=bg-light, content_color=text-dark, button_variant=btn-primary, button_size=btn-lg, vertical_padding=py-5, align=text-start, heading_level=2) are real. No component_version/uuid included per instructions.",
+  "nodes": [
+   {
+    "key": "sec",
+    "component": "section",
+    "parent": null,
+    "slot": null,
+    "inputs": {
+     "columns": "100",
+     "container_type": "container-fluid",
+     "background_color": "none",
+     "text_color": "auto",
+     "gutter": "gx-0 gy-0",
+     "padding_block_start": "pt-0",
+     "padding_block_end": "pb-0",
+     "vertical_alignment": "align-items-stretch",
+     "horizontal_alignment": "text-start"
+    }
+   },
+   {
+    "key": "hero",
+    "component": "hero-side-by-side",
+    "parent": "sec",
+    "slot": "col_1",
+    "inputs": {
+     "bg_edge2edge": true,
+     "heading": "Build better digital experiences with Varbase",
+     "heading_level": 2,
+     "text": "<p>Launch accessible, standards-based Drupal sites faster with ready-made components, sensible defaults, and a design system your whole team can trust.</p>",
+     "image": {
+      "src": "/themes/contrib/vartheme_bs5/components/foundation/images/assets/hero-2.png",
+      "alt": "Team collaborating on a Varbase project",
+      "width": 1200,
+      "height": 900
+     },
+     "image_position": "left",
+     "align": "text-start",
+     "background_color": "bg-light",
+     "content_color": "text-dark",
+     "vertical_padding": "py-5",
+     "button_label": "Get started",
+     "button_url": "/get-started",
+     "button_variant": "btn-primary",
+     "button_outline": false,
+     "button_size": "btn-lg",
+     "button_target": "self"
+    }
+   }
+  ]
+ },
+ {
+  "pattern_id": "media_banner_intro",
+  "label": "Media Banner Intro",
+  "notes": "Shape: section(columns:'100') > col_1 > media-banner > media_banner_slot[heading, text, button]. Props/enums taken verbatim from section.component.yml and media-banner.component.yml. Leaf atoms modeled on the real 05-features.yml demo: heading uses heading_text/level/text_color; text uses text.{value,format=canvas_html_block}/text_size/text_color; button uses label/href.uri (internal path, never '#')/variant/size/etc. media-banner overlay set to bg-dark opacity-50 with white text for contrast (matching demo). Background image (media prop) intentionally omitted \u2014 resolved at build time via a media entity reference, not a static prop. No component_version/uuid included per instructions.",
+  "nodes": [
+   {
+    "key": "sec",
+    "component": "section",
+    "parent": null,
+    "slot": null,
+    "inputs": {
+     "columns": "100",
+     "container_type": "none",
+     "bg_edge2edge": true,
+     "gutter": "gx-3 gy-3",
+     "vertical_alignment": "align-items-center",
+     "horizontal_alignment": "text-start",
+     "padding_block_start": "pt-0",
+     "padding_block_end": "pt-0",
+     "margin_block_start": "mt-0",
+     "margin_block_end": "mb-5",
+     "section_header": false,
+     "section_footer": false,
+     "aos_once": true
+    }
+   },
+   {
+    "key": "banner",
+    "component": "media-banner",
+    "parent": "sec",
+    "slot": "col_1",
+    "inputs": {
+     "container_type": "container",
+     "bg_edge2edge": false,
+     "height": "large",
+     "flex_position": "center-left",
+     "overlay_bg": "bg-dark",
+     "overlay_opacity": "opacity-50",
+     "content_width": "w-75",
+     "object_position": "center",
+     "padding_inline_start": "ps-5",
+     "padding_inline_end": "pe-5",
+     "radius": "rounded-2"
+    }
+   },
+   {
+    "key": "heading",
+    "component": "heading",
+    "parent": "banner",
+    "slot": "media_banner_slot",
+    "inputs": {
+     "heading_text": "Build enterprise sites faster with Varbase",
+     "level": 1,
+     "text_color": "text-white"
+    }
+   },
+   {
+    "key": "text",
+    "component": "text",
+    "parent": "banner",
+    "slot": "media_banner_slot",
+    "inputs": {
+     "text": {
+      "value": "<p>A recipe-based Drupal distribution with security, accessibility, and multilingual support ready out of the box.</p>",
+      "format": "canvas_html_block"
+     },
+     "text_size": "none",
+     "text_color": "text-white"
+    }
+   },
+   {
+    "key": "button",
+    "component": "button",
+    "parent": "banner",
+    "slot": "media_banner_slot",
+    "inputs": {
+     "label": "Get started",
+     "href": {
+      "uri": "internal:/features",
+      "options": {}
+     },
+     "variant": "btn-primary",
+     "outline": false,
+     "size": "btn-lg",
+     "radius": "rounded-1",
+     "icon": "none",
+     "icon_first": false,
+     "disabled": false,
+     "full_width": false,
+     "alignment": "start"
+    }
+   }
+  ]
+ },
+ {
+  "pattern_id": "feature_grid_icons",
+  "label": "Feature Grid (Icons)",
+  "notes": "Root section uses columns=33-33-33 with vertical_alignment=align-items-stretch (equal-height cards) per AGENTS.md \u00a77. A heading + intro text sit in header_slot. Each of col_1..col_3 holds one organisms/card-icon, which is fully prop-driven (no slots) \u2014 all content lives in its inputs. card-icon props verified against manifest: text, description (HTML), text_align, icon (enum without bi- prefix), icon_size, background_color, shadow, has_padding, url, button_label, button_variant. icon values chosen from the manifest enum (search, people, check). background_color=bg-body and shadow=shadow to match card defaults. Links use real paths, never '#'. section props (columns, vertical_alignment, gutter, container_type, padding, section_header, aos_once) all from section manifest enums. heading uses heading_text/level and text uses text.value/format as seen in the demo page.",
+  "nodes": [
+   {
+    "key": "sec",
+    "component": "section",
+    "parent": null,
+    "slot": null,
+    "inputs": {
+     "columns": "33-33-33",
+     "vertical_alignment": "align-items-stretch",
+     "gutter": "gx-4 gy-4",
+     "container_type": "container",
+     "bg_edge2edge": true,
+     "section_header": true,
+     "section_footer": false,
+     "padding_block_start": "pt-5",
+     "padding_block_end": "pb-5",
+     "horizontal_alignment": "text-center",
+     "aos_once": true
+    }
+   },
+   {
+    "key": "head",
+    "component": "heading",
+    "parent": "sec",
+    "slot": "header_slot",
+    "inputs": {
+     "level": 2,
+     "heading_text": "Everything you need to build",
+     "align": "text-center"
+    }
+   },
+   {
+    "key": "intro",
+    "component": "text",
+    "parent": "sec",
+    "slot": "header_slot",
+    "inputs": {
+     "text": {
+      "value": "<p>A powerful, enterprise-ready foundation with the tools your team needs from day one.</p>",
+      "format": "canvas_html_block"
+     },
+     "text_color": "text-subtle-text"
+    }
+   },
+   {
+    "key": "card1",
+    "component": "card-icon",
+    "parent": "sec",
+    "slot": "col_1",
+    "inputs": {
+     "text": "Fast by default",
+     "description": "<p>Optimized front-end performance keeps every page loading quickly on any device.</p>",
+     "icon": "arrow-repeat",
+     "icon_size": "fs-2",
+     "text_align": "text-center",
+     "background_color": "bg-body",
+     "shadow": "shadow",
+     "has_padding": true,
+     "url": "/features",
+     "button_label": "See performance",
+     "button_variant": "btn-primary"
+    }
+   },
+   {
+    "key": "card2",
+    "component": "card-icon",
+    "parent": "sec",
+    "slot": "col_2",
+    "inputs": {
+     "text": "Secure and reliable",
+     "description": "<p>Hardened with security best practices and access controls so you can launch with confidence.</p>",
+     "icon": "check",
+     "icon_size": "fs-2",
+     "text_align": "text-center",
+     "background_color": "bg-body",
+     "shadow": "shadow",
+     "has_padding": true,
+     "url": "/features",
+     "button_label": "See security",
+     "button_variant": "btn-primary"
+    }
+   },
+   {
+    "key": "card3",
+    "component": "card-icon",
+    "parent": "sec",
+    "slot": "col_3",
+    "inputs": {
+     "text": "Built for teams",
+     "description": "<p>Collaborative editing and flexible workflows help your whole team ship content together.</p>",
+     "icon": "people",
+     "icon_size": "fs-2",
+     "text_align": "text-center",
+     "background_color": "bg-body",
+     "shadow": "shadow",
+     "has_padding": true,
+     "url": "/features",
+     "button_label": "See collaboration",
+     "button_variant": "btn-primary"
+    }
+   }
+  ]
+ },
+ {
+  "pattern_id": "feature_cards",
+  "label": "Feature Cards",
+  "notes": "Root atoms/section with columns=33-33-33 (3 equal columns) and vertical_alignment=align-items-stretch + each card equal_height=true for equal-height cards across the row (per AGENTS.md \u00a77). Optional heading placed in header_slot. Each col_1..col_3 holds one organisms/card-text (slot: content) containing heading (level 3), text, and button atoms. Prop names verified against section.component.yml (columns, gutter, container_type, vertical_alignment, background_color, padding_*, margin_*, section_header) and card-text.component.yml (card_border, padded, equal_height, background_color, corner_style, stretched_link). Leaf atom props (heading: heading_text/level; text: text{value,format}/text_size/text_color; button: label/href{uri,options}/variant/outline/size/radius/icon/target/alignment) taken from real usage in 05-features.yml. Links use internal:/ paths, never '#'. Buttons use uri-object form as stored by Canvas. Card icon images omitted (icon_image optional; card renders as plain text card when empty).",
+  "nodes": [
+   {
+    "key": "sec",
+    "component": "section",
+    "parent": null,
+    "slot": null,
+    "inputs": {
+     "container_type": "container",
+     "columns": "33-33-33",
+     "gutter": "gx-5 gy-5",
+     "vertical_alignment": "align-items-stretch",
+     "section_header": true,
+     "section_footer": false,
+     "bg_edge2edge": true,
+     "padding_block_start": "pt-5",
+     "padding_block_end": "pb-5",
+     "margin_block_start": "mt-5",
+     "margin_block_end": "mb-5",
+     "aos_once": false
+    }
+   },
+   {
+    "key": "sec_heading",
+    "component": "heading",
+    "parent": "sec",
+    "slot": "header_slot",
+    "inputs": {
+     "level": 2,
+     "heading_text": "Why teams choose Varbase",
+     "align": "text-center"
+    }
+   },
+   {
+    "key": "card1",
+    "component": "card-text",
+    "parent": "sec",
+    "slot": "col_1",
+    "inputs": {
+     "card_border": false,
+     "padded": true,
+     "equal_height": true,
+     "stretched_link": false,
+     "background_color": "bg-secondary-subtle",
+     "corner_style": "rounded-3"
+    }
+   },
+   {
+    "key": "card1_heading",
+    "component": "heading",
+    "parent": "card1",
+    "slot": "content",
+    "inputs": {
+     "level": 3,
+     "heading_text": "Recipe-based setup"
+    }
+   },
+   {
+    "key": "card1_text",
+    "component": "text",
+    "parent": "card1",
+    "slot": "content",
+    "inputs": {
+     "text": {
+      "value": "<p>Install only the features you need with composable Drupal recipes, and extend your site as it grows.</p>",
+      "format": "canvas_html_block"
+     },
+     "text_size": "fs-6",
+     "text_color": "text-subtle-text"
+    }
+   },
+   {
+    "key": "card1_button",
+    "component": "button",
+    "parent": "card1",
+    "slot": "content",
+    "inputs": {
+     "label": "Explore recipes",
+     "href": {
+      "uri": "internal:/features",
+      "options": {}
+     },
+     "variant": "btn-primary",
+     "outline": true,
+     "size": "btn-md",
+     "radius": "rounded-1",
+     "icon": "none",
+     "icon_first": false,
+     "full_width": false,
+     "disabled": false,
+     "alignment": "start"
+    }
+   },
+   {
+    "key": "card2",
+    "component": "card-text",
+    "parent": "sec",
+    "slot": "col_2",
+    "inputs": {
+     "card_border": false,
+     "padded": true,
+     "equal_height": true,
+     "stretched_link": false,
+     "background_color": "bg-secondary-subtle",
+     "corner_style": "rounded-3"
+    }
+   },
+   {
+    "key": "card2_heading",
+    "component": "heading",
+    "parent": "card2",
+    "slot": "content",
+    "inputs": {
+     "level": 3,
+     "heading_text": "Enterprise security"
+    }
+   },
+   {
+    "key": "card2_text",
+    "component": "text",
+    "parent": "card2",
+    "slot": "content",
+    "inputs": {
+     "text": {
+      "value": "<p>Hardened out of the box with password policies, spam protection, and access controls to keep your site safe.</p>",
+      "format": "canvas_html_block"
+     },
+     "text_size": "fs-6",
+     "text_color": "text-subtle-text"
+    }
+   },
+   {
+    "key": "card2_button",
+    "component": "button",
+    "parent": "card2",
+    "slot": "content",
+    "inputs": {
+     "label": "See security features",
+     "href": {
+      "uri": "internal:/security",
+      "options": {}
+     },
+     "variant": "btn-primary",
+     "outline": true,
+     "size": "btn-md",
+     "radius": "rounded-1",
+     "icon": "none",
+     "icon_first": false,
+     "full_width": false,
+     "disabled": false,
+     "alignment": "start"
+    }
+   },
+   {
+    "key": "card3",
+    "component": "card-text",
+    "parent": "sec",
+    "slot": "col_3",
+    "inputs": {
+     "card_border": false,
+     "padded": true,
+     "equal_height": true,
+     "stretched_link": false,
+     "background_color": "bg-secondary-subtle",
+     "corner_style": "rounded-3"
+    }
+   },
+   {
+    "key": "card3_heading",
+    "component": "heading",
+    "parent": "card3",
+    "slot": "content",
+    "inputs": {
+     "level": 3,
+     "heading_text": "Multilingual ready"
+    }
+   },
+   {
+    "key": "card3_text",
+    "component": "text",
+    "parent": "card3",
+    "slot": "content",
+    "inputs": {
+     "text": {
+      "value": "<p>Build and translate content in multiple languages, with localization configured and ready from day one.</p>",
+      "format": "canvas_html_block"
+     },
+     "text_size": "fs-6",
+     "text_color": "text-subtle-text"
+    }
+   },
+   {
+    "key": "card3_button",
+    "component": "button",
+    "parent": "card3",
+    "slot": "content",
+    "inputs": {
+     "label": "Learn about translations",
+     "href": {
+      "uri": "internal:/contact-us",
+      "options": {}
+     },
+     "variant": "btn-primary",
+     "outline": true,
+     "size": "btn-md",
+     "radius": "rounded-1",
+     "icon": "none",
+     "icon_first": false,
+     "full_width": false,
+     "disabled": false,
+     "alignment": "start"
+    }
+   }
+  ]
+ },
+ {
+  "pattern_id": "featured_media_split",
+  "label": "Featured Media Split",
+  "notes": "Root section uses columns='100' (single full-width column) per target shape; card-featured lives in col_1. card-featured is a media+content organism: media_position='start' with a ratio, and its content slot holds heading/text/button leaf atoms (its own inner grid handles the split, so the outer section stays 1-column). Section vertical_alignment=align-items-center and container_type=container mirror the real About Varbase demo page. Heading atom uses heading_text/level (observed props); text atom uses text object {value, format: canvas_html_block} + text_color (observed); button atom uses label + href.uri (internal:/features) + variant/size/outline (observed in demo). No media_image set (optional; card-featured shows a placeholder when empty). Links use real internal paths, never '#'. component_version/uuid omitted as instructed.",
+  "nodes": [
+   {
+    "key": "sec",
+    "component": "section",
+    "parent": null,
+    "slot": null,
+    "inputs": {
+     "container_type": "container",
+     "columns": "100",
+     "bg_edge2edge": true,
+     "vertical_alignment": "align-items-center",
+     "gutter": "gx-5 gy-5",
+     "padding_block_start": "pt-5",
+     "padding_block_end": "pb-5",
+     "margin_block_start": "mt-5",
+     "section_header": false,
+     "section_footer": false
+    }
+   },
+   {
+    "key": "card",
+    "component": "card-featured",
+    "parent": "sec",
+    "slot": "col_1",
+    "inputs": {
+     "media_position": "start",
+     "ratio": "ratio-16x9",
+     "fit": "object-fit-cover",
+     "card_border": false,
+     "corner_style": "rounded-3",
+     "padded": true,
+     "equal_height": true,
+     "stretched_link": false,
+     "content_vertical_alignment": "align-items-center",
+     "gutters_between": "g-4 g-lg-5",
+     "columns_xs_size": "06_06"
+    }
+   },
+   {
+    "key": "heading",
+    "component": "heading",
+    "parent": "card",
+    "slot": "content",
+    "inputs": {
+     "heading_text": "Build faster with Varbase",
+     "level": 2
+    }
+   },
+   {
+    "key": "text",
+    "component": "text",
+    "parent": "card",
+    "slot": "content",
+    "inputs": {
+     "text": {
+      "value": "<p>Varbase pairs an enterprise-ready Drupal foundation with a flexible, media-rich layout system. Pair a striking visual with clear, focused copy to guide visitors toward the next step.</p>",
+      "format": "canvas_html_block"
+     },
+     "text_size": "none",
+     "text_color": "text-subtle-text"
+    }
+   },
+   {
+    "key": "button",
+    "component": "button",
+    "parent": "card",
+    "slot": "content",
+    "inputs": {
+     "label": "Explore features",
+     "href": {
+      "uri": "internal:/features",
+      "options": {}
+     },
+     "variant": "btn-primary",
+     "outline": false,
+     "size": "btn-md",
+     "radius": "rounded-1",
+     "icon": "arrow-up-right",
+     "icon_first": false,
+     "full_width": false,
+     "disabled": false
+    }
+   }
+  ]
+ },
+ {
+  "pattern_id": "pricing_row",
+  "label": "Pricing Row",
+  "notes": "Root atoms/section with columns=33-33-33 and vertical_alignment=align-items-stretch so the three pricing cards render equal-height (per AGENTS.md \u00a77 equal-height guidance, paired with each card being emphasized via promote on the middle one). card-pricing is fully prop-driven (no slots), so all copy lives in inputs \u2014 no child nodes. symbol_position is the only required prop and is set on every card. Middle card (col_2) has promote:true plus badge_text and border-primary to read as the highlighted plan. button_url uses real paths (/contact-us, /sign-up), never '#'. Features use the card's `text` HTML-list prop. All enums/defaults taken directly from card-pricing.component.yml and section.component.yml.",
+  "nodes": [
+   {
+    "key": "sec",
+    "component": "section",
+    "parent": null,
+    "slot": null,
+    "inputs": {
+     "container_type": "container",
+     "columns": "33-33-33",
+     "gutter": "gx-4 gy-4",
+     "vertical_alignment": "align-items-stretch",
+     "horizontal_alignment": "text-center",
+     "padding_block_start": "pt-5",
+     "padding_block_end": "pb-5",
+     "margin_block_start": "mt-5",
+     "margin_block_end": "mb-5",
+     "section_header": true
+    }
+   },
+   {
+    "key": "hdr",
+    "component": "heading",
+    "parent": "sec",
+    "slot": "header_slot",
+    "inputs": {
+     "heading_text": "Simple, transparent pricing",
+     "level": 2,
+     "align": "text-center"
+    }
+   },
+   {
+    "key": "card1",
+    "component": "card-pricing",
+    "parent": "sec",
+    "slot": "col_1",
+    "inputs": {
+     "heading_text": "Starter",
+     "level": 3,
+     "description": "Everything you need to launch your first Varbase site.",
+     "price": "0",
+     "currency_code": "USD",
+     "currency_symbol": "$",
+     "symbol_position": "before",
+     "price_period": "/month",
+     "price_note": "Free forever",
+     "show_features_divider": true,
+     "text": "<ul><li>1 site</li><li>Community support</li><li>Core modules included</li><li>Up to 3 editors</li></ul>",
+     "shadow": "shadow-sm",
+     "border": "border",
+     "background_color": "bg-body",
+     "text_align": "text-start",
+     "button_url": "/sign-up",
+     "button_target": "self",
+     "button_label": "Get started",
+     "button_variant": "btn-primary",
+     "promote": false
+    }
+   },
+   {
+    "key": "card2",
+    "component": "card-pricing",
+    "parent": "sec",
+    "slot": "col_2",
+    "inputs": {
+     "badge_text": "Most popular",
+     "heading_text": "Business",
+     "level": 3,
+     "description": "For growing teams that need scale, security, and support.",
+     "price": "49",
+     "currency_code": "USD",
+     "currency_symbol": "$",
+     "symbol_position": "before",
+     "price_period": "/month",
+     "price_note": "Billed annually",
+     "show_features_divider": true,
+     "text": "<ul><li>Up to 10 sites</li><li>Priority support</li><li>Advanced security suite</li><li>Unlimited editors</li><li>Multilingual out of the box</li></ul>",
+     "shadow": "shadow-lg",
+     "border": "border-primary",
+     "background_color": "bg-body",
+     "text_align": "text-start",
+     "button_url": "/sign-up",
+     "button_target": "self",
+     "button_label": "Choose Business",
+     "button_variant": "btn-primary",
+     "promote": true
+    }
+   },
+   {
+    "key": "card3",
+    "component": "card-pricing",
+    "parent": "sec",
+    "slot": "col_3",
+    "inputs": {
+     "heading_text": "Enterprise",
+     "level": 3,
+     "description": "Custom deployments with dedicated onboarding and SLAs.",
+     "price": "Custom",
+     "symbol_position": "before",
+     "price_note": "Tailored to your needs",
+     "show_features_divider": true,
+     "text": "<ul><li>Unlimited sites</li><li>Dedicated success manager</li><li>Custom SLAs</li><li>SSO and audit logs</li><li>On-premise or cloud hosting</li></ul>",
+     "shadow": "shadow-sm",
+     "border": "border",
+     "background_color": "bg-dark text-white",
+     "text_align": "text-start",
+     "button_url": "/contact-us",
+     "button_target": "self",
+     "button_label": "Contact sales",
+     "button_variant": "btn-light",
+     "promote": false
+    }
+   }
+  ]
+ },
+ {
+  "pattern_id": "testimonials_row",
+  "label": "Testimonials Row",
+  "notes": "card-testimonial is fully prop-driven (no slots) \u2014 all content in inputs. Section uses columns 33-33-33 with one card-testimonial per col_1..col_3. Enabled section_header + heading in header_slot for the row title. heading atom uses content/level; text atom skipped. All enum/prop values taken verbatim from the two manifests (section: columns, gutter, vertical_alignment=align-items-stretch for equal-height row per AGENTS.md \u00a77; card-testimonial required props align+style, plus text/cite_name/cite_text/shadow/show_quote_icon). No links needed here (card-testimonial has no url prop). Avatar media omitted (needs media entity ref resolved at build).",
+  "nodes": [
+   {
+    "key": "sec",
+    "component": "section",
+    "parent": null,
+    "slot": null,
+    "inputs": {
+     "container_type": "container",
+     "background_color": "bg-body-tertiary",
+     "columns": "33-33-33",
+     "gutter": "gx-4 gy-4",
+     "padding_block_start": "pt-5",
+     "padding_block_end": "pb-5",
+     "vertical_alignment": "align-items-stretch",
+     "horizontal_alignment": "text-center",
+     "section_header": true,
+     "section_footer": false,
+     "aos_once": true
+    }
+   },
+   {
+    "key": "sec_heading",
+    "component": "heading",
+    "parent": "sec",
+    "slot": "header_slot",
+    "inputs": {
+     "content": "What our customers say",
+     "level": 2
+    }
+   },
+   {
+    "key": "card1",
+    "component": "card-testimonial",
+    "parent": "sec",
+    "slot": "col_1",
+    "inputs": {
+     "style": "bg-body",
+     "align": "text-center",
+     "shadow": "shadow-sm",
+     "show_quote_icon": true,
+     "text": "Varbase gave our team an enterprise-ready baseline out of the box. We shipped our first site in days, not months.",
+     "cite_name": "Amina Haddad",
+     "cite_text": "Product Lead, Northwind"
+    }
+   },
+   {
+    "key": "card2",
+    "component": "card-testimonial",
+    "parent": "sec",
+    "slot": "col_2",
+    "inputs": {
+     "style": "bg-body",
+     "align": "text-center",
+     "shadow": "shadow-sm",
+     "show_quote_icon": true,
+     "text": "The Canvas visual builder let our editors assemble on-brand pages without touching code. Adoption was instant.",
+     "cite_name": "Lucas Moreau",
+     "cite_text": "Digital Editor, Beacon Media"
+    }
+   },
+   {
+    "key": "card3",
+    "component": "card-testimonial",
+    "parent": "sec",
+    "slot": "col_3",
+    "inputs": {
+     "style": "bg-body",
+     "align": "text-center",
+     "shadow": "shadow-sm",
+     "show_quote_icon": true,
+     "text": "Composable recipes meant we started from a solid, secure foundation and grew the platform at our own pace.",
+     "cite_name": "Priya Nair",
+     "cite_text": "CTO, Meridian Labs"
+    }
+   }
+  ]
+ },
+ {
+  "pattern_id": "logos_strip",
+  "label": "Logos Strip",
+  "notes": "Root atoms/section uses columns '16-16-16-16-16-16' (the 6-equal-column preset) so exactly six columns render. section_header enabled to show a header region with a heading + supporting text via atoms/heading and atoms/text. Each col_1..col_6 holds one organisms/card-logo (card-logo is fully prop-driven, noUI, no slots \u2014 logo goes in its `media` image prop). card-logo props used are all real: media (image object), url (uri-reference path), shadow (enum, default shadow-none), alignment (enum, default center chosen for a logo strip). Section vertical_alignment align-items-center + horizontal_alignment text-center to keep logos visually aligned. All url paths are real (/partners/...), never '#'. Image src values point at the shipped vartheme placeholder logo asset. heading uses content/level props; text uses value prop \u2014 inferred common atom props per task guidance.",
+  "nodes": [
+   {
+    "key": "sec",
+    "component": "section",
+    "parent": null,
+    "slot": null,
+    "inputs": {
+     "container_type": "container",
+     "background_color": "bg-body-tertiary",
+     "columns": "16-16-16-16-16-16",
+     "gutter": "gx-4 gy-4",
+     "padding_block_start": "pt-5",
+     "padding_block_end": "pb-5",
+     "vertical_alignment": "align-items-center",
+     "horizontal_alignment": "text-center",
+     "section_header": true
+    }
+   },
+   {
+    "key": "head",
+    "component": "heading",
+    "parent": "sec",
+    "slot": "header_slot",
+    "inputs": {
+     "content": "Trusted by leading teams",
+     "level": 2
+    }
+   },
+   {
+    "key": "subtext",
+    "component": "text",
+    "parent": "sec",
+    "slot": "header_slot",
+    "inputs": {
+     "value": "Organizations of every size build faster with our platform."
+    }
+   },
+   {
+    "key": "logo1",
+    "component": "card-logo",
+    "parent": "sec",
+    "slot": "col_1",
+    "inputs": {
+     "media": {
+      "src": "/themes/contrib/vartheme_bs5/components/foundation/images/assets/full-logo-dark.svg",
+      "alt": "Northwind Labs logo",
+      "width": 600,
+      "height": 240
+     },
+     "url": "/partners/northwind-labs",
+     "alignment": "center",
+     "shadow": "shadow-none"
+    }
+   },
+   {
+    "key": "logo2",
+    "component": "card-logo",
+    "parent": "sec",
+    "slot": "col_2",
+    "inputs": {
+     "media": {
+      "src": "/themes/contrib/vartheme_bs5/components/foundation/images/assets/full-logo-dark.svg",
+      "alt": "Brightwave logo",
+      "width": 600,
+      "height": 240
+     },
+     "url": "/partners/brightwave",
+     "alignment": "center",
+     "shadow": "shadow-none"
+    }
+   },
+   {
+    "key": "logo3",
+    "component": "card-logo",
+    "parent": "sec",
+    "slot": "col_3",
+    "inputs": {
+     "media": {
+      "src": "/themes/contrib/vartheme_bs5/components/foundation/images/assets/full-logo-dark.svg",
+      "alt": "Meridian Group logo",
+      "width": 600,
+      "height": 240
+     },
+     "url": "/partners/meridian-group",
+     "alignment": "center",
+     "shadow": "shadow-none"
+    }
+   },
+   {
+    "key": "logo4",
+    "component": "card-logo",
+    "parent": "sec",
+    "slot": "col_4",
+    "inputs": {
+     "media": {
+      "src": "/themes/contrib/vartheme_bs5/components/foundation/images/assets/full-logo-dark.svg",
+      "alt": "Cedar & Co logo",
+      "width": 600,
+      "height": 240
+     },
+     "url": "/partners/cedar-and-co",
+     "alignment": "center",
+     "shadow": "shadow-none"
+    }
+   },
+   {
+    "key": "logo5",
+    "component": "card-logo",
+    "parent": "sec",
+    "slot": "col_5",
+    "inputs": {
+     "media": {
+      "src": "/themes/contrib/vartheme_bs5/components/foundation/images/assets/full-logo-dark.svg",
+      "alt": "Solaris Energy logo",
+      "width": 600,
+      "height": 240
+     },
+     "url": "/partners/solaris-energy",
+     "alignment": "center",
+     "shadow": "shadow-none"
+    }
+   },
+   {
+    "key": "logo6",
+    "component": "card-logo",
+    "parent": "sec",
+    "slot": "col_6",
+    "inputs": {
+     "media": {
+      "src": "/themes/contrib/vartheme_bs5/components/foundation/images/assets/full-logo-dark.svg",
+      "alt": "Vantage Point logo",
+      "width": 600,
+      "height": 240
+     },
+     "url": "/partners/vantage-point",
+     "alignment": "center",
+     "shadow": "shadow-none"
+    }
+   }
+  ]
+ },
+ {
+  "pattern_id": "cta_band",
+  "label": "Call To Action Band",
+  "notes": "Root atoms/section with columns=100 (single full-width column). Edge-to-edge primary band achieved on the section (bg_edge2edge=true, background_color=bg-primary, container_type=container so inner content stays readable, generous vertical padding pt-5/pb-5). The organisms/cta component is fully prop-driven (no slots per its manifest), so all heading/body/button content lives in its inputs \u2014 no child nodes. cta.background_color set to bg-none (band colour comes from the section) and content_color=text-white to read on the primary band. button_url uses a real path '/get-started' (never '#'; cta.button_url is uri-reference). Enums used are verbatim from the manifests: section.columns '100', section.background_color 'bg-primary', section.text_color 'text-white', section.horizontal_alignment 'text-center'; cta.level 2, cta.heading_size 'display-5', cta.text_align 'text-center', cta.button_variant 'btn-light' (light button for contrast on primary), cta.background_color 'bg-none', cta.content_color 'text-white'. cta requires text_align and level \u2014 both provided.",
+  "nodes": [
+   {
+    "key": "sec",
+    "component": "section",
+    "parent": null,
+    "slot": null,
+    "inputs": {
+     "columns": "100",
+     "container_type": "container",
+     "bg_edge2edge": true,
+     "background_color": "bg-primary",
+     "text_color": "text-white",
+     "horizontal_alignment": "text-center",
+     "vertical_alignment": "align-items-center",
+     "padding_block_start": "pt-5",
+     "padding_block_end": "pb-5",
+     "section_header": false,
+     "section_footer": false
+    }
+   },
+   {
+    "key": "cta",
+    "component": "cta",
+    "parent": "sec",
+    "slot": "col_1",
+    "inputs": {
+     "heading_text": "Ready to build your next site with Varbase?",
+     "level": 2,
+     "heading_size": "display-5",
+     "text": "Launch faster with a governed design system, accessible components, and Drupal Canvas authoring out of the box.",
+     "text_align": "text-center",
+     "background_color": "bg-none",
+     "content_color": "text-white",
+     "button_text": "Get started",
+     "button_url": "/get-started",
+     "button_variant": "btn-light"
+    }
+   }
+  ]
+ },
+ {
+  "pattern_id": "faq_accordion",
+  "label": "FAQ Accordion",
+  "notes": "Root section uses columns='100' (single 100% column) as required by the target shape; header region enabled to carry an intro heading (section_header:true, header_slot). accordion-container props verified from manifest (id, flush, always_open, color enum text-bg-*); left color unset to use the default secondary-subtle design, flush:false. accordion-block props verified: title, heading_level (enum 2-6, default 3), open_by_default (bool), color (default 'inherit'); first item open_by_default:true, others false. Leaf body uses atoms/text with the {value,format} shape and text_size/text_color as seen in the demo canvas_page (format canvas_html_block). heading atom uses heading_text/level per demo usage. No component_version/uuid included. All prop values are real enums from the read manifests.",
+  "nodes": [
+   {
+    "key": "sec",
+    "component": "section",
+    "parent": null,
+    "slot": null,
+    "inputs": {
+     "columns": "100",
+     "container_type": "container",
+     "section_header": true,
+     "section_footer": false,
+     "gutter": "gx-3 gy-3",
+     "padding_block_start": "pt-5",
+     "padding_block_end": "pb-5",
+     "horizontal_alignment": "text-start"
+    }
+   },
+   {
+    "key": "sec_heading",
+    "component": "heading",
+    "parent": "sec",
+    "slot": "header_slot",
+    "inputs": {
+     "heading_text": "Frequently Asked Questions",
+     "level": 2,
+     "align": "text-center"
+    }
+   },
+   {
+    "key": "acc_container",
+    "component": "accordion-container",
+    "parent": "sec",
+    "slot": "col_1",
+    "inputs": {
+     "flush": false,
+     "always_open": false
+    }
+   },
+   {
+    "key": "acc_1",
+    "component": "accordion-block",
+    "parent": "acc_container",
+    "slot": "accordion_content",
+    "inputs": {
+     "title": "What is Varbase?",
+     "heading_level": 3,
+     "open_by_default": true
+    }
+   },
+   {
+    "key": "acc_1_text",
+    "component": "text",
+    "parent": "acc_1",
+    "slot": "accordion_content",
+    "inputs": {
+     "text": {
+      "value": "<p>Varbase is an enhanced Drupal distribution that ships with the most commonly needed features, modules, and configuration to accelerate building standard websites and web applications.</p>",
+      "format": "canvas_html_block"
+     },
+     "text_size": "none",
+     "text_color": "text-body"
+    }
+   },
+   {
+    "key": "acc_2",
+    "component": "accordion-block",
+    "parent": "acc_container",
+    "slot": "accordion_content",
+    "inputs": {
+     "title": "How do I get started?",
+     "heading_level": 3,
+     "open_by_default": false
+    }
+   },
+   {
+    "key": "acc_2_text",
+    "component": "text",
+    "parent": "acc_2",
+    "slot": "accordion_content",
+    "inputs": {
+     "text": {
+      "value": "<p>Install Varbase with Composer, run the guided installer, and start authoring pages right away. See our <a href=\"/documentation\">documentation</a> for step-by-step setup instructions.</p>",
+      "format": "canvas_html_block"
+     },
+     "text_size": "none",
+     "text_color": "text-body"
+    }
+   },
+   {
+    "key": "acc_3",
+    "component": "accordion-block",
+    "parent": "acc_container",
+    "slot": "accordion_content",
+    "inputs": {
+     "title": "Where can I get support?",
+     "heading_level": 3,
+     "open_by_default": false
+    }
+   },
+   {
+    "key": "acc_3_text",
+    "component": "text",
+    "parent": "acc_3",
+    "slot": "accordion_content",
+    "inputs": {
+     "text": {
+      "value": "<p>Reach the community through the issue queues and forums, or <a href=\"/contact-us\">contact our team</a> for professional support and services.</p>",
+      "format": "canvas_html_block"
+     },
+     "text_size": "none",
+     "text_color": "text-body"
+    }
+   }
+  ]
+ },
+ {
+  "pattern_id": "intro_two_column",
+  "label": "Two-column Intro + Card",
+  "notes": "Root section uses columns=50-50 with section_header=true so header_slot renders. header_slot holds a section-title heading; col_1 has heading + text + button (link uses /features path); col_2 holds a card-text organism (prop-driven, padded + bordered) whose content slot has a heading + text. Atoms used: heading (heading_text/level/text_size/font_weight), text (text/text_size/text_color), button (label/href/variant/size/alignment). card-text is prop-driven for its chrome and exposes a single 'content' slot. All props/enums verified against the read manifests; no invented props. gutter/vertical_alignment left at sensible existing enums.",
+  "nodes": [
+   {
+    "key": "sec",
+    "component": "section",
+    "parent": null,
+    "slot": null,
+    "inputs": {
+     "container_type": "container",
+     "columns": "50-50",
+     "gutter": "gx-4 gy-4",
+     "vertical_alignment": "align-items-center",
+     "section_header": true,
+     "section_footer": false,
+     "padding_block_start": "pt-4",
+     "padding_block_end": "pb-4"
+    }
+   },
+   {
+    "key": "hdr_heading",
+    "component": "heading",
+    "parent": "sec",
+    "slot": "header_slot",
+    "inputs": {
+     "heading_text": "Build faster with Varbase",
+     "level": 2,
+     "text_size": "h2",
+     "font_weight": "fw-bold",
+     "align": "text-start"
+    }
+   },
+   {
+    "key": "col1_heading",
+    "component": "heading",
+    "parent": "sec",
+    "slot": "col_1",
+    "inputs": {
+     "heading_text": "A composable starting point",
+     "level": 3,
+     "text_size": "h4",
+     "font_weight": "fw-semibold"
+    }
+   },
+   {
+    "key": "col1_text",
+    "component": "text",
+    "parent": "sec",
+    "slot": "col_1",
+    "inputs": {
+     "text": "<p>Varbase brings together the tools, recipes, and Bootstrap 5 components you need to launch enterprise-ready Drupal sites. Assemble pages visually and keep every layout responsive and on brand.</p>",
+     "text_size": "fs-5",
+     "text_color": "text-body"
+    }
+   },
+   {
+    "key": "col1_button",
+    "component": "button",
+    "parent": "sec",
+    "slot": "col_1",
+    "inputs": {
+     "label": "Explore features",
+     "href": "/features",
+     "variant": "btn-primary",
+     "size": "btn-lg",
+     "alignment": "left"
+    }
+   },
+   {
+    "key": "col2_card",
+    "component": "card-text",
+    "parent": "sec",
+    "slot": "col_2",
+    "inputs": {
+     "card_border": true,
+     "background_color": "bg-body-tertiary",
+     "padded": true,
+     "box_shadow": "shadow-sm",
+     "corner_style": "rounded-3",
+     "equal_height": false
+    }
+   },
+   {
+    "key": "card_heading",
+    "component": "heading",
+    "parent": "col2_card",
+    "slot": "content",
+    "inputs": {
+     "heading_text": "Why teams choose Varbase",
+     "level": 3,
+     "text_size": "h5",
+     "font_weight": "fw-semibold"
+    }
+   },
+   {
+    "key": "card_text",
+    "component": "text",
+    "parent": "col2_card",
+    "slot": "content",
+    "inputs": {
+     "text": "<p>Ship accessible, secure, and standards-based sites with a governed design system. Reuse proven patterns instead of wiring everything up by hand.</p>",
+     "text_size": "none",
+     "text_color": "text-body"
+    }
+   }
+  ]
+ }
+]

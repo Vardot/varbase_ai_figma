@@ -1,0 +1,13 @@
+name: 'Varbase AI Figma'
+type: module
+description: 'Varbase customization of AI Figma: tunes the general Figma-to-Canvas engine for the Bootstrap 5.3 vartheme_bs5 theme and wires Context Control Center (ai_context). Configures layouts, component choices and the demo Figma file so a Varbase site builds Canvas pages from a Figma link out of the box.'
+package: 'Varbase AI'
+core_version_requirement: ^11.3
+dependencies:
+  - ai_figma:ai_figma
+  - ai_agents:ai_agents
+  - ai:ai
+  - ai_context:ai_context
+  - easy_encryption:easy_encryption
+  - canvas:canvas
+configure: ai_figma.settings

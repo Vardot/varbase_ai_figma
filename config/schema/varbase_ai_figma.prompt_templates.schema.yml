@@ -1,0 +1,17 @@
+varbase_ai_figma.prompt_templates:
+  type: config_object
+  label: 'AI Figma improvement prompt templates'
+  mapping:
+    templates:
+      type: sequence
+      label: 'Templates'
+      sequence:
+        type: mapping
+        label: 'Template'
+        mapping:
+          label:
+            type: label
+            label: 'Label'
+          instructions:
+            type: text
+            label: 'Instructions'

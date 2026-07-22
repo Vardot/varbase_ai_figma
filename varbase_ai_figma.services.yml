@@ -1,0 +1,95 @@
+services:
+  varbase_ai_figma.installer:
+    class: Drupal\varbase_ai_figma\VarbaseAiFigmaInstaller
+    arguments:
+      - '@config.factory'
+      - '@entity_type.manager'
+      - '@logger.factory'
+      - '@extension.path.resolver'
+      - '@plugin.manager.key.key_provider'
+      - '@ai_figma.installer'
+
+  # Alias the class to the service id so the OOP #[Hook] class can autowire it.
+  Drupal\varbase_ai_figma\VarbaseAiFigmaInstaller: '@varbase_ai_figma.installer'
+
+  # The Figma-to-Canvas builder + page-ops + assistant, moved here from ai_figma
+  # (which now ships only the Figma connection client). The builder still takes
+  # the retained @ai_figma.client as its Figma reader.
+  varbase_ai_figma.builder:
+    class: Drupal\varbase_ai_figma\FigmaToCanvasBuilder
+    arguments:
+      - '@ai_figma.client'
+      - '@entity_type.manager'
+      - '@uuid'
+      - '@config.factory'
+      - '@logger.factory'
+      - '@plugin.manager.sdc'
+      - '@file_system'
+      - '@http_client'
+  Drupal\varbase_ai_figma\FigmaToCanvasBuilder: '@varbase_ai_figma.builder'
+
+  varbase_ai_figma.page_analyzer:
+    class: Drupal\varbase_ai_figma\CanvasPageAnalyzer
+    arguments:
+      - '@entity_type.manager'
+      - '@renderer'
+  Drupal\varbase_ai_figma\CanvasPageAnalyzer: '@varbase_ai_figma.page_analyzer'
+
+  varbase_ai_figma.page_editor:
+    class: Drupal\varbase_ai_figma\CanvasPageEditor
+    arguments:
+      - '@entity_type.manager'
+      - '@uuid'
+  Drupal\varbase_ai_figma\CanvasPageEditor: '@varbase_ai_figma.page_editor'
+
+  varbase_ai_figma.assistant:
+    class: Drupal\varbase_ai_figma\AiAssistant
+    arguments:
+      - '@ai.provider'
+      - '@config.factory'
+      - '@logger.factory'
+  Drupal\varbase_ai_figma\AiAssistant: '@varbase_ai_figma.assistant'
+
+  # Assembles Canvas Pattern component trees from the default theme's full
+  # component palette (reuse-before-create). Used by the create_pattern tool.
+  varbase_ai_figma.pattern_builder:
+    class: Drupal\varbase_ai_figma\PatternBuilder
+    arguments:
+      - '@ai_figma.client'
+      - '@varbase_ai_figma.builder'
+      - '@entity_type.manager'
+      - '@uuid'
+      - '@config.factory'
+      - '@Drupal\canvas\ComponentSource\ComponentSourceManager'
+      - '@plugin.manager.sdc'
+      - '@logger.factory'
+
+  Drupal\varbase_ai_figma\PatternBuilder: '@varbase_ai_figma.pattern_builder'
+
+  varbase_ai_figma.role_vocabulary:
+    class: Drupal\varbase_ai_figma\RoleVocabulary
+    arguments:
+      - '@config.factory'
+
+  Drupal\varbase_ai_figma\RoleVocabulary: '@varbase_ai_figma.role_vocabulary'
+
+  varbase_ai_figma.inventory:
+    class: Drupal\varbase_ai_figma\InventoryScanner
+    arguments:
+      - '@entity_type.manager'
+      - '@plugin.manager.sdc'
+      - '@plugin.manager.block'
+      - '@config.factory'
+      - '@theme_handler'
+      - '@varbase_ai_figma.role_vocabulary'
+
+  Drupal\varbase_ai_figma\InventoryScanner: '@varbase_ai_figma.inventory'
+
+  varbase_ai_figma.resolver:
+    class: Drupal\varbase_ai_figma\DesignResolver
+    arguments:
+      - '@varbase_ai_figma.inventory'
+      - '@varbase_ai_figma.role_vocabulary'
+      - '@config.factory'
+
+  Drupal\varbase_ai_figma\DesignResolver: '@varbase_ai_figma.resolver'

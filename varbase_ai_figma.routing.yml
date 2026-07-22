@@ -1,0 +1,18 @@
+# Token-gated Canvas page preview for the headless browser.
+#
+# Renders an UNPUBLISHED canvas_page when the request carries a valid, unexpired
+# preview token minted by the varbase_ai_figma:preview_token_url function call,
+# so an automated unauthenticated browser can open it without a login link.
+varbase_ai_figma.token_preview:
+  path: '/varbase-ai-figma/preview/{canvas_page}'
+  methods: [GET]
+  defaults:
+    _controller: '\Drupal\varbase_ai_figma\Controller\PreviewController::view'
+    _title: 'Canvas Page Preview'
+  requirements:
+    _custom_access: '\Drupal\varbase_ai_figma\Controller\PreviewController::access'
+  options:
+    no_cache: TRUE
+    parameters:
+      canvas_page:
+        type: entity:canvas_page

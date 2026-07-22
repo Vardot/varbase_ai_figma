@@ -1,0 +1,228 @@
+################################################################################
+# GitLab CI for the Varbase AI Figma module on git.drupalcode.org.
+#
+# Replaces the old GitHub Actions workflow (.github/workflows/test.yml) with the
+# same coverage, using the Drupal GitLabCI template (the DrupalCI replacement).
+# Adapted from the sibling project ai_figma's .gitlab-ci.yml (1.0.x). See:
+#   https://project.pages.drupalcode.org/gitlab_templates/
+#
+# Coverage parity with the retired GitHub workflow:
+#   - Static + unit lanes (composer validate, PHPCS + DrupalPractice, PHPStan,
+#     PHPUnit unit tests, cspell) come from the template. The template also runs
+#     them across the previous/next minor and next major core versions and the
+#     max supported PHP, so it exceeds the single PHP 8.4 / core 11.3 the GitHub
+#     matrix used - nothing is dropped.
+#   - ESLint on the custom webship-js step definitions (the GitHub
+#     "ESLint (step definitions)" job).
+#   - The webship-js (Playwright + Cucumber) BDD acceptance suite, tested
+#     against Varbase 11 only: this module tunes vartheme_bs5 (Bootstrap 5.3)
+#     specifically, so a plain Drupal Core / Drupal CMS site never exercises
+#     what it actually does. The GitHub workflow's 3-way distro matrix is not
+#     reproduced here.
+#   - The amazee.ai live-agent (@ai) lane. Uses amazee.ai's free anonymous
+#     trial (ensureAmazeeAiAccess) via a testing-only recipe
+#     (tests/recipes/varbase_ai_figma_amazee) - no API key/secret needed, so
+#     it runs on every pipeline including issue-fork ones. Matches the proven
+#     pattern from the sibling project display_builder_ai.
+################################################################################
+
+include:
+  - project: $_GITLAB_TEMPLATES_REPO
+    ref: $_GITLAB_TEMPLATES_REF
+    file:
+      - '/includes/include.drupalci.main.yml'
+      - '/includes/include.drupalci.variables.yml'
+      - '/includes/include.drupalci.workflows.yml'
+
+variables:
+  # Test against adjacent core versions too, not just the current one.
+  OPT_IN_TEST_PREVIOUS_MINOR: 1
+  OPT_IN_TEST_NEXT_MINOR: 1
+  OPT_IN_TEST_NEXT_MAJOR: 1
+  OPT_IN_TEST_MAX_PHP: 1
+  # The only JS/CSS in the project is the webship-js suite under tests/: it is
+  # linted by the dedicated ESLint job below (its own .eslintrc.json) and
+  # exercised by the webship-js jobs, so the template's generic ESLint /
+  # Stylelint jobs have nothing to lint.
+  SKIP_ESLINT: 1
+  SKIP_STYLELINT: 1
+
+# Blocking quality gates (these were separate GitHub jobs).
+phpcs:
+  allow_failure: false
+
+phpstan:
+  allow_failure: false
+
+phpunit:
+  allow_failure: false
+
+cspell:
+  allow_failure: false
+
+# ─── ESLint on the webship-js step definitions ────────────────────────────────
+# Reproduces the GitHub "ESLint (step definitions)" job: eslint 8 +
+# eslint-config-prettier 8 against tests/step-definitions, using the project's
+# own .eslintrc.json (Node / Cucumber globals) rather than Drupal core's eslint
+# config, which is why the template ESLint job is skipped above.
+'eslint (step definitions)':
+  stage: validate
+  needs: []
+  image: node:22
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: on_success
+    - if: '$CI_COMMIT_REF_NAME =~ /^[0-9]+\.[0-9]+\.x$/'
+      when: on_success
+    - when: never
+  script:
+    - npm install --no-save eslint@8 eslint-config-prettier@8
+    - node ./node_modules/eslint/bin/eslint.js tests/step-definitions
+
+# ─── webship-js (Playwright + Cucumber) BDD acceptance suite ──────────────────
+# Build a site with this module via a Composer path repository, serve it with
+# Apache against the template's MySQL service, and run the tests/ webship-js
+# suite. Varbase is the default site/profile below; the amazee.ai leg
+# overrides it back to plain Drupal Core. The default `yarn test` lane
+# excludes @canvas-editor and @demo (see cucumber.js), so this is an
+# always-green functional lane with no live LLM provider key required.
+.functional-testing:
+  extends: .testing-job-base
+  stage: test
+  needs: []
+  allow_failure: false
+  services:
+    - name: $_CONFIG_DOCKERHUB_ROOT/$_TARGET_DB_TYPE-$_TARGET_DB_VERSION:$_TARGET_DB_IMAGE_TAG
+      alias: database
+  variables:
+    LAUNCH_URL: "http://localhost"
+    DRUPAL_ADMIN_USERNAME: "webmaster"
+    DRUPAL_ADMIN_PASSWORD: "dD.123123ddd"
+    LOGIN_USER: "webmaster"
+    LOGIN_PASS: "dD.123123ddd"
+    HEADLESS: "true"
+    BROWSER: "chromium"
+    FORCE_COLOR: "1"
+    _BUILD_DIR: "/tmp/site-build"
+    SITE_PACKAGE: "drupal/varbase_project:~11.0.0"
+    INSTALL_PROFILE: "varbase"
+    EXTRA_REQUIRE: ""
+    ENABLE_MODULES: "ai_figma varbase_ai_figma canvas_ai modeler_api"
+    # vardot/varbase sets composer's bin-dir to bin/ instead of the default
+    # vendor/bin/.
+    DRUSH_BIN: "$_BUILD_DIR/bin/drush"
+    TEST_CMD: "yarn test"
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: on_success
+    - if: '$CI_COMMIT_REF_NAME =~ /^[0-9]+\.[0-9]+\.x$/'
+      when: on_success
+    - when: never
+  artifacts:
+    when: on_failure
+    paths:
+      - tests/reports
+      - tests/screenshots
+      - tests/videos
+    expire_in: 1 week
+  before_script:
+    # Node 22 + Playwright (yarn 4 needs the node-modules linker; webship-js's
+    # postinstall can clobber cucumber.js, so back it up around yarn install).
+    - curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
+    - apt-get install -y nodejs
+    - 'test -f .yarnrc.yml || echo "nodeLinker: node-modules" > .yarnrc.yml'
+    - cp cucumber.js .cucumber.js.bak
+    - corepack enable
+    - yarn install
+    - cp .cucumber.js.bak cucumber.js && rm .cucumber.js.bak
+    - ./node_modules/.bin/playwright install --with-deps chromium
+    # Build a fresh site with this module via a Composer path repository. Its
+    # dependency ai_figma is public on drupal.org, so it resolves from
+    # packages.drupal.org - no GitHub mirror wiring needed.
+    - composer create-project "$SITE_PACKAGE" $_BUILD_DIR --no-interaction --no-progress --no-install --no-scripts
+    - cd $_BUILD_DIR
+    - composer config minimum-stability dev
+    - composer config prefer-stable true
+    - composer config allow-plugins true -n
+    - composer config repositories.mut '{"type":"path","url":"'"$CI_PROJECT_DIR"'","options":{"symlink":true}}'
+    # modeler_api provides the AI Agents management UI route the suite asserts;
+    # require it explicitly so `composer update` cannot prune it as an orphan.
+    # --ignore-platform-req=ext-pgsql: the Varbase leg pulls varbase_starter ->
+    # drupal_cms_ai -> ai_provider_amazeeio, which only lists pgsql as an
+    # optional backend for a feature this suite never exercises; the CI image
+    # has no pgsql extension, and requiring it here is a Composer resolver
+    # check, not a runtime need.
+    - composer require "drupal/varbase_ai_figma:*@dev" drupal/modeler_api drush/drush:^13 $EXTRA_REQUIRE --with-all-dependencies --no-interaction --no-progress --ignore-platform-req=ext-pgsql
+    # Apache serves the built site against the MySQL service.
+    - mkdir -pv $_BUILD_DIR/web/sites/default/files $_BUILD_DIR/web/sites/simpletest
+    - chmod -R 777 $_BUILD_DIR/web/sites/default/files $_BUILD_DIR/web/sites/simpletest
+    - rm -rf /var/www/html && ln -s $_BUILD_DIR/web /var/www/html
+    - chown -R www-data:www-data $_BUILD_DIR
+    - service apache2 start
+    - export SIMPLETEST_DB=mysql://$MYSQL_USER:$MYSQL_PASSWORD@database/$MYSQL_DATABASE
+    # Install, normalise the admin to "webmaster", then enable the modules.
+    - $DRUSH_BIN --root=$_BUILD_DIR/web site:install $INSTALL_PROFILE --db-url=$SIMPLETEST_DB --account-name=webmaster --account-pass=dD.123123ddd --site-name="Varbase AI Figma CI" -y
+    - $DRUSH_BIN --root=$_BUILD_DIR/web php:eval '$u=\Drupal\user\Entity\User::load(1); $u->setUsername("webmaster"); $u->setEmail("webmaster@example.test"); $u->setPassword("dD.123123ddd"); $u->save();'
+    - $DRUSH_BIN --root=$_BUILD_DIR/web en $ENABLE_MODULES -y
+    # amazee.ai lane only: apply the free-trial provider recipe (no API key
+    # needed - ensureAmazeeAiAccess provisions an anonymous trial).
+    - |
+      if [ -n "$APPLY_AMAZEE_RECIPE" ]; then
+        $DRUSH_BIN --root=$_BUILD_DIR/web cache:rebuild
+        $DRUSH_BIN --root=$_BUILD_DIR/web recipe "$CI_PROJECT_DIR/tests/recipes/varbase_ai_figma_amazee" -y
+      fi
+    - $DRUSH_BIN --root=$_BUILD_DIR/web cache:rebuild
+  script:
+    - cd "$CI_PROJECT_DIR"
+    - eval "$TEST_CMD"
+
+# Varbase 11 (drupal/varbase_project, varbase profile) - the only distro this
+# module is tested against; see the note at the top of this file.
+'functional-testing (Varbase)':
+  extends: .functional-testing
+  variables:
+    # google/recaptcha 1.5 (pulled in via varbase_starter -> varbase_security_base
+    # -> drupal/recaptcha) requires PHP >=8.4, newer than this CI image's PHP
+    # 8.3; pin it below that so Composer resolves an older, PHP-8.3-compatible
+    # release instead.
+    EXTRA_REQUIRE: "vardot/varbase-patches:~11.0.0 google/recaptcha:<1.5"
+
+# amazee.ai live-agent (@ai) lane. Free anonymous trial, no secret required -
+# runs on every pipeline like the other leg. Plain Drupal Core, not Varbase:
+# this exercises the AI provider recipe, not vartheme_bs5. Currently a no-op
+# (no @ai scenarios are tagged yet); wired and ready for when live-agent
+# scenarios are added.
+'functional-testing (AI live agent - amazee.ai)':
+  extends: .functional-testing
+  variables:
+    SITE_PACKAGE: "drupal/recommended-project:^11"
+    INSTALL_PROFILE: "standard"
+    DRUSH_BIN: "$_BUILD_DIR/vendor/bin/drush"
+    EXTRA_REQUIRE: "drupal/ai_provider_amazeeio drupal/ai_simple_provider_installer:*@alpha"
+    ENABLE_MODULES: "ai_figma varbase_ai_figma canvas_ai modeler_api"
+    APPLY_AMAZEE_RECIPE: "1"
+    TEST_CMD: 'npx cucumber-js --config cucumber.js --tags "@ai and not @wip"'
+
+# Build the docs/ folder with MkDocs and publish it to GitLab Pages, served at
+# https://project.pages.drupalcode.org/varbase_ai_figma/. On merge requests the
+# job just builds (validating the docs with --strict); GitLab only publishes
+# Pages from the default branch. `--strict` fails the job on a broken link or
+# nav entry.
+pages:
+  stage: build
+  needs: []
+  image: python:3.12-slim
+  rules:
+    - if: '$CI_COMMIT_TAG'
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: on_success
+    - if: '$CI_COMMIT_REF_NAME =~ /^[0-9]+\.[0-9]+\.x$/'
+      when: on_success
+    - when: never
+  script:
+    - pip install --no-cache-dir mkdocs-material
+    - mkdocs build --strict --site-dir public
+  artifacts:
+    paths:
+      - public

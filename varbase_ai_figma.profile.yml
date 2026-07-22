@@ -1,0 +1,187 @@
+figma_token_source: key
+figma_token_key: figma
+figma_api_base: 'https://api.figma.com'
+# Bootstrap 5.3 / vartheme_bs5 customization of the general ai_figma engine.
+component_prefix: 'sdc.vartheme_bs5'
+# Default Figma file to read when no link is given (VB Approved Stylesheet).
+# Set your own file key here, or just pass a full Figma link in the prompt.
+default_file_key: 'RJkuWNHla1P8VYHa5z6dnL'
+default_layout: auto
+# Semantic content the builder reads out of the Figma node text. Each role
+# names where its text comes from (heading = larger text, paragraph = longer
+# copy, label = a short button-like string, root = the node name) and how much
+# to keep. The layout `content` bindings below reference these role names, so
+# none of them are hard-coded in PHP.
+content_roles:
+  title:
+    source: heading
+    index: 0
+    max_length: 70
+  body:
+    source: paragraph
+    index: 0
+    max_length: 280
+  cta:
+    source: label
+    index: 0
+    max_length: 24
+# Each section role declares its component, the slot it sits in, its static
+# props, and a `content` map binding component props to the content roles above
+# (prop name => role). When a role has no `content` map the builder derives the
+# binding from the component's own props (read from the theme component folder /
+# cached Canvas component config). Nothing about component/slot/props/content is
+# hard-coded in PHP - repoint any of it here.
+layouts:
+  cards:
+    section:
+      component: section
+      props: { container_type: container, gutter: 'gx-4 gy-4', padding_block_start: pt-5, padding_block_end: pb-5, aos_once: true, background_color: none }
+    card:
+      component: card
+      slot: 'col_%i'
+      props: { orientation: image-top, background: bg-light, has_padding: true, media_ratio: auto, button_variant: btn-primary, url: / }
+  feature:
+    heading_section:
+      component: section
+      props: { columns: '100', container_type: container, padding_block_start: pt-5, padding_block_end: pb-2, aos_once: true }
+    heading:
+      component: heading
+      slot: col_1
+      props: { level: 2, align: text-center }
+      content: { heading_text: title, text: title }
+    section:
+      component: section
+      props: { container_type: container, gutter: 'gx-3 gy-3', padding_block_start: pt-2, padding_block_end: pb-5, aos_once: true }
+    card:
+      component: card-icon
+      slot: 'col_%i'
+      props: { text: '', icon: record-circle, icon_size: fs-2, background_color: bg-light, text_align: text-start, has_padding: true, button_label: '' }
+      content: { text: title, description: body }
+  cta:
+    section:
+      component: section
+      props: { columns: '100', container_type: container, background_color: bg-dark, bg_edge2edge: true, padding_block_start: pt-5, padding_block_end: pb-5, aos_once: true }
+    cta:
+      component: cta
+      slot: col_1
+      props: { level: 2, heading_size: display-5, background_color: 'bg-dark text-white', content_color: text-white, text_align: text-center, button_variant: btn-primary, button_url: /, bg_edge2edge: false }
+      content: { heading_text: title, text: body, button_text: cta }
+  media:
+    section:
+      component: section
+      props: { columns: '50-50', container_type: container, background_color: bg-dark, bg_edge2edge: true, gutter: 'gx-4 gy-4', padding_block_start: pt-5, padding_block_end: pb-5, aos_once: true }
+    text:
+      component: cta
+      slot: col_1
+      props: { level: 2, heading_size: display-6, background_color: bg-none, content_color: text-white, text_align: text-start, button_variant: btn-primary, button_url: /, bg_edge2edge: false }
+      content: { heading_text: title, text: body, button_text: cta }
+    media:
+      component: card-icon
+      slot: col_2
+      props: { text: '', description: '', icon: people, icon_size: fs-1, background_color: 'bg-primary text-white', text_align: text-center, has_padding: true, button_label: '' }
+component_choices:
+  section: section
+  group: group
+  card: card
+  hero: hero-side-by-side
+  cta: cta
+  heading: heading
+  text: plain-text
+builder_order:
+  - section
+  - group
+  - card
+
+# Prompts / rules + scope (CONFIG, not code). Applied onto ai_figma.settings;
+# the install hook pushes these onto the editable AI Context items.
+build_rules: '## Varbase Figma Build Rules
+
+
+  This site is a Drupal site built with Varbase (the enterprise Drupal distribution). Build designs with Drupal Canvas. The site is built with Bootstrap 5.3 - prefer Bootstrap classes and utility classes (container, row, col-*, btn, card, d-flex, py-5, text-center, ...) in markup.
+
+
+  1. REUSE before creating - first use the EXISTING components listed in available_components (Canvas code components, blocks, menus, views and other ready Drupal building blocks); only create a new code component when nothing fits.
+
+  2. Build parts of pages as SECTIONS - one focused code component per design section (hero, cards, stats, CTA, ...), not one monolithic page component.
+
+  3. Create Canvas pages and place the created/existing components in them.
+
+  4. The site header and footer are global - they live in the theme''s header/footer page regions; never repeat them inside page components. Build them from EXISTING SYSTEM blocks first (Site branding, Main navigation, Footer menu, "Powered by", …) placed into the regions with Put it in the header or footer - only create a custom code component for the header/footer when no system block fits. Do NOT build header/footer as code components by default.
+
+  5. Use Bootstrap 5.3 CSS custom properties (var(--bs-primary), var(--bs-body-color), ...) for colors - provided via UI Skins/UI Styles - instead of hard-coded hex values; map Figma colours onto the closest --bs-* variable.
+
+  6. Name components after what they are (e.g. "hero", "stats"); do not prefix names with "Figma".
+
+  7. Fill components with the REAL text from content_texts (headings, body copy and button labels in document order - larger sizes are headings, smaller are body/labels). Use that wording verbatim instead of lorem ipsum; only fall back to placeholder text when content_texts is empty.
+
+  8. When you create a Canvas page that is the site Homepage, set it as the Drupal front page (Connect the design to the real site, action set_front_page). Give EVERY Canvas page you create a clean, human-readable URL alias matching its title/menu label (Connect the design to the real site, action set_path_alias, e.g. /about-varbase, /contact-us) so its URL and menu link are not /page/N.
+
+  9. When you create Canvas pages that belong in the main, secondary or footer menu of the design, add them to that Drupal menu, and when a design drops a page from a menu remove its link, using the Manage the menus tool (actions list/add/remove on main, secondary or footer).
+
+  10. Do NOT build a full page as ONE component. Build small SECTION components first, then compose the Canvas page from them - place them inside the theme''s section/group SDC components (sdc.vartheme_bs5.section, sdc.vartheme_bs5.group) on the page. A Canvas page = section/group wrappers + small code components, never a single monolithic page component. Work in two passes: FIRST create/update all needed section components, THEN assemble the Canvas pages from them.
+
+  11. NEVER duplicate an existing component: before creating any component, check available_components / the existing code component list; when one with the same purpose exists (any name), UPDATE it instead of creating a near-duplicate.
+
+  12. AVOID array-shaped props on code components — Drupal Canvas cannot populate a prop whose JSON shape is type:array (it errors "does not know of a field type/widget"). Instead hard-code repeating lists inside the component, or expose them as separate numbered scalar props (item1_title, item1_text, ...), or use named slots. Never declare a prop as an array/object.
+
+  13. NO MOCKUP HTML — this is a hard rule. Never hand-code fake/placeholder markup for anything Drupal already provides (forms, content listings, content cards). Build FUNCTIONAL, data-driven components and pages wired to real Drupal data (entities, fields, view modes, Views, Webforms, blocks). Reserve static text ONLY for genuinely static marketing copy (a hero headline, a CTA label).
+
+  14. FORMS = WEBFORM, never hand-coded. Do not build a form inside a code component. Use an EXISTING ready Webform that fits the design (e.g. contact, business_contact, newsletter_subscribe) or create a new Webform with Install a set of features (recipe) (a webform.webform.<id> config), then PLACE it by passing "webform:<id>" to Build the page (e.g. components="webform:contact") — that puts the real Webform block bound to that form on the page.
+
+  15. CARDS / repeating items = ONE reusable component fed by real data. Create a single card code component and reuse it; for content-driven cards (blog, news, events, programs, team, …) bind it to Drupal entities via content-entity-reference props and the content type''s view modes — do NOT paste static card text.
+
+  16. LISTINGS of content (blog, news, events, programs, …) = ready VIEWS + their blocks, placed in Canvas. Use the existing View''s block by passing its block id to Build the page (e.g. components="views_block.blog-all" or "views_block.blog-latest"). When the needed content type / fields / view mode / View does not exist yet, use the OTHER Drupal AI agents and tools (the Canvas page/component agents, content-type and field agents, Install a set of features (recipe)) to create the content type, its fields, a view mode and a View first, THEN place the View''s block. Never fake a listing with static cards.
+
+  17. LINK components to Drupal data + view modes: a component that shows content must pull it from Drupal (entity-reference props, fields, view modes) so the page stays in sync with real content; configure the content type''s display modes and reference real entities instead of hardcoding content.
+
+  18. SIZING UNITS = REM/EM + BOOTSTRAP SCALE, NEVER px. When converting Figma sizes to CSS, do NOT hard-code px for width, height, padding, margin, gap or font-size. Convert px to rem (divide by 16: Figma 24px -> 1.5rem) or em, and PREFER the equivalent Bootstrap utility classes and spacing scale over inline styles: p-*/m-*/g-* (1=0.25rem, 2=0.5rem, 3=1rem, 4=1.5rem, 5=3rem), py-5 for 48px section padding, fs-1..fs-6 for font sizes, w-25/50/75/100 + mw-100 for widths, container/row/col-* for layout widths, ratio ratio-16x9 for media boxes. px is acceptable ONLY for 1px borders and hairlines. Example: Figma "padding: 80px 0" -> class py-5 (or style padding:5rem 0); Figma "width: 880px" -> style maxWidth:''55rem'' or col-lg-8.
+
+  19. BUILD ON VARBASE — read and obey the Varbase AI Context items already on this site ("Varbase AI Editorial Rules" = content types/taxonomies/editorial workflow, "Varbase Brand & Identity Guidelines" = product name/tone/voice, "Varbase AI Safety Guardrails") and reuse Varbase''s ready modules and tools (Webform, Views, Media, Paragraphs/Varbase Components, Scheduler, Pathauto, UI Skins/Styles) plus the other Drupal AI agents, rather than reinventing them. The get_design_context "building_blocks" field lists the ready building blocks to pick from: visitor-usable webforms (e.g. webform:business_contact — Varbase''s business contact form), Views listing blocks (e.g. views_block.blog-all) and content types (blog, page). Choose the matching ready building block before building anything custom.
+
+  20. VIEW MODES = CANVAS CONTENT TEMPLATES — ALL entity view modes (full, teaser, card, etc.) that display content to visitors MUST be built as Drupal Canvas content templates (canvas.content_template.{entity_type}.{bundle}.{view_mode}), not traditional Drupal field formatters or display settings. Create/update view mode templates with Install a set of features (recipe), writing a canvas.content_template config. There is no separate view-mode tool - do not look for one. Each view mode template binds a Canvas code component to the entity fields using entity-field source expressions. Example: node.blog.full → js.blog_detail component binding title, body, image from node fields. For listing view modes (card, teaser, grid_item) use a card-style component. For the full view mode use a detail/page-style component. Never leave a view mode on "default" field formatters when a Canvas template can give it a designed, branded layout.
+
+  21. TALK LIKE A SITE BUILDER, NOT LIKE THE CODE. What you say back is read by site builders, product owners and clients. Never show them machine names (sdc.*, views_block.*, block.*, canvas.component.*), tool names, config keys, JSON, YAML, match scores, or Figma node ids - not even to echo back a node id they pasted. Use the human labels: "the Heading component", "the Feature Cards section already saved on your site", "the blog list". Say WHAT will be used, WHETHER it already exists, and WHAT is still missing, in plain sentences. The technical detail belongs to the tools; the person gets the meaning.
+
+
+  ## Full-site build workflow
+
+
+  When asked to build the FULL site from a Figma file, follow this exact sequence:
+
+  1. Call Figma: List Design Pages to get every page frame and its node id; plan one Canvas page per design frame (skip foundation/icon/style-guide canvases).
+
+  2. Build the global header and footer from EXISTING SYSTEM blocks (NOT code components): place Site branding + Main navigation into the header region and Footer menu + "Powered by" into the footer region in ONE call each with Put it in the header or footer (e.g. region=header, components="system_branding_block, system_menu_block.main"; region=footer, components="system_menu_block.footer, system_powered_by_block"). Only build a custom header/footer code component when the design needs something no system block provides.
+
+  3. For each design frame: call Read the design with that frame''s node id, create the needed SECTION code components (reuse existing ones when they fit), export any real imagery with Bring the images across and use the returned URLs, then call Build the page with the page title and the section components in order.
+
+  4. Wire the site: set the Homepage as front page and add the pages to the main/footer menus with Connect the design to the real site.
+
+  5. Report each created component, page, menu link and the front page when done.
+
+
+  For other site changes (enable a module, change settings): use Install a set of features (recipe) - write a small recipe with install + config.actions. That is the Drupal way, and it leaves a reviewable trail instead of an untracked edit.'
+accessibility_rules: 'Every component and text you add MUST be accessible (WCAG 2.1 AA): use one logical heading hierarchy (a single h1, then h2/h3 in order - never skip levels or use a heading purely for size); give every image/icon meaningful alt text (empty alt only for purely decorative ones); give every link and button real, descriptive text (no "click here", no empty/icon-only controls without an aria-label); keep text and its background at >=4.5:1 contrast (>=3:1 for large text) - if a mapped Figma colour fails contrast on its background, pick the theme variant that passes; associate every form field with a visible label; do not convey meaning by colour alone. After building, the result should pass an automated accessibility audit (axe-core) with no serious or critical violations.'
+mapping_governance: '## Figma Component Mapping Governance
+
+
+  When turning a Figma design into Drupal Canvas components, GOVERN the mapping - do not silently scaffold new components. For EACH design section, before building:
+
+
+  1. READ & SUGGEST MAPPING. Compare the section against the existing component library (available_components + the existing code components). Suggest the proper mapping and state your confidence.
+
+  2. EXACT MATCH -> reuse the existing component as-is. Explain the basis for the match (layout, content zones, structure).
+
+  3. CLOSEST MATCH (partial). Surface the top 1-3 closest existing components with their structural differences from the design. PREFER extending the closest one: add new props / settings / variants to scale it further, rather than cloning a near-duplicate.
+
+  4. NO MATCH -> AVOID building a new component without user approval. Inform the user this section has no existing match and offer a choice: (a) create a new component, or (b) update an existing component / the theme to cover it. Wait for the user''s decision before scaffolding new code.
+
+  5. INFORM ON DIFFERENCES between the design reference and the theme. If the design does not map exactly, say so explicitly and recommend either new components or improvements to the existing theme/components.
+
+  6. PICK UP SMALL POLISH DIFFERENCES. Assess and report layer grouping, spacing, font weights, font sizes and alignment where the design diverges from the matched component, and propose theme improvements. Map polish values onto the theme spacing/type scale (Bootstrap 5.3 spacing + fs-* scale) rather than hard-coding pixels.
+
+  7. PRESENT A PLAN FIRST. For a multi-section design, list the per-section mapping decision (reuse / extend / new-with-approval) before applying changes, so the user stays in control. Apply changes as a draft for review.'
+context_scope:
+  global:
+  - global
+  use_case:
+  - working_in_canvas
