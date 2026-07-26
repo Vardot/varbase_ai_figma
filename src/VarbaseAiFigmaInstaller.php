@@ -203,6 +203,23 @@ final class VarbaseAiFigmaInstaller {
 
     try {
       $storage = $this->entityTypeManager->getStorage('ai_context_item');
+
+      // ai_context caps published global items (default 3) and rejects saves
+      // over the cap, which silently drops the items seeded here when other
+      // modules (e.g. ai_figma) seeded theirs first. Raise the cap so every
+      // item this module teaches fits alongside the ones already published.
+      $published_globals = 0;
+      foreach ($storage->loadByProperties(['status' => 1]) as $existing_item) {
+        if (method_exists($existing_item, 'isStoredGlobal') ? $existing_item->isStoredGlobal() : TRUE) {
+          $published_globals++;
+        }
+      }
+      $needed = $published_globals + count($items);
+      $ai_context_settings = $this->configFactory->getEditable('ai_context.settings');
+      $current_max = (int) ($ai_context_settings->get('max_global_items') ?? 3);
+      if ($needed > $current_max) {
+        $ai_context_settings->set('max_global_items', $needed)->save();
+      }
       foreach ($items as $item) {
         $label = trim((string) ($item['label'] ?? ''));
         $content = trim((string) ($item['content'] ?? ''));

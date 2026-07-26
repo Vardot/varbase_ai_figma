@@ -185,7 +185,11 @@ cspell:
     # -> drupal/recaptcha) requires PHP >=8.4, newer than this CI image's PHP
     # 8.3; pin it below that so Composer resolves an older, PHP-8.3-compatible
     # release instead.
-    EXTRA_REQUIRE: "vardot/varbase-patches:~11.0.0 google/recaptcha:<1.5"
+    # drupal/ctools:^4.1.1: varbase-patches 11.0.30 dropped the ctools
+    # views_block schema patch because ctools 4.1.1 fixes it upstream; require
+    # it explicitly so a stale composer mirror cannot resolve 4.1.0 and bring
+    # the Drupal Canvas views_block validation errors back.
+    EXTRA_REQUIRE: "vardot/varbase-patches:~11.0.0 google/recaptcha:<1.5 drupal/ctools:^4.1.1"
 
 # amazee.ai live-agent (@ai) lane. Free anonymous trial, no secret required -
 # runs on every pipeline like the other leg. Plain Drupal Core, not Varbase:
