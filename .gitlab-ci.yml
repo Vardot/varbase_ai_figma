@@ -12,9 +12,9 @@
 #     them across the previous/next minor and next major core versions and the
 #     max supported PHP, so it exceeds the single PHP 8.4 / core 11.3 the GitHub
 #     matrix used - nothing is dropped.
-#   - ESLint on the custom webship-js step definitions (the GitHub
+#   - ESLint on the custom varbase-e2e step definitions (the GitHub
 #     "ESLint (step definitions)" job).
-#   - The webship-js (Playwright + Cucumber) BDD acceptance suite, tested
+#   - The varbase-e2e (Playwright + Cucumber) BDD acceptance suite, tested
 #     against Varbase 11 only: this module tunes vartheme_bs5 (Bootstrap 5.3)
 #     specifically, so a plain Drupal Core / Drupal CMS site never exercises
 #     what it actually does. The GitHub workflow's 3-way distro matrix is not
@@ -40,9 +40,9 @@ variables:
   OPT_IN_TEST_NEXT_MINOR: 1
   OPT_IN_TEST_NEXT_MAJOR: 1
   OPT_IN_TEST_MAX_PHP: 1
-  # The only JS/CSS in the project is the webship-js suite under tests/: it is
+  # The only JS/CSS in the project is the varbase-e2e suite under tests/: it is
   # linted by the dedicated ESLint job below (its own .eslintrc.json) and
-  # exercised by the webship-js jobs, so the template's generic ESLint /
+  # exercised by the varbase-e2e jobs, so the template's generic ESLint /
   # Stylelint jobs have nothing to lint.
   SKIP_ESLINT: 1
   SKIP_STYLELINT: 1
@@ -60,7 +60,7 @@ phpunit:
 cspell:
   allow_failure: false
 
-# ─── ESLint on the webship-js step definitions ────────────────────────────────
+# ─── ESLint on the varbase-e2e step definitions ────────────────────────────────
 # Reproduces the GitHub "ESLint (step definitions)" job: eslint 8 +
 # eslint-config-prettier 8 against tests/step-definitions, using the project's
 # own .eslintrc.json (Node / Cucumber globals) rather than Drupal core's eslint
@@ -79,9 +79,9 @@ cspell:
     - npm install --no-save eslint@8 eslint-config-prettier@8
     - node ./node_modules/eslint/bin/eslint.js tests/step-definitions
 
-# ─── webship-js (Playwright + Cucumber) BDD acceptance suite ──────────────────
+# ─── varbase-e2e (Playwright + Cucumber) BDD acceptance suite ──────────────────
 # Build a site with this module via a Composer path repository, serve it with
-# Apache against the template's MySQL service, and run the tests/ webship-js
+# Apache against the template's MySQL service, and run the tests/ varbase-e2e
 # suite. Varbase is the default site/profile below; the amazee.ai leg
 # overrides it back to plain Drupal Core. The default `yarn test` lane
 # excludes @canvas-editor and @demo (see cucumber.js), so this is an
@@ -126,7 +126,7 @@ cspell:
       - tests/videos
     expire_in: 1 week
   before_script:
-    # Node 22 + Playwright (yarn 4 needs the node-modules linker; webship-js's
+    # Node 22 + Playwright (yarn 4 needs the node-modules linker; varbase-e2e's
     # postinstall can clobber cucumber.js, so back it up around yarn install).
     - curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
     - apt-get install -y nodejs

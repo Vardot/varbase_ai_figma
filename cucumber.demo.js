@@ -30,17 +30,17 @@
 
 const baseWorldParameters = require('./cucumber.shared.js');
 
-process.env.WEBSHIP_REPORT_JSON =
-  process.env.WEBSHIP_REPORT_JSON || 'tests/reports/demo/cucumber_report.json';
-process.env.WEBSHIP_REPORT_OUT =
-  process.env.WEBSHIP_REPORT_OUT || 'tests/reports/demo/cucumber_report.html';
+process.env.VARBASE_E2E_REPORT_JSON =
+  process.env.VARBASE_E2E_REPORT_JSON || 'tests/reports/demo/cucumber_report.json';
+process.env.VARBASE_E2E_REPORT_OUT =
+  process.env.VARBASE_E2E_REPORT_OUT || 'tests/reports/demo/cucumber_report.html';
 
 module.exports = {
   default: {
     timeout: 45000,
     requireModule: ['tsx/cjs'],
     require: [
-      'node_modules/webship-js/tests/step-definitions/**/*.js',
+      'node_modules/@vardot/varbase-e2e/tests/step-definitions/**/*.js',
       'tests/step-definitions/**/*.js',
     ],
     paths: ['tests/features/drupal/**/*.feature'],

@@ -16,6 +16,9 @@ Feature: Role-based access control for Varbase AI Figma
   Background:
     Given I am a logged in user with the "Webmaster" user
      And I add testing users
+     # Each scenario performs its own role-specific login; drop the Background
+     # session first so the login form is actually presented.
+     And I am an anonymous user
 
   Scenario Outline: An administrator can reach <area>
     Given I am a logged in user with the "Webmaster" user

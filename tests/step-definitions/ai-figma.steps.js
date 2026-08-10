@@ -1,5 +1,9 @@
 'use strict';
 
+// The Varbase login and wait steps ship as built-ins in @vardot/varbase-e2e
+// (varbase.steps.js / drupal-core.steps.js) - the local copies were removed to
+// keep every matching scenario unambiguous.
+
 /**
  * @file
  * Custom step definitions for the AI Figma + Varbase AI Figma test suite.
@@ -8,13 +12,13 @@
  * through the browser only - no Drush, no shell. The Mink-style navigation /
  * assertion / form steps (`I am on …`, `I should see …`, `I fill in …`,
  * `I press …`), the JavaScript-error check, the landmark and accessibility
- * audits are all provided by webship-js. Only the steps below are
+ * audits are all provided by varbase-e2e. Only the steps below are
  * module-specific or are the named-selector vocabulary webshare itself
  * defines (`Then the "<key>" element should be visible / have a count of N`,
  * `When I click the "<key>" element`, `Then I should see a "<label>" field`,
  * `Then I should see the button "<text>"`).
  *
- * Navigation and waiting reuse webship-js's own helpers - gotoUrl (friendly
+ * Navigation and waiting reuse varbase-e2e's own helpers - gotoUrl (friendly
  * navigation errors) and waitForPageLoad (BBR smart-settle: DOM ready,
  * network idle, no pending AJAX/timers, DOM-quiet) - instead of raw
  * Playwright waits, and failures are wrapped with friendly().
@@ -25,7 +29,7 @@ const {
   friendly,
   gotoUrl,
   waitForPageLoad,
-} = require('webship-js/tests/step-definitions/webship');
+} = require('@vardot/varbase-e2e/tests/step-definitions/varbase-e2e');
 
 /**
  * Run a step body and rethrow any failure as a tester-friendly error.
@@ -40,42 +44,6 @@ async function attempt(body, message) {
     throw friendly(message, err);
   }
 }
-
-/**
- * Log in as a named test user defined in cucumber.shared.js
- * worldParameters.users.
- *
- * The Webmaster row is the site-install super-admin; the lowercase
- * `webmaster` alias resolves to the same account and matches the Varbase /
- * Vardoc feature convention. Uses Drupal's stable field IDs so the step is
- * theme-independent (Olivero, Claro/Gin and vartheme_bs5 all render
- * `#edit-name` / `#edit-pass`).
- *
- * Example #1: Given I am a logged in user with the "Webmaster" user
- * Example #2: Given I am a logged in user with the "webmaster" user
- * Example #3: Given I am a logged in user with the "Content editor" user
- */
-Given(/^I am a logged in user with( the)*( username)* "([^"]*)?"( user)?$/, async function (theCase, usernameCase, key, userCase) {
-  const users = this.parameters.users || {};
-  if (!(key in users)) {
-    throw new Error(`No user named "${key}" in cucumber.shared.js worldParameters.users`);
-  }
-  const { username, password } = users[key];
-  if (!username || !password) {
-    throw new Error(`User "${key}" is missing username or password in worldParameters.users`);
-  }
-  await attempt(async () => {
-    await this.context.clearCookies();
-    await gotoUrl(this.page, `${this.parameters.launchUrl}/user/login`);
-    await this.page.locator('#edit-name').fill(username);
-    await this.page.locator('#edit-pass').fill(password);
-    // Scope the submit to the login form so it works whether the active theme
-    // renders it as an <input> (Olivero / Claro / Gin) or a <button>
-    // (vartheme_bs5 / Bootstrap) - and never matches a header search button.
-    await this.page.locator('#user-login-form #edit-submit').first().click();
-    await waitForPageLoad(this.page, this.minWaitTime && this.minWaitTime.page);
-  }, `Could not log in as "${key}"`);
-});
 
 /**
  * Assert the page does not contain a PHP error, fatal, warning, notice, or
@@ -201,9 +169,9 @@ Given(/^I enable only the default AI Figma settings$/, async function () {
 });
 
 /**
- * Resolve a webship-js named selector from the world registry.
+ * Resolve a varbase-e2e named selector from the world registry.
  *
- * The registry (`world.__selectorsCss`) is hydrated by webship-js from
+ * The registry (`world.__selectorsCss`) is hydrated by varbase-e2e from
  * cucumber.shared.js's `selectors.files` list - see tests/selectors/*.json
  * for the catalog. Throws when the name is unknown so a typo never silently
  * passes through to Playwright as a literal CSS string.
@@ -216,7 +184,7 @@ function resolveName(world, name) {
   }
   // Suggest the closest registered name (Levenshtein distance) so a typo
   // surfaces a one-line hint instead of a wall of selectors. The bulk dump
-  // is still available via `Then print css selectors` (webship-js).
+  // is still available via `Then print css selectors` (varbase-e2e).
   const keys = Object.keys(css);
   let best = null;
   let bestDistance = Infinity;
@@ -253,7 +221,7 @@ function resolveName(world, name) {
 
 /**
  * Assert a named selector is visible / hidden / attached / focused / enabled /
- * disabled / editable. Mirrors webship-js's raw-CSS `should be …` phrasing.
+ * disabled / editable. Mirrors varbase-e2e's raw-CSS `should be …` phrasing.
  *
  * Example #1: Then the "ai figma settings form" element should be visible
  * Example #2: Then the "ai figma open ai panel" element should be visible within 5 seconds

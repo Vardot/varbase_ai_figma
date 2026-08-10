@@ -1,6 +1,6 @@
 {
   "name": "varbase_ai_figma",
-  "description": "Webship-js (Playwright + Cucumber) BDD suite for the AI Figma + Varbase AI Figma Drupal modules.",
+  "description": "Varbase E2E (Playwright + Cucumber) BDD suite for the AI Figma + Varbase AI Figma Drupal modules.",
   "license": "GPL-2.0",
   "private": true,
   "author": "Rajab Natshah",
@@ -25,7 +25,7 @@
     "ai"
   ],
   "dependencies": {
-    "webship-js": "~2.0.4"
+    "@vardot/varbase-e2e": "~2.0.1"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.11.3",

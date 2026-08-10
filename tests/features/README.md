@@ -1,6 +1,6 @@
-# AI Figma - webship-js feature scenarios
+# AI Figma - varbase-e2e feature scenarios
 
-Browser-only BDD (Playwright + Cucumber via webship-js) for the `ai_figma` +
+Browser-only BDD (Playwright + Cucumber via varbase-e2e) for the `ai_figma` +
 `varbase_ai_figma` modules. The feature set is split by flavour, the same way
 the `webshare` reference module splits its suite:
 
@@ -57,7 +57,7 @@ LAUNCH_URL=https://your-site.ddev.site npm test
 
 ## Step vocabulary
 
-Every scenario uses step phrasings webship-js ships (navigation, `I should
+Every scenario uses step phrasings varbase-e2e ships (navigation, `I should
 see …`, `I fill in …`, `I press …`, the JavaScript-error check, the landmark
 and accessibility audits) plus the named-selector vocabulary defined in
 `tests/step-definitions/ai-figma.steps.js`

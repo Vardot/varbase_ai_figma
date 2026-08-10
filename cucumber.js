@@ -11,32 +11,32 @@
 //   npx cucumber-js --config cucumber.js              # Drupal / Varbase (default)
 //   npx cucumber-js --config cucumber.drupalcms.js    # Drupal CMS
 //
-// Browser-only BDD (Playwright + Cucumber via webship-js). Point it at any
+// Browser-only BDD (Playwright + Cucumber via varbase-e2e). Point it at any
 // running site that has the ai_figma + varbase_ai_figma modules enabled:
 //
 //   LAUNCH_URL=https://your-site.ddev.site npm test
 //
-// Loads webship-js's built-in step library plus this module's custom steps.
+// Loads varbase-e2e's built-in step library plus this module's custom steps.
 
 const baseWorldParameters = require('./cucumber.shared.js');
 
 // This flavour writes its cucumber JSON under tests/reports/drupal/ (see the
-// `format` block below). webship-js auto-generates an HTML report at process
+// `format` block below). varbase-e2e auto-generates an HTML report at process
 // exit and defaults to tests/reports/cucumber_report.json, so point its input
 // (and HTML output) at the flavour directory; otherwise the exit hook throws
 // ENOENT and the process exits non-zero even though every scenario passed.
 // Respect an explicit override if the operator already set these.
-process.env.WEBSHIP_REPORT_JSON =
-  process.env.WEBSHIP_REPORT_JSON || 'tests/reports/drupal/cucumber_report.json';
-process.env.WEBSHIP_REPORT_OUT =
-  process.env.WEBSHIP_REPORT_OUT || 'tests/reports/drupal/cucumber_report.html';
+process.env.VARBASE_E2E_REPORT_JSON =
+  process.env.VARBASE_E2E_REPORT_JSON || 'tests/reports/drupal/cucumber_report.json';
+process.env.VARBASE_E2E_REPORT_OUT =
+  process.env.VARBASE_E2E_REPORT_OUT || 'tests/reports/drupal/cucumber_report.html';
 
 module.exports = {
   default: {
     timeout: 45000,
     requireModule: ['tsx/cjs'],
     require: [
-      'node_modules/webship-js/tests/step-definitions/**/*.js',
+      'node_modules/@vardot/varbase-e2e/tests/step-definitions/**/*.js',
       'tests/step-definitions/**/*.js',
     ],
     paths: ['tests/features/drupal/**/*.feature'],

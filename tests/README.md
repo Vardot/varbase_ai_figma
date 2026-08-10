@@ -1,6 +1,6 @@
-# AI Figma - webship-js BDD suite
+# AI Figma - varbase-e2e BDD suite
 
-Browser-only BDD tests (Playwright + Cucumber via webship-js) for the
+Browser-only BDD tests (Playwright + Cucumber via varbase-e2e) for the
 `ai_figma` and `varbase_ai_figma` modules. No Drush, no shell - every step
 drives the site through the browser, so the suite runs against any site that
 has the modules enabled. Structured exactly like the `webshare` reference

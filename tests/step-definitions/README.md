@@ -1,6 +1,6 @@
 # Step Definitions
 
-`ai-figma.steps.js` holds the only steps not shipped by webship-js:
+`ai-figma.steps.js` holds the only steps not shipped by varbase-e2e:
 
 - **Theme-independent login** - `Given I am a logged in user with the
   "<user>" user` (uses Drupal's stable `#edit-name` / `#edit-pass` ids).
@@ -38,4 +38,4 @@ an unknown key fails fast with a "Did you mean …?" hint.
 Everything else (navigation, `I should see …`, `I fill in …`, `I press …`,
 `there should be no JavaScript errors`, `the page should have a … landmark`,
 `the page should have no serious accessibility violations`) comes from
-webship-js's built-in step library.
+varbase-e2e's built-in step library.
