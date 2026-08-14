@@ -25,7 +25,7 @@
     "ai"
   ],
   "dependencies": {
-    "@vardot/varbase-e2e": "~2.0.1"
+    "@vardot/varbase-e2e": "^2"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.11.3",
