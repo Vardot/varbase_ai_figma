@@ -2,7 +2,7 @@
 
 [![Tests](https://github.com/Vardot/varbase_ai_figma/actions/workflows/test.yml/badge.svg)](https://github.com/Vardot/varbase_ai_figma/actions/workflows/test.yml)
 [![pipeline status](https://git.drupalcode.org/project/varbase_ai_figma/badges/1.0.x/pipeline.svg)](https://git.drupalcode.org/project/varbase_ai_figma/-/pipelines)
-[![Varbase AI Figma](https://img.shields.io/badge/Varbase%20AI%20Figma-1.0.0--rc1-0d6efc?labelColor=001d38&style=flat-square)](https://git.drupalcode.org/project/varbase_ai_figma/-/pipelines?ref=1.0.0-rc1)
+[![Varbase AI Figma](https://img.shields.io/badge/Varbase%20AI%20Figma-1.0.0-0d6efc?labelColor=001d38&style=flat-square)](https://git.drupalcode.org/project/varbase_ai_figma/-/pipelines?ref=1.0.0)
 [![Automated Functional Testing](https://git.drupalcode.org/project/varbase_project/badges/11.0.x/pipeline.svg)](https://git.drupalcode.org/project/varbase_project/-/pipelines)
 
 Turn a Figma design into a ready-made Drupal Canvas page. Paste a Figma link and
