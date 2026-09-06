@@ -144,7 +144,27 @@ cspell:
     - composer config minimum-stability dev
     - composer config prefer-stable true
     - composer config allow-plugins true -n
-    - composer config repositories.mut '{"type":"path","url":"'"$CI_PROJECT_DIR"'","options":{"symlink":true}}'
+    # The module under test is installed from a Composer *path* repository. A
+    # path repo is canonical and outranks packages.drupal.org, so the version it
+    # declares is the ONLY version of this module Composer can see. Left
+    # undeclared that version is `dev-<sha>`, which satisfies no `~1.0.x`
+    # constraint - and drupal/varbase_ai_figma_base has back-pinned
+    # `drupal/varbase_ai_figma:~1.0.0` since its 1.0.0-rc2 (16 Aug 2026), so
+    # resolution fails outright with "the packages from the higher priority
+    # repository do not match your constraint".
+    #
+    # So declare the version, derived from the branch rather than hardcoded, to
+    # keep working when the branch moves to 1.1.x: `1.0.x` -> `1.0.x-dev`, which
+    # Composer normalises to `1.0.9999999.9999999-dev` and which therefore
+    # satisfies `~1.0.0` under this build's `minimum-stability: dev`.
+    - |
+      MUT_BRANCH="${CI_MERGE_REQUEST_TARGET_BRANCH_NAME:-$CI_COMMIT_BRANCH}"
+      case "$MUT_BRANCH" in
+        *.x) MUT_VERSION="${MUT_BRANCH}-dev" ;;
+        *)   MUT_VERSION="${CI_COMMIT_TAG:-1.0.x-dev}" ;;
+      esac
+      echo "Path repository declares drupal/varbase_ai_figma as $MUT_VERSION"
+      composer config repositories.mut "{\"type\":\"path\",\"url\":\"$CI_PROJECT_DIR\",\"options\":{\"symlink\":true,\"versions\":{\"drupal/varbase_ai_figma\":\"$MUT_VERSION\"}}}"
     # modeler_api provides the AI Agents management UI route the suite asserts;
     # require it explicitly so `composer update` cannot prune it as an orphan.
     # --ignore-platform-req=ext-pgsql: the Varbase leg pulls varbase_starter ->
