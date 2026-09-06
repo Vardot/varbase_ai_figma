@@ -6,6 +6,7 @@ namespace Drupal\varbase_ai_figma;
 
 use Drupal\ai_figma\AiFigmaInstaller;
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Extension\ExtensionPathResolver;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
@@ -230,11 +231,11 @@ final class VarbaseAiFigmaInstaller {
         $entity = $existing ? reset($existing) : NULL;
         if ($entity) {
           $entity->set('content', ['value' => $content, 'format' => 'plain_text']);
-          $entity->set('scope', $scope);
+          $this->applyContextScope($entity, $scope);
           $entity->save();
           continue;
         }
-        $storage->create([
+        $new_entity = $storage->create([
           'type' => 'default',
           'status' => TRUE,
           'uid' => 1,
@@ -242,8 +243,9 @@ final class VarbaseAiFigmaInstaller {
           'description' => ['value' => (string) ($item['description'] ?? ''), 'format' => 'plain_text'],
           'purpose' => ['value' => (string) ($item['purpose'] ?? ''), 'format' => 'plain_text'],
           'content' => ['value' => $content, 'format' => 'plain_text'],
-          'scope' => $scope,
-        ])->save();
+        ]);
+        $this->applyContextScope($new_entity, $scope);
+        $new_entity->save();
       }
     }
     catch (\Throwable $e) {
@@ -252,6 +254,22 @@ final class VarbaseAiFigmaInstaller {
         ['@msg' => $e->getMessage()]
       );
     }
+  }
+
+  /**
+   * Assigns a grouped scope array to an AI Context item.
+   *
+   * @param \Drupal\Core\Entity\EntityInterface $entity
+   *   The ai_context_item entity to assign the scope to.
+   * @param array $scope
+   *   Grouped scope, keyed by scope plugin ID, each an array of values.
+   */
+  protected function applyContextScope(EntityInterface $entity, array $scope): void {
+    if (method_exists($entity, 'setScope')) {
+      $entity->setScope($scope);
+      return;
+    }
+    $entity->set('scope', $scope);
   }
 
   /**
