@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+- Require `drupal/ai_figma` `^1.0.1` so the inherited `AiFigmaInstaller` AI Context seeding fix is guaranteed. With `^1.0` a site could still resolve `ai_figma` 1.0.0, where the seeding wrote a grouped `scope_id => [value, ...]` array into the multi-value `scope` field of `ai_context` 1.0.0-beta5 and the resulting `InvalidArgumentException` was caught and logged as a warning, so recipes reported success while no AI Context item was created.
 
 ## [1.0.0] - 2026-09-06
 ### Changed
