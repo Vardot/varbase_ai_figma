@@ -12,7 +12,8 @@ use Drupal\ai\Base\FunctionCallBase;
 use Drupal\ai\Service\FunctionCalling\ExecutableFunctionCallInterface;
 use Drupal\ai\Service\FunctionCalling\FunctionCallInterface;
 use Drupal\ai_agents\PluginInterfaces\AiAgentContextInterface;
-use Drupal\canvas\Entity\PageRegion;
+use Drupal\canvas\Entity\PageVariant;
+use Drupal\canvas\PageVariantMigration;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -159,28 +160,52 @@ class PlaceInRegion extends FunctionCallBase implements ExecutableFunctionCallIn
       return;
     }
 
+    // Canvas 1.11 replaced theme-global page regions with page variants: one
+    // theme-independent, full-page component tree whose page template component
+    // carries a slot per theme region. A region is therefore no longer its own
+    // config entity, it is a slot on the template component inside the site
+    // default variant.
+    // @see https://git.drupalcode.org/project/canvas/-/work_items/3591806
     $theme = (string) $this->configFactory->get('system.theme')->get('default');
-    $region_id = $theme . '.' . $region;
-    $page_region = PageRegion::load($region_id);
-    if (!$page_region) {
-      foreach (PageRegion::createFromBlockLayout($theme) as $created) {
-        $created->enable();
-        $created->save();
-      }
-      $page_region = PageRegion::load($region_id);
-    }
-    if (!$page_region) {
-      $this->result = sprintf('The %s theme has no "%s" region available to Canvas.', $theme, $region);
+    $variant = $this->loadDefaultPageVariant($theme);
+    if (!$variant instanceof PageVariant) {
+      $this->result = sprintf('The %s theme has no Canvas page variant to place components in.', $theme);
       return;
     }
 
-    $page_region->enable();
-    $tree = $mode === 'append' ? ($page_region->get('component_tree') ?: []) : [];
-    foreach ($entries as $uuid => $entry) {
-      $tree[$uuid] = $entry;
+    // The page template component is the only root of the variant's tree.
+    $tree = $variant->getComponentTree()->getValue();
+    $template_uuid = NULL;
+    foreach ($tree as $item) {
+      if (empty($item['parent_uuid'])) {
+        $template_uuid = $item['uuid'] ?? NULL;
+        break;
+      }
     }
-    $page_region->set('component_tree', $tree);
-    $page_region->save();
+    if ($template_uuid === NULL) {
+      $this->result = sprintf('The "%s" page variant has no page template component to place into.', $variant->id());
+      return;
+    }
+
+    // Replace clears only this region's slot, never the rest of the page.
+    if ($mode !== 'append') {
+      $tree = array_values(array_filter(
+        $tree,
+        static fn (array $item): bool => ($item['parent_uuid'] ?? NULL) !== $template_uuid
+          || ($item['slot'] ?? NULL) !== $region,
+      ));
+    }
+    foreach ($entries as $entry) {
+      $entry['parent_uuid'] = $template_uuid;
+      $entry['slot'] = $region;
+      $tree[] = $entry;
+    }
+
+    $variant->getComponentTree()->setValue($tree);
+    if (!$variant->status()) {
+      $variant->enable();
+    }
+    $variant->save();
 
     $this->result = sprintf(
       'Done: placed %s into the global %s region of %s (%s)%s.',
@@ -241,6 +266,35 @@ class PlaceInRegion extends FunctionCallBase implements ExecutableFunctionCallIn
    */
   public function getReadableOutput(): string {
     return $this->result;
+  }
+
+  /**
+   * Loads the site default page variant, migrating legacy regions on first use.
+   *
+   * @param string $theme
+   *   The default theme machine name.
+   *
+   * @return \Drupal\canvas\Entity\PageVariant|null
+   *   The variant to place into, or NULL when none can be resolved.
+   */
+  protected function loadDefaultPageVariant(string $theme): ?PageVariant {
+    $id = $this->configFactory->get('canvas.settings')->get(PageVariant::DEFAULT_SETTING);
+    if (is_string($id) && $id !== '') {
+      $variant = PageVariant::load($id);
+      if ($variant instanceof PageVariant) {
+        return $variant;
+      }
+    }
+
+    // No site default yet: fold the theme's legacy regions into a variant, the
+    // same way Canvas' own post-update does.
+    $variant = PageVariantMigration::migrateDefaultTheme();
+    if ($variant instanceof PageVariant) {
+      return $variant;
+    }
+
+    $variant = PageVariant::load('theme_' . preg_replace('/[^a-z0-9_]/', '_', $theme));
+    return $variant instanceof PageVariant ? $variant : NULL;
   }
 
 }

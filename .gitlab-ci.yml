@@ -172,7 +172,7 @@ cspell:
     # optional backend for a feature this suite never exercises; the CI image
     # has no pgsql extension, and requiring it here is a Composer resolver
     # check, not a runtime need.
-    - composer require "drupal/varbase_ai_figma:*@dev" drupal/modeler_api drush/drush:^13 $EXTRA_REQUIRE --with-all-dependencies --no-interaction --no-progress --ignore-platform-req=ext-pgsql
+    - composer require "drupal/varbase_ai_figma:*@dev" "drupal/cva:^1.0.1" drupal/modeler_api drush/drush:^13 $EXTRA_REQUIRE --with-all-dependencies --no-interaction --no-progress --ignore-platform-req=ext-pgsql
     # Apache serves the built site against the MySQL service.
     - mkdir -pv $_BUILD_DIR/web/sites/default/files $_BUILD_DIR/web/sites/simpletest
     - chmod -R 777 $_BUILD_DIR/web/sites/default/files $_BUILD_DIR/web/sites/simpletest
