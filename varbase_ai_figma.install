@@ -13,10 +13,15 @@
 
 declare(strict_types=1);
 
+use Drupal\Core\Config\FileStorage;
+use Drupal\Core\Config\InstallStorage;
+use Drupal\Core\Config\MemoryStorage;
+
 /**
  * Implements hook_install().
  */
 function varbase_ai_figma_install(): void {
+  _varbase_ai_figma_install_skipped_ai_context_views();
   $installer = \Drupal::service('varbase_ai_figma.installer');
   $installer->applyProfile();
   $installer->bakeDemoToken();
@@ -29,4 +34,24 @@ function varbase_ai_figma_install(): void {
  */
 function varbase_ai_figma_uninstall(): void {
   \Drupal::service('varbase_ai_figma.installer')->setOrchestratorTools(FALSE);
+}
+
+/**
+ * Creates the AI Context views that core skipped when it installed them.
+ *
+ * With Trash 3.1 and Canvas, Views data is built during a module install from
+ * entity types that do not include ai_context's yet, so core skips
+ * views.view.ai_context_usage and every AI Context page fails on its missing
+ * route. Remove once https://www.drupal.org/i/3624638 is in a Trash release.
+ */
+function _varbase_ai_figma_install_skipped_ai_context_views(): void {
+  $path = \Drupal::service('extension.list.module')->getPath('ai_context');
+  $source = new FileStorage($path . '/' . InstallStorage::CONFIG_INSTALL_DIRECTORY);
+  $views = new MemoryStorage();
+  foreach ($source->listAll('views.view.') as $name) {
+    $views->write($name, $source->read($name));
+  }
+  \Drupal::service('views.views_data')->clear();
+  // Creates only the views that do not exist yet.
+  \Drupal::service('config.installer')->installOptionalConfig($views);
 }
