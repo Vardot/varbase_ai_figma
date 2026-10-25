@@ -226,27 +226,3 @@ cspell:
     ENABLE_MODULES: "ai_figma varbase_ai_figma canvas_ai modeler_api"
     APPLY_AMAZEE_RECIPE: "1"
     TEST_CMD: 'npx cucumber-js --config cucumber.js --tags "@ai and not @wip"'
-
-# Build the docs/ folder with MkDocs and publish it to GitLab Pages, served at
-# https://project.pages.drupalcode.org/varbase_ai_figma/. On merge requests the
-# job just builds (validating the docs with --strict); GitLab only publishes
-# Pages from the default branch. `--strict` fails the job on a broken link or
-# nav entry.
-pages:
-  stage: build
-  needs: []
-  image: python:3.12-slim
-  rules:
-    - if: '$CI_COMMIT_TAG'
-      when: never
-    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
-      when: on_success
-    - if: '$CI_COMMIT_REF_NAME =~ /^[0-9]+\.[0-9]+\.x$/'
-      when: on_success
-    - when: never
-  script:
-    - pip install --no-cache-dir mkdocs-material
-    - mkdocs build --strict --site-dir public
-  artifacts:
-    paths:
-      - public
