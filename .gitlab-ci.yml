@@ -46,6 +46,7 @@ variables:
   # Stylelint jobs have nothing to lint.
   SKIP_ESLINT: 1
   SKIP_STYLELINT: 1
+  DRUPAL_CMS_TELEMETRY: "0"
 
 # Blocking quality gates (these were separate GitHub jobs).
 phpcs:
