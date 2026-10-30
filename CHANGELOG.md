@@ -8,7 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Changed
 - Require `drupal/ai_figma` `^1.0.1` so the inherited `AiFigmaInstaller` AI Context seeding fix is guaranteed. With `^1.0` a site could still resolve `ai_figma` 1.0.0, where the seeding wrote a grouped `scope_id => [value, ...]` array into the multi-value `scope` field of `ai_context` 1.0.0-beta5 and the resulting `InvalidArgumentException` was caught and logged as a warning, so recipes reported success while no AI Context item was created.
+
+## [1.0.6] - 2026-10-29
+### Added
+- Add the Varbase logo as logo.png ([#3632507](https://www.drupal.org/i/3632507)).
+
+### Changed
 - Move the documentation to docs.varbase.vardot.com ([#3633014](https://www.drupal.org/i/3633014)).
+- Disable Drupal CMS telemetry in CI ([#3633851](https://www.drupal.org/i/3633851)).
+- Update the version badge to `1.0.6` in `README.md`.
 
 ## [1.0.0] - 2026-09-06
 ### Changed
@@ -38,7 +46,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Fix `page_edit`'s stale component classifier and add a provider fallback to `AiAssistant`.
 
-[Unreleased]: https://git.drupalcode.org/project/varbase_ai_figma/-/compare/1.0.0...1.0.x
+[Unreleased]: https://git.drupalcode.org/project/varbase_ai_figma/-/compare/1.0.6...1.0.x
+[1.0.6]: https://git.drupalcode.org/project/varbase_ai_figma/-/compare/1.0.5...1.0.6
 [1.0.0]: https://git.drupalcode.org/project/varbase_ai_figma/-/compare/1.0.0-rc1...1.0.0
 [1.0.0-rc1]: https://git.drupalcode.org/project/varbase_ai_figma/-/compare/1.0.0-beta1...1.0.0-rc1
 [1.0.0-beta1]: https://git.drupalcode.org/project/varbase_ai_figma/-/compare/1.0.0-alpha2...1.0.0-beta1
